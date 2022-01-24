@@ -12,12 +12,12 @@ For a city that has a space, replace it with a `+`.
 
 ## Google Sheets Embedding
 You can use the following formula to embed this info into google sheets:  
-`=TRANSPOSE(IMPORTXML(CONCATENATE({URL}, {CELL}, "//td/tr"))`
+`=IMPORTXML(CONCATENATE({URL}, {CITY}), "/root")`
 
 HINTS:
 - if you use `get-headers` as the city-state parameter, you should get a xml that you can use the same formula above to populate the header row;
 - you can use the following formula to convert from `City, ST` to `city-st`:  
-`=LOWER(SUBSTITUTE(SUBSTITUTE({CELL},", ","-"), " ", "+")))`
+`=LOWER(SUBSTITUTE(SUBSTITUTE({CITY},", ","-"), " ", "+"))`
 
 ## Sample URL
 This is hosted on a free heroku dyno, so it might stop at anytime:  
