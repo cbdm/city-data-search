@@ -1,5 +1,7 @@
 # app.py
+import os
 import os.path
+import redis
 import string
 from flask import Flask, request, jsonify
 from data_fetchers import get_livability, get_population, get_weather
@@ -8,6 +10,10 @@ from utils import create_output_xml, check_delete
 app = Flask(__name__)
 app.debug = True
 data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
+
+db_url = os.getenv('REDIS_ENDPOINT_URI', '127.0.0.1:6379')
+db_pass = os.getenv('REDIS_PASSWORD', '')
+db = redis.from_url(f'{(db_pass + "@") if db_pass else ""}redis://{db_url}')
 
 @app.route('/<citystate>/')
 def get_data(citystate):
@@ -31,23 +37,16 @@ def get_data(citystate):
         # Check if we already have fetched data for this citystate.
         # TODO: add some freshness (e.g., update if after a month?) to this file.
         # TODO: add some flag to force update.
-        # TODO: figure out how to enable this cache in heroku.
-        filepath = os.path.join(data_dir, f'{citystate}.xml')
-        if os.path.exists(filepath):
-            # If we have this data cached, load it.
-            with open(filepath, 'rb') as file_in:
-                xml = file_in.read()
-        else:
+        
+        xml = db.get(citystate)  # If we have this data cached, load it.
+        if not xml:
             # If we don't, fetch it.
             xml = create_output_xml(population=get_population(citystate),
                                     weather=get_weather(citystate),
                                     livability=get_livability(citystate)
                                     )
-            # Export the xml to disk.
-            with open(filepath, 'wb') as file_out:
-                file_out.write(xml)
-            # Check if file was created correctly.
-            check_delete(filepath, xml)
+            # Update redis with the data.
+            db.set(citystate, xml)
 
     # Serve the xml.
     return app.response_class(xml, mimetype='application/xml')
