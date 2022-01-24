@@ -34,14 +34,6 @@ def create_output_xml(population, weather, livability):
     return ET.tostring(root)
 
 
-def check_delete(filepath, xml):
-    '''Check if the xml was correctly written to disk, otherwise deletes it.'''
-    with open(filepath, 'rb') as file_in:
-        xml2 = file_in.read()
-    if xml != xml2:
-        remove(filepath)
-
-
 def validate_city_state(citystate):
     '''Validate the format of the citystate; raises assertionerrors for invalid data.'''
     assert citystate.count(' ') == 0, 'spaces should be replaced with pluses (i.e., "+").'

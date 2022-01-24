@@ -4,7 +4,7 @@ import os.path
 import redis
 from flask import Flask, request, jsonify
 from data_fetchers import get_livability, get_population, get_weather
-from utils import create_output_xml, check_delete, validate_city_state
+from utils import create_output_xml, validate_city_state
 
 app = Flask(__name__)
 app.debug = True
@@ -17,7 +17,7 @@ db = redis.Redis(
 @app.route('/<citystate>/')
 def get_data(citystate):
     '''Return gathered information for the given citystate in a xml format that gSheets can parse.'''
-    # Data validation.
+    # Check citystate has the correct format.
     validate_city_state(citystate)
    
     if citystate == 'get-headers':   # Check special case for returning headers.
@@ -46,7 +46,7 @@ def get_data(citystate):
 @app.route('/force/<citystate>/')
 def force_get_data(citystate):
     '''API to force fetching the data for the given city-state.'''
-    # Data validation.
+    # Check citystate has the correct format.
     validate_city_state(citystate)
    
     if citystate == 'get-headers':   # Check special case for returning headers.
