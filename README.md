@@ -18,3 +18,7 @@ HINTS:
 - if you use `get-headers` as the city-state parameter, you should get a xml that you can use the same formula above to populate the header row;
 - you can use the following formula to convert from `City, ST` to `city-st`:  
 `=LOWER(SUBSTITUTE(SUBSTITUTE({CELL},", ","-"), " ", "+")))`
+
+## Sample URL
+This is hosted on a free heroku dyno, so it might stop at anytime:  
+[https://city-data-search.herokuapp.com](https://city-data-search.herokuapp.com)

@@ -23,13 +23,14 @@ def get_data(citystate):
    
     if citystate == 'get-headers':   # Check special case for returning headers.
         xml = create_output_xml(population='Population',
-                                weather='2021 Weather\nlowest | median daily low | median daily avg | median daily high | highest',
-                                livability=('Overall Libavility', 'Amenities', 'Cost of Living', 'Crime',
+                                weather='2021 Weather (ºC)',
+                                livability=('Overall Livability', 'Amenities', 'Cost of Living', 'Crime',
                                                 'Employment', 'Housing', 'Schools', 'User Ratings')
                                 )
     else:
         # Check if we already have looked for this citystate.
         # TODO: add some freshness (e.g., update if after a month?) to this file.
+        # TODO: figure out how to enable this cache in heroku.
         filepath = os.path.join(data_dir, f'{citystate}.data')
         if os.path.exists(filepath):
             with open(filepath, 'rb') as file_in:
