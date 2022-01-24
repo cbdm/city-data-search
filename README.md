@@ -12,7 +12,7 @@ For a city that has a space, replace it with a `+`.
 
 ## Google Sheets Embedding
 You can use the following formula to embed this info into google sheets:  
-`=IMPORTXML(CONCATENATE({URL}, {CITY}), "/root")`
+`=IMPORTXML(CONCATENATE({URL}, {CITY}), "/data")`
 
 HINTS:
 - if you use `get-headers` as the city-state parameter, you should get a xml that you can use the same formula above to populate the header row;
