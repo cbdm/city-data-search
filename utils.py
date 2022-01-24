@@ -1,3 +1,4 @@
+import string
 import xml.etree.ElementTree as ET
 from os import remove
 
@@ -39,3 +40,14 @@ def check_delete(filepath, xml):
         xml2 = file_in.read()
     if xml != xml2:
         remove(filepath)
+
+
+def validate_city_state(citystate):
+    '''Validate the format of the citystate; raises assertionerrors for invalid data.'''
+    assert citystate.count(' ') == 0, 'spaces should be replaced with pluses (i.e., "+").'
+    assert citystate.count('-') == 1, 'wrong number of hyphens.'
+    city, state = citystate.split('-')
+    assert city, 'city should be filled.'
+    assert state, 'state should be filled.'
+    assert set(citystate) <= (set(string.ascii_lowercase) | set("'.+-")), \
+        "invalid characters, should have only lowercase letters and '.+-"

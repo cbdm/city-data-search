@@ -2,10 +2,9 @@
 import os
 import os.path
 import redis
-import string
 from flask import Flask, request, jsonify
 from data_fetchers import get_livability, get_population, get_weather
-from utils import create_output_xml, check_delete
+from utils import create_output_xml, check_delete, validate_city_state
 
 app = Flask(__name__)
 app.debug = True
@@ -19,13 +18,7 @@ db = redis.Redis(
 def get_data(citystate):
     '''Return gathered information for the given citystate in a xml format that gSheets can parse.'''
     # Data validation.
-    assert citystate.count(' ') == 0, 'spaces should be replaced with pluses (i.e., "+").'
-    assert citystate.count('-') == 1, 'too many hyphens.'
-    city, state = citystate.split('-')
-    assert city, 'city should be filled.'
-    assert state, 'state should be filled.'
-    assert set(citystate) <= (set(string.ascii_lowercase) | set("'.+-")), \
-        "invalid characters, should have only lowercase letters and '.+-"
+    validate_city_state(citystate)
    
     if citystate == 'get-headers':   # Check special case for returning headers.
         xml = create_output_xml(population='Population',
@@ -54,13 +47,7 @@ def get_data(citystate):
 def force_get_data(citystate):
     '''API to force fetching the data for the given city-state.'''
     # Data validation.
-    assert citystate.count(' ') == 0, 'spaces should be replaced with pluses (i.e., "+").'
-    assert citystate.count('-') == 1, 'too many hyphens.'
-    city, state = citystate.split('-')
-    assert city, 'city should be filled.'
-    assert state, 'state should be filled.'
-    assert set(citystate) <= (set(string.ascii_lowercase) | set("'.+-")), \
-        "invalid characters, should have only lowercase letters and '.+-"
+    validate_city_state(citystate)
    
     if citystate == 'get-headers':   # Check special case for returning headers.
         return 'Please use the regular API.'
