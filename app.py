@@ -11,9 +11,11 @@ app = Flask(__name__)
 app.debug = True
 data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
 
-db_url = os.getenv('REDIS_ENDPOINT_URI', '127.0.0.1:6379')
-db_pass = os.getenv('REDIS_PASSWORD', '')
-db = redis.from_url(f'redis://{(db_pass + "@") if db_pass else ""}{db_url}')
+db = redis.Redis(
+    host=os.getenv('REDIS_ENDPOINT_URI', '127.0.0.1'),
+    port=os.getenv('REDIS_PORT', '6379'), 
+    password=os.getenv('REDIS_PASSWORD', None)
+    )
 
 @app.route('/<citystate>/')
 def get_data(citystate):
