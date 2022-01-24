@@ -28,26 +28,28 @@ def get_data(citystate):
                                                 'Employment', 'Housing', 'Schools', 'User Ratings')
                                 )
     else:
-        # Check if we already have looked for this citystate.
+        # Check if we already have fetched data for this citystate.
         # TODO: add some freshness (e.g., update if after a month?) to this file.
         # TODO: add some flag to force update.
         # TODO: figure out how to enable this cache in heroku.
-        filepath = os.path.join(data_dir, f'{citystate}.data')
+        filepath = os.path.join(data_dir, f'{citystate}.xml')
         if os.path.exists(filepath):
+            # If we have this data cached, load it.
             with open(filepath, 'rb') as file_in:
                 xml = file_in.read()
         else:
+            # If we don't, fetch it.
             xml = create_output_xml(population=get_population(citystate),
                                     weather=get_weather(citystate),
                                     livability=get_livability(citystate)
                                     )
+            # Export the xml to disk.
             with open(filepath, 'wb') as file_out:
                 file_out.write(xml)
-            
             # Check if file was created correctly.
             check_delete(filepath, xml)
 
-    # Put data into a xml and serve it.
+    # Serve the xml.
     return app.response_class(xml, mimetype='application/xml')
 
 

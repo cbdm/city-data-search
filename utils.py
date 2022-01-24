@@ -12,19 +12,21 @@ def create_output_xml(population, weather, livability):
     for l in livability:
         assert isinstance(l, str)
     
-    root = ET.Element('root')
+    root = ET.Element('data')
 
-    p = ET.Element('data')
+    p = ET.Element('population')
     p.text = population
     root.append(p)
 
-    w = ET.Element('data')
+    w = ET.Element('weather')
     w.text = weather
     root.append(w)
 
     l = []
-    for liv in livability:
-        l.append(ET.Element('data'))
+    liv_headers = ('Livability', 'Amenities', 'CoL', 'Crime',
+                    'Employment', 'Housing', 'Schools', 'UserRatings')
+    for h, liv in zip(liv_headers, livability):
+        l.append(ET.Element(h))
         l[-1].text = liv
         root.append(l[-1])
     
@@ -35,6 +37,5 @@ def check_delete(filepath, xml):
     '''Check if the xml was correctly written to disk, otherwise deletes it.'''
     with open(filepath, 'rb') as file_in:
         xml2 = file_in.read()
-    
     if xml != xml2:
         remove(filepath)
