@@ -9,8 +9,6 @@ from utils import create_output_xml, check_delete
 
 app = Flask(__name__)
 app.debug = True
-data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
-
 db = redis.Redis(
     host=os.getenv('REDIS_ENDPOINT_URI', '127.0.0.1'),
     port=os.getenv('REDIS_PORT', '6379'), 
@@ -38,8 +36,6 @@ def get_data(citystate):
     else:
         # Check if we already have fetched data for this citystate.
         # TODO: add some freshness (e.g., update if after a month?) to this file.
-        # TODO: add some flag to force update.
-        
         xml = db.get(citystate)  # If we have this data cached, load it.
         if not xml:
             # If we don't, fetch it.
@@ -52,6 +48,32 @@ def get_data(citystate):
 
     # Serve the xml.
     return app.response_class(xml, mimetype='application/xml')
+
+
+@app.route('/force/<citystate>/')
+def force_get_data(citystate):
+    '''API to force fetching the data for the given city-state.'''
+    # Data validation.
+    assert citystate.count(' ') == 0, 'spaces should be replaced with pluses (i.e., "+").'
+    assert citystate.count('-') == 1, 'too many hyphens.'
+    city, state = citystate.split('-')
+    assert city, 'city should be filled.'
+    assert state, 'state should be filled.'
+    assert set(citystate) <= (set(string.ascii_lowercase) | set("'.+-")), \
+        "invalid characters, should have only lowercase letters and '.+-"
+   
+    if citystate == 'get-headers':   # Check special case for returning headers.
+        return 'Please use the regular API.'
+    else:
+        # Fetch the data.
+        xml = create_output_xml(population=get_population(citystate),
+                                weather=get_weather(citystate),
+                                livability=get_livability(citystate)
+                                )
+        # Update redis with the data.
+        db.set(citystate, xml)
+        # Serve the xml.
+        return app.response_class(xml, mimetype='application/xml')
 
 
 @app.route('/')
