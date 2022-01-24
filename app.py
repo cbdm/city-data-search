@@ -30,6 +30,7 @@ def get_data(citystate):
     else:
         # Check if we already have looked for this citystate.
         # TODO: add some freshness (e.g., update if after a month?) to this file.
+        # TODO: add some flag to force update.
         # TODO: figure out how to enable this cache in heroku.
         filepath = os.path.join(data_dir, f'{citystate}.data')
         if os.path.exists(filepath):
