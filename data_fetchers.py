@@ -92,6 +92,8 @@ def get_weather(city):
     coordinates = Point(lat=float(geo_location['lat']),
                         lon=float(geo_location['lon']))
     data = Daily(coordinates, weather_start, weather_end)
+    data = data.normalize()
+    data = data.interpolate()
     data = data.fetch()
     lowest = data['tmin'].min()
     low = data['tmin'].median()
