@@ -7,8 +7,8 @@ from meteostat import Point, Daily
 population_url = 'https://www.areavibes.com/{}/demographics'
 livability_url = 'https://www.areavibes.com/{}/livability'
 location_app = Nominatim(user_agent="query")
-weather_start = datetime(2021, 1, 1)
-weather_end = datetime(2021, 12, 31)
+weather_start = datetime(datetime.now().year - 1, 1, 1)
+weather_end = datetime(datetime.now().year - 1, 12, 31)
 weather_format_str = '{:^5.1f}' + ('  |  {:^5.1f}' * 4)
 
 def get_population(citystate):
