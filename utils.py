@@ -2,7 +2,7 @@ import string
 import xml.etree.ElementTree as ET
 from os import remove
 
-def create_output_xml(population, weather, livability):
+def create_output_xml(citystate, population, weather, livability):
     '''Create a xml that contains the provided data.'''
 
     # Data validation.
@@ -13,7 +13,7 @@ def create_output_xml(population, weather, livability):
     for l in livability:
         assert isinstance(l, str)
     
-    root = ET.Element('data')
+    root = ET.Element('data', citystate=citystate)
 
     p = ET.Element('population')
     p.text = population
