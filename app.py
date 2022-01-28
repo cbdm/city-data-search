@@ -4,6 +4,7 @@ import os.path
 import redis
 from flask import Flask, request, jsonify
 from data_fetchers import get_livability, get_population, get_weather
+from large_cities import find_close_large_cities, City
 from utils import create_output_xml, validate_city_state
 from datetime import datetime
 import xml.etree.ElementTree as ET
@@ -27,7 +28,9 @@ def get_single_city_data(citystate, force=False):
                                 population='Population',
                                 weather=f'{datetime.now().year - 1} Weather (ºC)',
                                 livability=('Overall Livability', 'Amenities', 'Cost of Living', 'Crime',
-                                                'Employment', 'Housing', 'Schools', 'User Ratings')
+                                                'Employment', 'Housing', 'Schools', 'User Ratings'),
+                                closest_large_cities='closest large cities',
+                                count_large_cities='# of large cities nearby'
                                 )
     else:
         # Check if we already have fetched data for this citystate.
@@ -35,10 +38,13 @@ def get_single_city_data(citystate, force=False):
         xml = db.get(citystate)  # If we have this data cached, load it.
         if force or not xml:
             # If we don't, fetch it.
-            xml = create_output_xml(citystate,
+            closest_large_cities, count_large_cities = find_close_large_cities(citystate)
+            xml = create_output_xml(citystate=citystate,
                                     population=get_population(citystate),
                                     weather=get_weather(citystate),
-                                    livability=get_livability(citystate)
+                                    livability=get_livability(citystate),
+                                    closest_large_cities=closest_large_cities,
+                                    count_large_cities=count_large_cities
                                     )
             # Update redis with the data.
             db.set(citystate, xml)
@@ -46,19 +52,19 @@ def get_single_city_data(citystate, force=False):
     return xml
 
 
-@app.route('/<citystate>/')
+@app.route('/api/citystate/<citystate>/')
 def single_city(citystate, force=False):
-    '''Return gathered information for the given citystate in a xml format that gSheets can parse.'''
+    '''API to get data for a single given city-state.'''
     return app.response_class(get_single_city_data(citystate, force), mimetype='application/xml')
 
 
-@app.route('/force/<citystate>/')
+@app.route('/api/force/citystate/<citystate>/')
 def force_single_city(citystate):
     '''API to force fetching the data for the given city-state.'''
     return single_city(citystate, force=True)
 
 
-@app.route('/multi/<citystatelist>/')
+@app.route('/api/multi/<citystatelist>/')
 def multi_city(citystatelist, force=False):
     '''API to fetch data for all cities in the given city-state list.'''
     response = ET.Element('multi', citystatelist=citystatelist)
@@ -68,7 +74,7 @@ def multi_city(citystatelist, force=False):
     return app.response_class(ET.tostring(response), mimetype='application/xml')
 
 
-@app.route('/force-multi/<citystatelist>/')
+@app.route('/api/force/multi/<citystatelist>/')
 def force_multi_city(citystatelist):
     '''API to force fetching the data for the given city-state list.'''
     return multi_city(citystatelist, force=True)

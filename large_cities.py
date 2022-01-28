@@ -1,3 +1,4 @@
+import os.path
 from heapq import heappush, heappushpop
 from pickle import load
 from geopy.distance import distance
@@ -7,9 +8,9 @@ location_app = Nominatim(user_agent="query")
 
 class City(object):
     '''Object to store city data we use to find closest largest cities.'''
-    def __init__(self, citystate, displayname, population, coordinates):
-        self.citystate = citystate
+    def __init__(self, displayname, citystate, population, coordinates):
         self.displayname = displayname
+        self.citystate = citystate
         self.population = population
         self.coordinates = coordinates
 
@@ -42,12 +43,26 @@ class City(object):
         else:
             return False
 
+    @staticmethod
+    def from_str(s):
+        data = s.split(', ')
+        displayname = data[0] + ', ' + data[1][:data[1].find(' ')]
+        citystate = data[1][data[1].find('(') + 1:-1]
+        population = int(data[2])
+        coordinates = (float(data[3][data[3].find('(') + 1:]), float(data[4][:data[4].find(')')]))
+        return City(displayname, citystate, population, coordinates)
+
 
 _data = None  # Store the list of large cities.
 def _load_data():
     global _data
-    with open('large_cities.bin', 'rb') as file_in:
+    root_dir = os.path.dirname(os.path.realpath(__file__))
+    filepath = os.path.join(root_dir, 'large_cities.bin')
+    print('here2')
+    with open(filepath, 'rb') as file_in:
+        print('here3')
         _data = load(file_in)
+        print('here4')
 
 
 def find_close_large_cities(citystate, k=3, max_dist=100):
@@ -58,6 +73,7 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
             Canada: https://canadapopulation.org/largest-cities-in-canada-by-population/'''
     assert isinstance(k, int)
     assert k <= 20
+    print('here')
 
     # Load data if it hasn't been loaded yet.    
     if _data is None:
@@ -75,7 +91,7 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
         # Calculate the distance.
         dist = distance(city.coordinates, coordinates)
 
-        # Check it it's within max_dis.
+        # Check it it's within max_dist.
         if dist.km <= max_dist:
             count += 1
  
@@ -85,7 +101,7 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
         else:
             heappushpop(distances, (-dist, city.displayname))
 
-    return [f'{city} ({abs(distance.km):.0f}km)' for distance, city in sorted(distances, reverse=True)], count
+    return ', '.join([f'{city} ({abs(distance.km):.0f}km)' for distance, city in sorted(distances, reverse=True)]), count
 
 
 if __name__ == '__main__':
