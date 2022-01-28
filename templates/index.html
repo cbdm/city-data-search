@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">Enter the city in the format city-state (e.g., irvine-ca, new+york-ny)</label>
+        <br/>
+        <input type="text" name="citystate"
+               placeholder="irvine-ca"
+               value="{{ request.form['citystate'] }}"></input>
+        <br/>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

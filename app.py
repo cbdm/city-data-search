@@ -2,15 +2,17 @@
 import os
 import os.path
 import redis
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template, flash, redirect, url_for
 from data_fetchers import get_livability, get_population, get_weather
 from large_cities import find_close_large_cities
 from utils import create_output_xml, validate_city_state
 from datetime import datetime
 import xml.etree.ElementTree as ET
+import xmltodict
 
 app = Flask(__name__)
 app.debug = True
+app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'abc')
 db = redis.Redis(
     host=os.getenv('REDIS_ENDPOINT_URI', '127.0.0.1'),
     port=os.getenv('REDIS_PORT', '6379'), 
@@ -82,10 +84,40 @@ def multi_city(citystatelist, force=False):
 #     return multi_city(citystatelist, force=True)
 
 
-@app.route('/')
+@app.route('/', methods=('GET', 'POST'))
 def index():
-    '''Dummy main page just to show it's online.'''
-    return "<h1>App is running :)</h1>"
+    '''Homepage to allow the user to search for a city.'''
+    if request.method == 'POST':
+        citystate = request.form['citystate']
+        if not citystate:
+            flash('You must enter a city in the search box!')
+        else:
+            return redirect(url_for('web', citystate=citystate))
+    return render_template('index.html')
+
+
+@app.route('/about/')
+def about():
+    '''Return the about page.'''
+    return render_template('about.html')
+
+
+@app.route('/api/info/')
+def api_info():
+    ''''Return the api-info page.'''
+    return render_template('api.html')
+
+
+@app.route('/web/<citystate>/')
+def web(citystate):
+    '''Page to serve the data in a easy to understand GUI.'''
+    xml = get_single_city_data(citystate)
+    data = xmltodict.parse(xml)['data']
+    del data['@citystate']
+    data['citystate'] = citystate
+    # TODO: Improve the UX.
+    # TODO: Add an interactive map to show large cities.
+    return render_template('city.html', **data)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} ({{ citystate }}){% endblock %}</h1>
+
+    <h2>Large Cities Nearby</h2>
+    <b>Closest:</b> {{ nearby_large_cities }}<br/>
+    <b>Count:</b> {{ count_nearby_large }}
+
+    <h2>Population</h2>
+    {{ population }}
+
+    <h2>Year-round Weather</h2>
+    {{ weather }}
+
+    <h2>Livability</h2>
+    {{ livability }}{{ Livability }}
+
+    <h2>Amenities</h2>
+    {{ amenities }}{{ Amenities }}
+    
+    <h2>Cost of Living</h2>
+    {{ cost_of_living }}{{ CoL }}
+    
+    <h2>Crime</h2>
+    {{ crime }}{{ Crime }} 
+    
+    <h2>Employment</h2>
+    {{ employment }}{{ Employment }}
+    
+    <h2>Housing</h2>
+    {{ housing }}{{ Housing }}
+    
+    <h2>Schools</h2>
+    {{ schools }}{{ Schools }}
+    
+    <h2>User Ratings</h2>
+    {{ user_rating }}{{ UserRatings }}
+    
+{% endblock %}

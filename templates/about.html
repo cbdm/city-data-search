@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} (about){% endblock %}</h1>
+
+    <h2>Motivation</h2>
+    <p>
+        I started this project when I was preparing for academic job applications in US & Canada.<br/>
+        This was a way to find a little more information about cities in bulk, so I could choose which places I wanted to focus on.<br/>
+        The main goal of this project was to provide a single <a href="{{ url_for('api_info') }}">API</a> that could easily import all this data into Google Sheets.<br/>
+    </p>
+
+    <h2>Data Sources</h2>
+    <ul>
+        <li>
+            weather data: <a href="https://github.com/meteostat/meteostat-python">meteostat-python</a>
+        </li>
+        <li>
+            livability: <a href="https://areavibes.com">areavibes.com</a>
+        </li>
+        <li>
+            population: <a href="https://areavibes.com">areavibes.com</a>
+        </li>
+        <li>
+            large cities (def: cities with a population of 100k+ (US) or 50k+ (Canada)): <br/>
+            Sources accessed on 2022-01-27:
+                <ul>
+                    <li>
+                        US: <a href="https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/cities/">https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/cities/</a>
+                    </li>
+                    <li>
+                        Canada: <a href="https://canadapopulation.org/largest-cities-in-canada-by-population/">https://canadapopulation.org/largest-cities-in-canada-by-population/</a>
+                    </li>
+                </ul>
+        </li>
+    </ul>
+{% endblock %}
