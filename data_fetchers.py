@@ -88,6 +88,8 @@ def get_livability(city):
 
 def get_weather(city):
     '''Get information about the 2021 daily temperature for the given city.'''
+    # TODO: Maybe convert citystate into City, State; some places might find wrong coordinates.
+    # E.g., columbus-ga finds Columbus Gate in Hamilton, ON, instead of Columbus, GA.
     geo_location = location_app.geocode(city).raw
     coordinates = Point(lat=float(geo_location['lat']),
                         lon=float(geo_location['lon']))
