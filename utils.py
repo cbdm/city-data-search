@@ -26,8 +26,8 @@ def create_output_xml(citystate, population, weather, livability, closest_large_
     root.append(w)
 
     l = []
-    liv_headers = ('Livability', 'Amenities', 'CoL', 'Crime',
-                    'Employment', 'Housing', 'Schools', 'UserRatings')
+    liv_headers = ('livability', 'amenities', 'cost_of_living', 'crime',
+                    'employment', 'housing', 'schools', 'user_ratings')
     for h, liv in zip(liv_headers, livability):
         l.append(ET.Element(h))
         l[-1].text = liv
