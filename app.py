@@ -74,10 +74,12 @@ def multi_city(citystatelist, force=False):
     return app.response_class(ET.tostring(response), mimetype='application/xml')
 
 
-@app.route('/api/force/multi/<citystatelist>/')
-def force_multi_city(citystatelist):
-    '''API to force fetching the data for the given city-state list.'''
-    return multi_city(citystatelist, force=True)
+# Disabled because a large enough query was causing server errors.
+# Only queries for single citystates are allowed to force an update now.
+# @app.route('/api/force/multi/<citystatelist>/')
+# def force_multi_city(citystatelist):
+#     '''API to force fetching the data for the given city-state list.'''
+#     return multi_city(citystatelist, force=True)
 
 
 @app.route('/')
