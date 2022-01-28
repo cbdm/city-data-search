@@ -4,7 +4,7 @@ import os.path
 import redis
 from flask import Flask, request, jsonify
 from data_fetchers import get_livability, get_population, get_weather
-from large_cities import find_close_large_cities, City
+from large_cities import find_close_large_cities
 from utils import create_output_xml, validate_city_state
 from datetime import datetime
 import xml.etree.ElementTree as ET

@@ -55,14 +55,16 @@ class City(object):
 
 _data = None  # Store the list of large cities.
 def _load_data():
+    '''Load the preprocessed data into memory.'''
     global _data
+    if _data: return
+    # Using a csv instead of pickle data because of heroku's storage.
     root_dir = os.path.dirname(os.path.realpath(__file__))
-    filepath = os.path.join(root_dir, 'large_cities.bin')
-    print('here2')
-    with open(filepath, 'rb') as file_in:
-        print('here3')
-        _data = load(file_in)
-        print('here4')
+    filepath = os.path.join(root_dir, 'large_cities.csv')
+    _data = []
+    with open(filepath) as file_in:
+        for row in file_in:
+            _data.append(City.from_str(row))
 
 
 def find_close_large_cities(citystate, k=3, max_dist=100):
@@ -73,7 +75,6 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
             Canada: https://canadapopulation.org/largest-cities-in-canada-by-population/'''
     assert isinstance(k, int)
     assert k <= 20
-    print('here')
 
     # Load data if it hasn't been loaded yet.    
     if _data is None:
