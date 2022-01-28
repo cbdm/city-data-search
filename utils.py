@@ -53,3 +53,8 @@ def validate_city_state(citystate):
     assert state, 'state should be filled.'
     assert set(citystate) <= (set(string.ascii_lowercase) | set("'.+-")), \
         "invalid characters, should have only lowercase letters and '.+-"
+
+
+def convert_city_name(city):
+    '''Convert from City, ST to city-st.'''
+    return city.lower().replace(', ', '-').replace(' ', '+')

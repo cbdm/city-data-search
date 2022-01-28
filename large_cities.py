@@ -89,6 +89,10 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
     distances = []
 
     for city in _data:
+        # We don't want to include the city itself here.
+        if city.coordinates == coordinates:
+            continue
+
         # Calculate the distance.
         dist = distance(city.coordinates, coordinates)
 
@@ -105,5 +109,29 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
     return ', '.join([f'{city} ({abs(distance.km):.0f}km)' for distance, city in sorted(distances, reverse=True)]), f'{count}'
 
 
+def get_all_large_cities_within_radius(coordinates, radius=100):
+    '''Return a sorted list with all unique cities within the given radius in km.'''
+    # Load data if it hasn't been loaded yet.    
+    if _data is None: _load_data()
+    
+    distances = set()
+    for city in _data:
+        # We don't want to include the city itself here.
+        if city.coordinates == coordinates:
+            continue
+
+        # Calculate the distance.
+        dist = distance(city.coordinates, coordinates)
+
+        # Skip cities further than the given radius.
+        if dist.km > radius:
+            continue
+
+        distances.add((dist.km, city))
+
+    return [city for _, city in sorted(distances)]
+
+
 if __name__ == '__main__':
     print(find_close_large_cities('irvine-ca'))
+    print(get_all_large_cities_within_radius((33.6856969, -117.8259819)))

@@ -2,11 +2,11 @@
 
 {% block content %}
     <form method="post">
-        <label for="title">Enter the city in the format city-state (e.g., irvine-ca, new+york-ny)</label>
+        <label for="title">Enter the city in the format City, ST (e.g., "Irvine, CA", "New York, NY")</label>
         <br/>
-        <input type="text" name="citystate"
-               placeholder="irvine-ca"
-               value="{{ request.form['citystate'] }}"></input>
+        <input type="text" name="city"
+               placeholder="Irvine, CA"
+               value="{{ request.form['city'] }}"></input>
         <br/>
         <button type="submit">Submit</button>
     </form>

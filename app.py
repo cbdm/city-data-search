@@ -3,9 +3,9 @@ import os
 import os.path
 import redis
 from flask import Flask, request, render_template, flash, redirect, url_for
-from data_fetchers import get_livability, get_population, get_weather
-from large_cities import find_close_large_cities
-from utils import create_output_xml, validate_city_state
+from data_fetchers import location_app, get_livability, get_population, get_weather
+from large_cities import find_close_large_cities, get_all_large_cities_within_radius
+from utils import create_output_xml, validate_city_state, convert_city_name
 from datetime import datetime
 import xml.etree.ElementTree as ET
 import xmltodict
@@ -88,11 +88,17 @@ def multi_city(citystatelist, force=False):
 def index():
     '''Homepage to allow the user to search for a city.'''
     if request.method == 'POST':
-        citystate = request.form['citystate']
-        if not citystate:
+        city = request.form['city']
+        if not city:
             flash('You must enter a city in the search box!')
         else:
-            return redirect(url_for('web', citystate=citystate))
+            citystate = convert_city_name(city)
+            # Only passes both citystate and city if they are different.
+            # If they are the same, the url looks cleaner with only citystate.
+            if citystate != city:
+                return redirect(url_for('web', citystate=citystate,  cityname=city))
+            else:
+                return redirect(url_for('web', citystate=citystate))
     return render_template('index.html')
 
 
@@ -111,13 +117,15 @@ def api_info():
 @app.route('/web/<citystate>/')
 def web(citystate):
     '''Page to serve the data in a easy to understand GUI.'''
+    cityname = request.args.get('cityname', citystate)
     xml = get_single_city_data(citystate)
     data = xmltodict.parse(xml)['data']
     del data['@citystate']
     data['citystate'] = citystate
-    # TODO: Improve the UX.
-    # TODO: Add an interactive map to show large cities.
-    return render_template('city.html', **data)
+    loc = location_app.geocode(citystate)
+    coordinates = (loc.latitude, loc.longitude)
+    return render_template('city.html', cityname=cityname, **data,
+                    coordinates=coordinates, all_nearby_cities=get_all_large_cities_within_radius(coordinates))
 
 
 if __name__ == '__main__':
