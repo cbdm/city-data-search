@@ -29,8 +29,8 @@ def get_single_city_data(citystate, force=False):
                                 weather=f'{datetime.now().year - 1} Weather (ºC)',
                                 livability=('Overall Livability', 'Amenities', 'Cost of Living', 'Crime',
                                                 'Employment', 'Housing', 'Schools', 'User Ratings'),
-                                closest_large_cities='closest large cities',
-                                count_large_cities='# of large cities nearby'
+                                closest_large_cities='Closest Large Cities',
+                                count_large_cities='# of Large Cities Nearby'
                                 )
     else:
         # Check if we already have fetched data for this citystate.
