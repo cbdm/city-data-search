@@ -101,7 +101,7 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
         else:
             heappushpop(distances, (-dist, city.displayname))
 
-    return ', '.join([f'{city} ({abs(distance.km):.0f}km)' for distance, city in sorted(distances, reverse=True)]), count
+    return ', '.join([f'{city} ({abs(distance.km):.0f}km)' for distance, city in sorted(distances, reverse=True)]), f'{count}'
 
 
 if __name__ == '__main__':

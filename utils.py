@@ -13,7 +13,7 @@ def create_output_xml(citystate, population, weather, livability, closest_large_
     for l in livability:
         assert isinstance(l, str)
     assert isinstance(closest_large_cities, str)
-    assert isinstance(count_large_cities, int)    
+    assert isinstance(count_large_cities, str)    
     
     root = ET.Element('data', citystate=citystate)
 
@@ -38,7 +38,7 @@ def create_output_xml(citystate, population, weather, livability, closest_large_
     root.append(lcl)
 
     lcc = ET.Element('count_nearby_large')
-    lcc.text = f'{count_large_cities}'
+    lcc.text = count_large_cities
     root.append(lcc)
     
     return ET.tostring(root)
