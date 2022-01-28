@@ -6,13 +6,15 @@ from meteostat import Point, Daily
 # Parameters for queries.
 population_url = 'https://www.areavibes.com/{}/demographics'
 livability_url = 'https://www.areavibes.com/{}/livability'
-location_app = Nominatim(user_agent="query")
+location_app = Nominatim(user_agent="citydatasearch")
 weather_start = datetime(datetime.now().year - 1, 1, 1)
 weather_end = datetime(datetime.now().year - 1, 12, 31)
 weather_format_str = '{:^5.1f}' + ('  |  {:^5.1f}' * 4)
 
 def get_population(citystate):
     '''Find the population for the given city in areavibes.com'''
+    # TODO: find a better source for population data.
+    # E.g., Hamilton, ON has the wrong population.
     r = requests.get(population_url.format(citystate))
     html = r.text
     pop_flag = '<td>Population</td>'
@@ -89,7 +91,7 @@ def get_livability(city):
 def get_weather(city):
     '''Get information about the 2021 daily temperature for the given city.'''
     # TODO: Maybe convert citystate into City, State; some places might find wrong coordinates.
-    # E.g., columbus-ga finds Columbus Gate in Hamilton, ON, instead of Columbus, GA.
+    # E.g., columbus-ga finds Columbus Gate in Hamilton, ON, instead of Columbus, Georgia.
     geo_location = location_app.geocode(city).raw
     coordinates = Point(lat=float(geo_location['lat']),
                         lon=float(geo_location['lon']))
