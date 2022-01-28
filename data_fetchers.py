@@ -91,13 +91,16 @@ def get_weather(city):
     geo_location = location_app.geocode(city).raw
     coordinates = Point(lat=float(geo_location['lat']),
                         lon=float(geo_location['lon']))
-    data = Daily(coordinates, weather_start, weather_end)
-    data = data.normalize()
-    data = data.interpolate()
-    data = data.fetch()
-    lowest = data['tmin'].min()
-    low = data['tmin'].median()
-    avg = data['tavg'].median()
-    high = data['tmax'].median()
-    highest = data['tmax'].max()
-    return weather_format_str.format(lowest, low, avg, high, highest)
+    try:
+        data = Daily(coordinates, weather_start, weather_end)
+        data = data.normalize()
+        data = data.interpolate()
+        data = data.fetch()
+        lowest = data['tmin'].min()
+        low = data['tmin'].median()
+        avg = data['tavg'].median()
+        high = data['tmax'].median()
+        highest = data['tmax'].max()
+        return weather_format_str.format(lowest, low, avg, high, highest)
+    except KeyError:
+        return 'Unavailable...'
