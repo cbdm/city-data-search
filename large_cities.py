@@ -48,7 +48,7 @@ class City(object):
         data = s.split(', ')
         displayname = data[0] + ', ' + data[1][:data[1].find(' ')]
         citystate = data[1][data[1].find('(') + 1:-1]
-        population = int(data[2])
+        population = f'{int(data[2]):,}'
         coordinates = (float(data[3][data[3].find('(') + 1:]), float(data[4][:data[4].find(')')]))
         return City(displayname, citystate, population, coordinates)
 
@@ -129,7 +129,7 @@ def get_all_large_cities_within_radius(coordinates, radius=100):
 
         distances.add((dist.km, city))
 
-    return [city for _, city in sorted(distances)]
+    return [city for _, city in distances]
 
 
 if __name__ == '__main__':

@@ -3,7 +3,7 @@ import os
 import os.path
 import redis
 from flask import Flask, request, render_template, flash, redirect, url_for
-from data_fetchers import location_app, get_livability, get_population, get_weather
+from data_fetchers import location_app, get_livability, get_population, get_weather, weather_start
 from large_cities import find_close_large_cities, get_all_large_cities_within_radius
 from utils import create_output_xml, validate_city_state, convert_city_name
 from datetime import datetime
@@ -122,10 +122,11 @@ def web(citystate):
     data = xmltodict.parse(xml)['data']
     del data['@citystate']
     data['citystate'] = citystate
+    data['weather'] = [x.strip() for x in data['weather'].split('|')]
     loc = location_app.geocode(citystate)
     coordinates = (loc.latitude, loc.longitude)
-    return render_template('city.html', cityname=cityname, **data,
-                    coordinates=coordinates, all_nearby_cities=get_all_large_cities_within_radius(coordinates))
+    return render_template('city.html', cityname=cityname, **data, weather_year=weather_start.year,
+                    coordinates=coordinates, all_large_cities=get_all_large_cities_within_radius(coordinates))
 
 
 if __name__ == '__main__':

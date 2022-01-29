@@ -5,17 +5,110 @@
     {% block head%} {% endblock %}
     <title>City Data Search{% block title %} {% endblock %}</title>
     <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .two_columns_no_borders {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .two_columns_no_borders {
+                width: 100%;
+            }
+        }
+
+        /* Create 5 equal columns that floats next to each other */
+        .five_columns {
+            float: left;
+            width: 20%;
+            padding: 4px;
+            height: 70px;
+            border-radius: 10px;
+            border-color: #555555;
+            border-width: 5px;
+            border-style: double;
+            color: #000000;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 1200px) {
+            .five_columns {
+                width: 100%;
+            }
+        }
+
+        /* Create 3 equal columns that floats next to each other */
+        .three_columns {
+            float: left;
+            width: 33%;
+            padding: 4px;
+            height: 70px;
+            border-radius: 10px;
+            border-color: #555555;
+            border-width: 5px;
+            border-style: double;
+            color: #000000;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 1200px) {
+            .three_columns {
+                width: 100%;
+            }
+        }
+
+        /* Create 3 equal columns that floats next to each other */
+        .two_columns {
+            float: left;
+            width: 50%;
+            padding: 4px;
+            height: 70px;
+            border-radius: 10px;
+            border-color: #555555;
+            border-width: 5px;
+            border-style: double;
+            color: #000000;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 1200px) {
+            .two_columns {
+                width: 100%;
+            }
+        }
+
         .message {
             padding: 10px;
             margin: 5px;
             background-color: #f3f3f3
         }
+
         nav a {
             color: #d64161;
             font-size: 3em;
             margin-left: 50px;
             text-decoration: none;
         }
+
         code {
             font-family: Consolas,"courier new";
             color: crimson;
@@ -23,15 +116,21 @@
             padding: 2px;
             font-size: 105%;
         }
+
         map { 
             height: 180px;
         }
+
         .leaflet-container {
 			height: 400px;
 			width: 600px;
 			max-width: 100%;
 			max-height: 100%;
 		}
+
+        h2 {
+            color: #d64161;
+        }
     </style>
 </head>
 <body>
