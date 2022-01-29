@@ -10,7 +10,7 @@
         <li><code>{{ url_for('index', _external=True) }}api/multi/[citystate1_citystate2_..._citystateN]</code></li>
     </ul>
     These APIs return an XML containing information you can parse.<br/>
-    For both methods, you can use "get-headers" as a valid citystate to get the column names.    
+    For both methods, you can use "get-headers" as a valid citystate to get the column names.
 
     <h3>Examples</h3>
     <ul>
@@ -104,12 +104,12 @@
 
     <h2>Google Sheets Integration</h2>
     <h3>Data Preparation</h3>
-    Assuming you have city names in the format of "City, ST" (e.g., "Irvine, CA"), you can use the following formula to conver them:<br/>
+    Assuming you have city names in the format of "City, ST" (e.g., "Irvine, CA"), you can use the following formula to convert them into "city-state" (e.g., "irvine-ca"):<br/>
     <code>=LOWER(SUBSTITUTE(SUBSTITUTE({CELL},", ","-"), " ", "+"))</code><br/>
     where CELL is the cell containing the city name.
 
     <h3>IMPORTXML</h3>
-    After you have the city names in that format, you can use the following formulas:
+    After you have the city names in the "city-state" format, you can use the following formulas:
     <ul>
         <li>To get data for a single city: <code>=IMPORTXML(CONCATENATE("{{ url_for('index', _external=True) }}api/citystate/", {CITY}), "/data")</code></li>
         <li>To get data for multiple cities: <code>=IMPORTXML(CONCATENATE("{{ url_for('index', _external=True) }}api/multi/", {CITY LIST}), "/multi/data")</code></li>
