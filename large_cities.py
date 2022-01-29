@@ -109,12 +109,18 @@ def find_close_large_cities(citystate, k=3, max_dist=100):
     return ', '.join([f'{city} ({abs(distance.km):.0f}km)' for distance, city in sorted(distances, reverse=True)]), f'{count}'
 
 
-def get_all_large_cities_within_radius(coordinates, radius=100):
+def get_all_large_cities_within_radius(coordinates, radius=100, k_closest=3):
     '''Return a sorted list with all unique cities within the given radius in km.'''
+    assert k_closest <= 5
+    
     # Load data if it hasn't been loaded yet.    
     if _data is None: _load_data()
     
     distances = set()
+    # keep the three closest ones in case there are none within the radius.
+    if k_closest > 0:
+        nearby = []
+    
     for city in _data:
         # We don't want to include the city itself here.
         if city.coordinates == coordinates:
@@ -123,11 +129,20 @@ def get_all_large_cities_within_radius(coordinates, radius=100):
         # Calculate the distance.
         dist = distance(city.coordinates, coordinates)
 
+        if k_closest > 0:
+            if len(nearby) < k_closest:
+                heappush(nearby, (-dist.km, city))
+            else:
+                heappushpop(nearby, (-dist.km, city))
+
         # Skip cities further than the given radius.
         if dist.km > radius:
             continue
 
         distances.add((dist.km, city))
+
+    if k_closest > 0:
+        distances |= set(nearby)
 
     return [city for _, city in distances]
 
