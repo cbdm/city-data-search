@@ -105,11 +105,10 @@
         .website_title {
             color: #d64161;
             font-size: 3em;
-            margin-left: 50px;
             text-decoration: none;
         }
 
-        nav a {
+        .nav_bar {
             color: #555555;
             font-size: 2em;
             margin-left: 50px;
@@ -143,8 +142,8 @@
 <body>
     <nav>
         <a class="website_title" href="{{ url_for('index') }}">City Data Search</a>
-        <a href="{{ url_for('about') }}">about</a>
-        <a href="{{ url_for('api_info') }}">api</a>
+        <a class="nav_bar" href="{{ url_for('about') }}">about</a>
+        <a class="nav_bar" href="{{ url_for('api_info') }}">api</a>
     </nav>
     <hr>
     <div class="content">
