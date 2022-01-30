@@ -101,9 +101,13 @@ def get_single_city_data(city, force=False):
     if city == 'get-headers':
         city_obj = City.create_headers_city()
     else:
-        # TODO: add an empty response if the city_search didn't return results.
-        city_info = city_search(city, max_results=1)[0]
-        city_obj = dh.get_city_by_geonameid(city_info.geonameid, query=city)
+        city_info = city_search(city, max_results=1)
+        if city_info:
+            # If we found a result for this query, get the data for it.
+            city_obj = dh.get_city_by_geonameid(city_info[0].geonameid, query=city)
+        else:
+            # If not, we create a special City object to include in the response.
+            city_obj = City.create_invalid_query_city(city)
     return create_output_xml(city_obj)
 
 

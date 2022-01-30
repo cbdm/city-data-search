@@ -302,6 +302,24 @@ class City(object):
         return headers
 
 
+    @staticmethod
+    def create_invalid_query_city(query):
+        headers = City(None)
+        headers.query = query
+        headers.full_name = f'Could not find a city for query="{query}"'
+        headers.population = 'N/A'
+        headers.weather = ['N/A']
+        headers.overall_livability = 'N/A'
+        headers.cost_of_living = 'N/A'
+        headers.housing = 'N/A'
+        headers.safety = 'N/A'
+        headers.schools = 'N/A'
+        headers.closest_major_cities = 'N/A'
+        headers.nearby_major_cities = 'N/A'
+        headers.urban_area = 'N/A'
+        return headers
+
+
 
 def search(cityname, max_results=1):
     '''Find the best match results for the given city name.'''

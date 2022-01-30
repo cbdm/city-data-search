@@ -96,6 +96,25 @@
         </multi>
     </xmp>
 
+    <h3>Invalid City</h3>
+    If we cannot find a city for the given query, we will return the follwing xml:
+    <xmp>
+        <data query="1234567890">
+            <full_name>Could not find a city for query="1234567890"</full_name>
+            <population>N/A</population>
+            <weather>N/A</weather>
+            <city_livability>N/A</city_livability>
+            <cost_of_living>N/A</cost_of_living>
+            <housing>N/A</housing>
+            <safety>N/A</safety>
+            <schools>N/A</schools>
+            <closest_major_cities>N/A</closest_major_cities>
+            <count_nearby_major_cities>N/A</count_nearby_major_cities>
+            <urban_area_name>N/A</urban_area_name>
+        </data>
+    </xmp>
+    This is treated as a regular response, so it will be included in responses for multi-city requests as well.
+
     <h2>Google Sheets Integration</h2>
     You can use the following formulas to import the data into Google Sheets.
     <ul>
