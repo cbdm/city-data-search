@@ -17,6 +17,78 @@
     <h1>{{ city.full_name }}</h1>
     <div class="row">
         <div class="two_columns_no_borders">
+            <div class="row">
+                <div class="two_columns_no_borders">
+                    <div class="city_image" style="background-image: url({{ city.img }});">
+                        <img src="{{ city.img }}" alt="Photo of {{ city.name }}"/>
+                    </div>
+                </div>
+                <div class="two_columns_no_borders">
+                    <h2>Basic Info</h2>
+                    <ul>
+                        <li style="font-size: large;"> Population: {{ city.population }} </li>
+                        <li style="font-size: large;"> Current Local Time: <span id = "clock" onload="currentTime()"></span></li>
+                        <script>
+                            function currentTime() {
+                            let date = new luxon.DateTime.fromObject({}, {zone: '{{ city.tz }}'});
+                            document.getElementById("clock").innerText = date.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);;
+                            let t = setTimeout(function(){ currentTime() }, 1000);
+                            }
+                            currentTime();
+                        </script>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <h2> {{ weather_year }} Daily Temperatures</h2>
+                <div class="five_columns">
+                    Lowest<br/>
+                    {{ city.weather[0] }} ºC
+                </div>
+                <div class="five_columns">
+                    Md. Low<br/>
+                    {{ city.weather[1] }} ºC
+                </div>
+                <div class="five_columns">
+                    Md. Avg.<br/>
+                    {{ city.weather[2] }} ºC
+                </div>
+                <div class="five_columns">
+                    Md. High<br/>
+                    {{ city.weather[3] }} ºC
+                </div>
+                <div class="five_columns">
+                    Highest<br/>
+                    {{ city.weather[4] }} ºC
+                </div>
+            </div>
+            <div class="row">
+                <h2>City Livability</h2>
+                <div class="two_columns">
+                    Overall<br/>
+                    {{ city.overall_livability }}
+                </div>
+                <div class="two_columns">
+                    Cost of Living<br/>
+                    {{ city.cost_of_living }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="three_columns">
+                    Housing<br/>
+                    {{ city.housing }}
+                </div>
+                <div class="three_columns">
+                    Safety<br/>
+                    {{ city.safety }}{{ Crime }}     
+                </div>
+                <div class="three_columns">
+                    Schools<br/>
+                    {{ city.schools }}
+                </div>
+            </div>
+        </div>
+        <div class="two_columns_no_borders">
             <h2>Major Cities Nearby</h2>
             <div id="map" style="width: 600px; height: 400px; position: relative;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(-262px, -272px, 0px) scale(1);"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2724_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(112px, 330px, 0px); opacity: 1;"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(624px, 330px, 0px); opacity: 1;"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2723_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(112px, -182px, 0px); opacity: 1;"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(624px, -182px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(2096070px, 1394830px, 0px) scale(8192);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></div></div></div></div>
             <script>
@@ -60,76 +132,13 @@
             </ol>
             <b>Total within 250km:</b> {{ city.nearby_major_cities | length }}
         </div>
-        <div class="two_columns_no_borders">
-            <h2>Basic Info</h2>
-                <ul>
-                    <li style="font-size: large;"> Population: {{ city.population }} </li>
-                    <li style="font-size: large;"> Current Local Time: <span id = "clock" onload="currentTime()"></span></li>
-                    <script>
-                        function currentTime() {
-                        let date = new luxon.DateTime.fromObject({}, {zone: '{{ city.tz }}'});
-                        document.getElementById("clock").innerText = date.toLocaleString(luxon.DateTime.DATETIME_FULL_WITH_SECONDS);;
-                        let t = setTimeout(function(){ currentTime() }, 1000);
-                        }
-                        currentTime();
-                    </script>
-                </ul>
-            <h2> {{ weather_year }} Daily Temperatures</h2>
-            <div class="row">
-                <div class="five_columns">
-                    Lowest<br/>
-                    {{ city.weather[0] }} ºC
-                </div>
-                <div class="five_columns">
-                    Md. Low<br/>
-                    {{ city.weather[1] }} ºC
-                </div>
-                <div class="five_columns">
-                    Md. Avg.<br/>
-                    {{ city.weather[2] }} ºC
-                </div>
-                <div class="five_columns">
-                    Md. High<br/>
-                    {{ city.weather[3] }} ºC
-                </div>
-                <div class="five_columns">
-                    Highest<br/>
-                    {{ city.weather[4] }} ºC
-                </div>
-            </div>
-            <h2>City Livability</h2>
-            <div class="row">
-                <div class="two_columns">
-                    Overall<br/>
-                    {{ city.overall_livability }}
-                </div>
-                <div class="two_columns">
-                    Cost of Living<br/>
-                    {{ city.cost_of_living }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="three_columns">
-                    Housing<br/>
-                    {{ city.housing }}
-                </div>
-                <div class="three_columns">
-                    Safety<br/>
-                    {{ city.safety }}{{ Crime }}     
-                </div>
-                <div class="three_columns">
-                    Schools<br/>
-                    {{ city.schools }}
-                </div>
-            </div>
-        </div>
     </div>
     {% if city.urban_area != "N/A" %}
         <hr />
         <div class="row">
             <h2>Urban Area: <span style="color: black;">{{ city.urban_area }}</p></p></h2>
             <div class="two_columns_no_borders">
-                <img src="{{ city.ua_img_url }}" alt="{{ city.urban_area }}" class="city_image"/>
+                <img src="{{ city.ua_img_url }}" alt="{{ city.urban_area }}" class="ua_image"/>
             </div>
             <div class="two_columns_no_borders">
                 <div class="row">

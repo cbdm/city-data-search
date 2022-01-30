@@ -6,6 +6,10 @@ import weather
 import large_cities
 from datetime import datetime
 from jsonpickle import encode, decode
+import base64
+from os import getenv
+from dotenv import load_dotenv
+load_dotenv()
 
 class City(object):
     def __init__(self, geonameid, full_name='', *, fetch=False,
@@ -229,9 +233,18 @@ class City(object):
 
     def _fetch_city_image(self):
         '''Find an image from this city.'''
-        # TODO: look for a city image somewhere.
-        # Maybe https://unsplash.com/documentation
-        self.img_url = 'N/A'
+        self.img = 'N/A'
+        api_key = getenv('CDS_GOOGLE_API_KEY', '')
+        assert api_key
+
+        query1_url = f'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input={self.full_name}&key={api_key}&inputtype=textquery&fields=photos'
+        resp1 = requests.get(query1_url)
+        data1 = json.loads(resp1.text)
+        photo_ref = data1.get('candidates', [{}])[0].get('photos', [{}])[0].get('photo_reference', '')
+        if photo_ref:
+            query2_url = f'https://maps.googleapis.com/maps/api/place/photo?photoreference={photo_ref}&key={api_key}&maxwidth=400&maxheight=400'
+            resp2 = requests.get(query2_url)
+            self.img = 'data:image/jpg;base64,' + base64.b64encode(resp2.content).decode()
 
 
     def _fetch_weather(self):
