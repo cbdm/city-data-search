@@ -280,6 +280,7 @@ class City(object):
     @staticmethod
     def create_headers_city():
         headers = City(None)
+        headers.full_name = 'Full City Name'
         headers.population = 'Population'
         headers.weather = ['Year-round Weather (ºC)']
         headers.overall_livability = 'City Livability'

@@ -10,6 +10,10 @@ def create_output_xml(city, headers=False):
     
     root = ET.Element('data', city=city.full_name)
 
+    fn = ET.Element('full_name')
+    fn.text = city.full_name
+    root.append(fn)
+
     pop = ET.Element('population')
     pop.text = city.population
     root.append(pop)
