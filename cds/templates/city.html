@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -63,8 +64,15 @@
             <h2>Basic Info</h2>
                 <ul>
                     <li style="font-size: large;"> Population: {{ city.population }} </li>
-                    <!-- TODO: add a current local time instead. -->
-                    <li style="font-size: large;"> Timezone: {{ city.tz }} </li>
+                    <li style="font-size: large;"> Current Local Time: <span id = "clock" onload="currentTime()"></span></li>
+                    <script>
+                        function currentTime() {
+                        let date = new luxon.DateTime.fromObject({}, {zone: '{{ city.tz }}'});
+                        document.getElementById("clock").innerText = date.toLocaleString(luxon.DateTime.DATETIME_FULL_WITH_SECONDS);;
+                        let t = setTimeout(function(){ currentTime() }, 1000);
+                        }
+                        currentTime();
+                    </script>
                 </ul>
             <h2> {{ weather_year }} Daily Temperatures</h2>
             <div class="row">
