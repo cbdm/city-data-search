@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">Choose the desired city from the options below:</label>
+        <br/>
+        {% for city in option_list %}
+            <input type ="submit" name="{{ city.geonameid }}" value="{{ city.full_name }}"><br/><br/>
+        {% endfor %}
+    </form>
+{% endblock %}

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %} ({{ city.name }}){% endblock %}
+
 {% block head %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -11,15 +13,14 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{% block title %} ({{ cityname }}){% endblock %}</h1>
-    <p style="font-size: large;">Population: {{ population }} </p>
+    <h1>{{ city.full_name }}</h1>
     <div class="row">
         <div class="two_columns_no_borders">
-            <h2>Large Cities Nearby</h2>
+            <h2>Major Cities Nearby</h2>
             <div id="map" style="width: 600px; height: 400px; position: relative;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(-262px, -272px, 0px) scale(1);"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2724_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(112px, 330px, 0px); opacity: 1;"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(624px, 330px, 0px); opacity: 1;"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2723_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(112px, -182px, 0px); opacity: 1;"><img alt="" role="presentation" src="Quick%20Start%20-%20Leaflet_files/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(624px, -182px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(2096070px, 1394830px, 0px) scale(8192);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></div></div></div></div>
             <script>
 
-                var map = L.map('map').setView([{{ coordinates[0] }}, {{ coordinates[1] }}], 13);
+                var map = L.map('map').setView([{{ city.coordinates[0] }}, {{ city.coordinates[1] }}], 13);
 
                 var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
                     maxZoom: 18,
@@ -30,88 +31,158 @@
                     zoomOffset: -1
                 }).addTo(map);
 
-                L.marker([{{ coordinates[0] }}, {{ coordinates[1] }}]).addTo(map)
-                .bindPopup('{{ cityname }}')
+                L.marker([{{ city.coordinates[0] }}, {{ city.coordinates[1] }}]).addTo(map)
+                .bindPopup('{{ city.name }}')
                 .openPopup();
 
-                var circle = L.circle([{{ coordinates[0] }}, {{ coordinates[1] }}], {
+                var circle = L.circle([{{ city.coordinates[0] }}, {{ city.coordinates[1] }}], {
                     color: 'red',
                     fillColor: '#f03',
                     fillOpacity: 0.01,
-                    radius: 100000
+                    radius: 250000
                 }).addTo(map);
 
-                {% for city in all_large_cities %}
-                    L.marker([{{ city.coordinates[0] }}, {{ city.coordinates[1] }}]).addTo(map)
-                    .bindPopup('{{ city.displayname }}<br>Population: {{ city.population }}');
+                {% for nearby_city in city.closest_major_cities %}
+                    L.marker([{{ nearby_city['coordinates'][0] }}, {{ nearby_city['coordinates'][1] }}]).addTo(map)
+                    .bindPopup('{{ nearby_city['name'] }}<br>Population: {{ nearby_city['population'] }}');
+                {% endfor %}
+                {% for nearby_city in city.nearby_major_cities %}
+                    L.marker([{{ nearby_city['coordinates'][0] }}, {{ nearby_city['coordinates'][1] }}]).addTo(map)
+                    .bindPopup('{{ nearby_city['name'] }}<br>Population: {{ nearby_city['population'] }}');
                 {% endfor %}
             </script>
-            <b>Closest three:</b> {{ nearby_large_cities }}<br/>
-            <b>Total within 100km:</b> {{ count_nearby_large }}
+            <b>Closest Three:</b> 
+            <ol>
+            {% for nearby_city in city.closest_major_cities %}
+                <li>{{ nearby_city['name'] }} ({{ "%d" % nearby_city['distance'] }}km)</li>
+            {% endfor %}
+            </ol>
+            <b>Total within 250km:</b> {{ city.nearby_major_cities | length }}
         </div>
         <div class="two_columns_no_borders">
+            <h2>Basic Info</h2>
+                <ul>
+                    <li style="font-size: large;"> Population: {{ city.population }} </li>
+                    <!-- TODO: add a current local time instead. -->
+                    <li style="font-size: large;"> Timezone: {{ city.tz }} </li>
+                </ul>
             <h2> {{ weather_year }} Daily Temperatures</h2>
             <div class="row">
                 <div class="five_columns">
                     Lowest<br/>
-                    {{ weather[0] }} ºC
+                    {{ city.weather[0] }} ºC
                 </div>
                 <div class="five_columns">
                     Md. Low<br/>
-                    {{ weather[1] }} ºC
+                    {{ city.weather[1] }} ºC
                 </div>
                 <div class="five_columns">
                     Md. Avg.<br/>
-                    {{ weather[2] }} ºC
+                    {{ city.weather[2] }} ºC
                 </div>
                 <div class="five_columns">
                     Md. High<br/>
-                    {{ weather[3] }} ºC
+                    {{ city.weather[3] }} ºC
                 </div>
                 <div class="five_columns">
                     Highest<br/>
-                    {{ weather[4] }} ºC
+                    {{ city.weather[4] }} ºC
                 </div>
             </div>
-            <h2>Livability</h2>
+            <h2>City Livability</h2>
             <div class="row">
                 <div class="two_columns">
                     Overall<br/>
-                    {{ livability }}{{ Livability }}
+                    {{ city.overall_livability }}
                 </div>
                 <div class="two_columns">
                     Cost of Living<br/>
-                    {{ cost_of_living }}{{ CoL }}    
+                    {{ city.cost_of_living }}
                 </div>
             </div>
             <div class="row">
                 <div class="three_columns">
                     Housing<br/>
-                    {{ housing }}{{ Housing }}    
+                    {{ city.housing }}
                 </div>
                 <div class="three_columns">
-                    Crime<br/>
-                    {{ crime }}{{ Crime }}     
+                    Safety<br/>
+                    {{ city.safety }}{{ Crime }}     
                 </div>
                 <div class="three_columns">
                     Schools<br/>
-                    {{ schools }}{{ Schools }}    
-                </div>
-            </div>
-            <div class="row">     
-                <div class="three_columns">
-                    Employment<br/>
-                    {{ employment }}{{ Employment }}    
-                </div>
-                <div class="three_columns">
-                    Amenities<br/>
-                    {{ amenities }}{{ Amenities }}    
-                </div>
-                <div class="three_columns">
-                    User Ratings<br/>
-                    {{ user_ratings }}{{ UserRatings }}    
+                    {{ city.schools }}
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    {% if city.urban_area != "N/A" %}
+        <hr />
+        <div class="row">
+            <h2>Urban Area: <span style="color: black;">{{ city.urban_area }}</p></p></h2>
+            <div class="two_columns_no_borders">
+                <img src="{{ city.ua_img_url }}" alt="{{ city.urban_area }}" class="city_image"/>
+            </div>
+            <div class="two_columns_no_borders">
+                <div class="row">
+                    <h2>Urban Area Livability</h2>
+                    <div class="two_columns">
+                        Overall<br/>
+                        {{ city.ua_overall_livability }}
+                    </div>
+                    <div class="two_columns">
+                        Cost of Living<br/>
+                        {{ city.ua_cost_of_living }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="three_columns">
+                        Housing<br/>
+                        {{ city.ua_housing }}
+                    </div>
+                    <div class="three_columns">
+                        Safety<br/>
+                        {{ city.ua_safety }}{{ Crime }}     
+                    </div>
+                    <div class="three_columns">
+                        Schools<br/>
+                        {{ city.ua_schools }}
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>Weather</h2>
+                    <div class="two_columns">
+                        Type<br/>
+                        {{ city.ua_weather_type }}
+                    </div>
+                    <div class="two_columns">
+                        Rainy Days<br/>
+                        {{ city.ua_avg_num_rainy_days }}
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>Monthly Rent (USD)</h2>
+                    <div class="three_columns">
+                        Small Apt.<br/>
+                        {{ city.ua_rent_small }}
+                    </div>
+                    <div class="three_columns">
+                        Medium Apt.<br/>
+                        {{ city.ua_rent_medium }}
+                    </div>
+                    <div class="three_columns">
+                        Large Apt.<br/>
+                        {{ city.ua_rent_large }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    
+    </div>
+{% endblock %}
+
+{% block footer %}
+<hr/>
+Data for {{ city.name }} was last updated on {{ city.timestamp }} (UTC).
 {% endblock %}

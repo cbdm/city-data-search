@@ -1,412 +1,1107 @@
-Airdrie, AB (airdrie-ab), 61581, (51.28597, -114.01062)
-Calgary, AB (calgary-ab), 1239220, (51.0460954, -114.065465)
-Edmonton, AB (edmonton-ab), 932546, (53.535411, -113.507996)
-Grande Prairie, AB (grande+prairie-ab), 63166, (55.17108, -118.7949873)
-Lethbridge, AB (lethbridge-ab), 92729, (49.694285, -112.851562)
-Medicine Hat, AB (medicine+hat-ab), 63260, (50.04303, -110.679016)
-Red Deer, AB (red+deer-ab), 100418, (52.2697395, -113.8181766)
-St. Albert, AB (st.+albert-ab), 65589, (53.633239, -113.628845)
-Strathcona County, AB (strathcona+county-ab), 98044, (53.5762678, -113.1255397)
-Wood Buffalo, AB (wood+buffalo-ab), 71589, (57.6527825, -111.4667003)
-Anchorage, AK (anchorage-ak), 287095, (61.2163129, -149.894852)
-Birmingham, AL (birmingham-al), 206950, (33.570499, -86.765783)
-Huntsville, AL (huntsville-al), 202964, (33.55868, -86.802422)
-Mobile, AL (mobile-al), 187746, (39.092585, -84.853229)
-Montgomery, AL (montgomery-al), 196268, (33.810124, -86.809849)
-Tuscaloosa, AL (tuscaloosa-al), 102819, (33.48874, -86.861648)
-Little Rock, AR (little+rock-ar), 197866, (34.7465071, -92.2896267)
-Chandler, AZ (chandler-az), 265398, (33.3061605, -111.84125)
-Gilbert, AZ (gilbert-az), 257658, (33.3527632, -111.7890373)
-Glendale, AZ (glendale-az), 255307, (33.5386858, -112.1859941)
-Mesa, AZ (mesa-az), 528159, (33.4151117, -111.8314792)
-Peoria, AZ (peoria-az), 179872, (33.5806115, -112.237294)
-Phoenix, AZ (phoenix-az), 1708127, (33.4484367, -112.0741417)
-Scottsdale, AZ (scottsdale-az), 262647, (33.4942189, -111.9260184)
-Surprise, AZ (surprise-az), 147965, (33.6292271, -112.3680189)
-Tempe, AZ (tempe-az), 200402, (33.4255056, -111.9400091)
-Tucson, AZ (tucson-az), 553571, (32.2228765, -110.9748477)
-Abbotsford, BC (abbotsford-bc), 141397, (49.0521162, -122.329479)
-Burnaby, BC (burnaby-bc), 232755, (49.2433804, -122.9725459)
-Chilliwack, BC (chilliwack-bc), 83788, (49.157677, -121.9514307)
-Coquitlam, BC (coquitlam-bc), 139284, (49.2842958, -122.793281)
-Delta, BC (delta-bc), 102238, (49.0846258, -123.0579384)
-Kamloops, BC (kamloops-bc), 90280, (50.6758269, -120.339415)
-Kelowna, BC (kelowna-bc), 127380, (49.8879177, -119.4959025)
-Langley, BC (langley-bc), 117285, (49.098648749999995, -122.65923259915698)
-Maple Ridge, BC (maple+ridge-bc), 82256, (49.2197345, -122.5997078)
-Nanaimo, BC (nanaimo-bc), 90504, (49.163877, -123.938122)
-New Westminster, BC (new+westminster-bc), 70996, (49.2067726, -122.9108818)
-North Vancouver, BC (north+vancouver-bc), 85935, (49.3206294, -123.0737925)
-Port Coquitlam, BC (port+coquitlam-bc), 58612, (49.2621643, -122.7805425)
-Prince George, BC (prince+george-bc), 74003, (53.9128645, -122.7453699)
-Richmond, BC (richmond-bc), 198309, (49.163168, -123.137414)
-Saanich, BC (saanich-bc), 114148, (48.4594315, -123.3764946)
-Surrey, BC (surrey-bc), 517887, (49.1913033, -122.8491439)
-Vancouver, BC (vancouver-bc), 631486, (49.2608724, -123.113952)
-Victoria, BC (victoria-bc), 85792, (48.4283182, -123.3649533)
-Anaheim, CA (anaheim-ca), 353676, (33.8347516, -117.911732)
-Antioch, CA (antioch-ca), 111605, (38.0049214, -121.805789)
-Bakersfield, CA (bakersfield-ca), 385725, (35.3738712, -119.0194639)
-Berkeley, CA (berkeley-ca), 122726, (37.8753497, -122.23963364918777)
-Burbank, CA (burbank-ca), 101866, (34.1816482, -118.3258554)
-Carlsbad, CA (carlsbad-ca), 115599, (33.1580933, -117.3505966)
-Chico, CA (chico-ca), 102867, (39.7284945, -121.8374777)
-Chula Vista, CA (chula+vista-ca), 272979, (32.6400541, -117.0841955)
-Clovis, CA (clovis-ca), 117662, (36.8252277, -119.7029194)
-Concord, CA (concord-ca), 128544, (37.9768525, -122.0335624)
-Corona, CA (corona-ca), 170996, (33.8752945, -117.5664449)
-Costa Mesa, CA (costa+mesa-ca), 112366, (33.6636611, -117.91946518435181)
-Daly City, CA (daly+city-ca), 105868, (37.6904826, -122.47267)
-Downey, CA (downey-ca), 109202, (33.942215, -118.1235646)
-El Cajon, CA (el+cajon-ca), 102401, (32.7947731, -116.962526)
-El Monte, CA (el+monte-ca), 112344, (34.0751571, -118.036849)
-Elk Grove, CA (elk+grove-ca), 177302, (38.4087993, -121.3716178)
-Escondido, CA (escondido-ca), 149943, (33.1216751, -117.0814849)
-Fairfield, CA (fairfield-ca), 117580, (38.2493581, -122.039966)
-Fontana, CA (fontana-ca), 216173, (34.0922335, -117.435048)
-Fremont, CA (fremont-ca), 234569, (37.5482697, -121.988571)
-Fresno, CA (fresno-ca), 530267, (36.7295295, -119.70886126075588)
-Fullerton, CA (fullerton-ca), 139921, (33.8708215, -117.9294165)
-Garden Grove, CA (garden+grove-ca), 171366, (33.7746292, -117.9463717)
-Glendale, CA (glendale-ca), 197747, (34.1469416, -118.2478471)
-Hayward, CA (hayward-ca), 157966, (37.6688205, -122.080796)
-Huntington Beach, CA (huntington+beach-ca), 198246, (33.6783336, -118.0000166)
-Inglewood, CA (inglewood-ca), 107203, (33.9562003, -118.353132)
-Irvine, CA (irvine-ca), 283700, (33.6856969, -117.8259819)
-Jurupa Valley, CA (jurupa+valley-ca), 109745, (33.9798472, -117.4515754)
-Lancaster, CA (lancaster-ca), 155822, (34.6981064, -118.1366153)
-Long Beach, CA (long+beach-ca), 454681, (33.7690164, -118.191604)
-Los Angeles, CA (los+angeles-ca), 3970219, (34.0536909, -118.242766)
-Modesto, CA (modesto-ca), 215666, (37.6390972, -120.9968782)
-Moreno Valley, CA (moreno+valley-ca), 212349, (33.937517, -117.2305944)
-Murrieta, CA (murrieta-ca), 116522, (33.577752399999994, -117.18845420205307)
-Norwalk, CA (norwalk-ca), 102635, (33.9092802, -118.0849169)
-Oakland, CA (oakland-ca), 424891, (37.8044557, -122.2713563)
-Oceanside, CA (oceanside-ca), 174648, (33.1958696, -117.3794834)
-Ontario, CA (ontario-ca), 183393, (50.000678, -86.000977)
-Orange, CA (orange-ca), 138192, (33.7500378, -117.8704931)
-Oxnard, CA (oxnard-ca), 207945, (34.1976308, -119.1803818)
-Palmdale, CA (palmdale-ca), 150498, (34.5793131, -118.1171108)
-Pasadena, CA (pasadena-ca), 141045, (34.1476452, -118.1444779)
-Pomona, CA (pomona-ca), 149212, (34.0553813, -117.7517496)
-Rancho Cucamonga, CA (rancho+cucamonga-ca), 178849, (34.1279268, -117.56432205849399)
-Rialto, CA (rialto-ca), 104132, (34.1064001, -117.3703235)
-Richmond, CA (richmond-ca), 110038, (37.9357576, -122.347748)
-Riverside, CA (riverside-ca), 330786, (33.7219991, -116.0372472)
-Roseville, CA (roseville-ca), 144725, (38.7521235, -121.2880059)
-Sacramento, CA (sacramento-ca), 512838, (38.5810606, -121.493895)
-Salinas, CA (salinas-ca), 154868, (36.6744117, -121.6550372)
-San Bernardino, CA (san+bernardino-ca), 217491, (34.8253019, -116.0833144)
-San Buenaventura (Ventura), CA (san+buenaventura+(ventura)-ca), 107110, (34.3640573, -119.31101594866902)
-San Diego, CA (san+diego-ca), 1422420, (32.7174202, -117.1627728)
-San Francisco, CA (san+francisco-ca), 866606, (37.7790262, -122.419906)
-San Jose, CA (san+jose-ca), 1013616, (37.3361905, -121.890583)
-San Mateo, CA (san+mateo-ca), 102398, (37.496904, -122.3330573)
-Santa Ana, CA (santa+ana-ca), 331301, (33.7494951, -117.8732213)
-Santa Clara, CA (santa+clara-ca), 131055, (37.2333253, -121.6846349)
-Santa Clarita, CA (santa+clarita-ca), 209990, (34.3916641, -118.542586)
-Santa Maria, CA (santa+maria-ca), 105851, (34.9531295, -120.4358577)
-Santa Rosa, CA (santa+rosa-ca), 174613, (38.4404925, -122.7141049)
-Simi Valley, CA (simi+valley-ca), 125168, (34.2677404, -118.7538071)
-Stockton, CA (stockton-ca), 312716, (37.9577016, -121.2907796)
-Sunnyvale, CA (sunnyvale-ca), 151746, (37.3688301, -122.036349)
-Temecula, CA (temecula-ca), 113878, (33.4946353, -117.1473661)
-Thousand Oaks, CA (thousand+oaks-ca), 126310, (34.1705609, -118.8375937)
-Torrance, CA (torrance-ca), 141553, (33.8358492, -118.3406288)
-Vacaville, CA (vacaville-ca), 101332, (38.3565773, -121.9877444)
-Vallejo, CA (vallejo-ca), 120747, (38.1040864, -122.2566367)
-Victorville, CA (victorville-ca), 124982, (34.5361067, -117.2911565)
-Visalia, CA (visalia-ca), 135007, (36.3302284, -119.2920585)
-Vista, CA (vista-ca), 100636, (33.2000368, -117.2425355)
-West Covina, CA (west+covina-ca), 103656, (34.0471735, -117.8963242650494)
-Arvada, CO (arvada-co), 121936, (39.8005505, -105.0811573)
-Aurora, CO (aurora-co), 387377, (43.6963371, -98.5722461)
-Boulder, CO (boulder-co), 107645, (40.102555, -105.3632079)
-Centennial, CO (centennial-co), 110156, (39.579155, -104.8769227)
-Colorado Springs, CO (colorado+springs-co), 482131, (38.8339578, -104.825348)
-Denver, CO (denver-co), 735538, (39.7392364, -104.9848623)
-Fort Collins, CO (fort+collins-co), 168234, (40.5508527, -105.0668085)
-Greeley, CO (greeley-co), 108958, (38.4570355, -101.8185007)
-Lakewood, CO (lakewood-co), 157429, (39.7085736, -105.0846694)
-Pueblo, CO (pueblo-co), 112751, (38.187635, -104.5350145)
-Thornton, CO (thornton-co), 148113, (51.5030751, -0.2232956)
-Westminster, CO (westminster-co), 115046, (39.8366528, -105.0372046)
-Bridgeport, CT (bridgeport-ct), 143525, (28.0228228, -82.6975886)
-Hartford, CT (hartford-ct), 121535, (41.3403944, -72.0243982)
-New Haven, CT (new+haven-ct), 130801, (22.2667238, 114.19238192419849)
-Stamford, CT (stamford-ct), 131397, (35.5698636, -80.9308626)
-Waterbury, CT (waterbury-ct), 106826, (32.8446313, -116.9778221)
-Washington, DC (washington-dc), 712816, (38.8950368, -77.0365427)
-Cape Coral, FL (cape+coral-fl), 200972, (26.6059432, -81.9806771)
-Clearwater, FL (clearwater-fl), 116552, (27.9658533, -82.8001026)
-Coral Springs, FL (coral+springs-fl), 133519, (26.271192, -80.2706044)
-Davie, FL (davie-fl), 106621, (26.0628665, -80.2331038)
-Fort Lauderdale, FL (fort+lauderdale-fl), 184245, (26.1223084, -80.1433786)
-Gainesville, FL (gainesville-fl), 135004, (29.6519684, -82.3249846)
-Hialeah, FL (hialeah-fl), 232027, (25.8670439, -80.29146452058569)
-Hollywood, FL (hollywood-fl), 154611, (26.0112014, -80.1494901)
-Jacksonville, FL (jacksonville-fl), 920570, (30.3321838, -81.655651)
-Lakeland, FL (lakeland-fl), 115283, (28.0394654, -81.9498042)
-Miami, FL (miami-fl), 471525, (25.7741728, -80.19362)
-Miami Gardens, FL (miami+gardens-fl), 109131, (25.9423108, -80.23976495072381)
-Miramar, FL (miramar-fl), 141150, (25.9873137, -80.2322706)
-Orlando, FL (orlando-fl), 289457, (28.5421109, -81.3790304)
-Palm Bay, FL (palm+bay-fl), 116932, (27.9946969, -80.6366144)
-Pembroke Pines, FL (pembroke+pines-fl), 174414, (26.0031465, -80.223937)
-Pompano Beach, FL (pompano+beach-fl), 112360, (26.2378597, -80.1247667)
-Port St. Lucie, FL (port+st.+lucie-fl), 209715, (27.2939333, -80.3503283)
-St. Petersburg, FL (st.+petersburg-fl), 267802, (27.7703796, -82.6695085)
-Tallahassee, FL (tallahassee-fl), 196326, (30.4380832, -84.2809332)
-Tampa, FL (tampa-fl), 407599, (27.9477595, -82.458444)
-West Palm Beach, FL (west+palm+beach-fl), 112782, (26.715364, -80.0532942)
-Athens-Clarke County unified government, GA (athens-clarke+county+unified+government-ga), 126391, (33.9597677, -83.376398)
-Atlanta, GA (atlanta-ga), 512550, (33.7489924, -84.3902644)
-Columbus, GA (columbus-ga), 196442, (32.4610708, -84.9880449)
-Macon-Bibb, GA (macon-bibb-ga), 152737, (32.8406946, -83.6324022)
-Sandy Springs, GA (sandy+springs-ga), 109928, (33.9242688, -84.3785379)
-Savannah, GA (savannah-ga), 143632, (32.0809, -81.0912)
-South Fulton, GA (south+fulton-ga), 102567, (33.5902659, -84.6712292)
-Cedar Rapids, IA (cedar+rapids-ia), 134027, (41.9758872, -91.6704053)
-Davenport, IA (davenport-ia), 101799, (41.5236436, -90.5776368)
-Des Moines, IA (des+moines-ia), 212312, (41.5910323, -93.6046655)
-Boise City, ID (boise+city-id), 229776, (43.6166163, -116.200886)
-Meridian, ID (meridian-id), 121182, (43.6086295, -116.392326)
-Nampa, ID (nampa-id), 103215, (43.5737361, -116.559631)
-Aurora, IL (aurora-il), 196383, (41.7571701, -88.3147539)
-Chicago, IL (chicago-il), 2677643, (41.8755616, -87.6244212)
-Elgin, IL (elgin-il), 110196, (42.03726, -88.2810994)
-Joliet, IL (joliet-il), 146673, (41.5263603, -88.0840212)
-Naperville, IL (naperville-il), 147986, (41.7728699, -88.1479278)
-Peoria, IL (peoria-il), 109428, (40.6938609, -89.5891008)
-Rockford, IL (rockford-il), 144835, (42.2713945, -89.093966)
-Springfield, IL (springfield-il), 113671, (39.7990175, -89.6439575)
-Carmel, IN (carmel-in), 101643, (39.9788017, -86.1189257)
-Evansville, IN (evansville-in), 118407, (37.9747645, -87.5558483)
-Fort Wayne, IN (fort+wayne-in), 272398, (41.0799898, -85.1386015)
-South Bend, IN (south+bend-in), 101868, (41.6833813, -86.2500066)
-Kansas City, KS (kansas+city-ks), 152727, (39.1134562, -94.626497)
-Olathe, KS (olathe-ks), 141665, (38.8838856, -94.81887)
-Overland Park, KS (overland+park-ks), 197381, (38.9742502, -94.6851702)
-Topeka, KS (topeka-ks), 124558, (39.049011, -95.677556)
-Wichita, KS (wichita-ks), 391731, (37.6922361, -97.3375448)
-Lexington-Fayette urban, KY (lexington-fayette+urban-ky), 324735, (38.10551845, -84.55996125434804)
-Baton Rouge, LA (baton+rouge-la), 219052, (28.2968872, -82.502277)
-Lafayette, LA (lafayette-la), 126535, (31.3704662, -92.4373252)
-New Orleans, LA (new+orleans-la), 389476, (29.9759983, -90.0782127)
-Shreveport, LA (shreveport-la), 184786, (33.4201744, -96.572744)
-Boston, MA (boston-ma), 691531, (42.3602534, -71.0582912)
-Cambridge, MA (cambridge-ma), 119192, (42.3750997, -71.1056157)
-Lowell, MA (lowell-ma), 110904, (42.6334247, -71.3161718)
-Springfield, MA (springfield-ma), 152646, (42.1018764, -72.5886727)
-Worcester, MA (worcester-ma), 184570, (42.2625621, -71.8018877)
-Winnipeg, MB (winnipeg-mb), 705224, (49.8955367, -97.1384584)
-Baltimore, MD (baltimore-md), 586131, (39.2908816, -76.610759)
-Ann Arbor, MI (ann+arbor-mi), 119280, (42.2681569, -83.7312291)
-Detroit, MI (detroit-mi), 665369, (42.3315509, -83.0466403)
-Grand Rapids, MI (grand+rapids-mi), 200031, (42.9632405, -85.6678639)
-Lansing, MI (lansing-mi), 117540, (42.7337712, -84.5553805)
-Sterling Heights, MI (sterling+heights-mi), 131709, (42.5803122, -83.0302033)
-Warren, MI (warren-mi), 132877, (38.7535106, -91.1453948)
-Minneapolis, MN (minneapolis-mn), 433111, (44.9772995, -93.2654692)
-Rochester, MN (rochester-mn), 119862, (44.0234387, -92.4630182)
-St. Paul, MN (st.+paul-mn), 306717, (44.9497487, -93.0931028)
-Columbia, MO (columbia-mo), 124769, (38.9464035, -92.3484631580807)
-Independence, MO (independence-mo), 116774, (39.0924792, -94.4137923)
-Kansas City, MO (kansas+city-mo), 497159, (39.100105, -94.5781416)
-Lee's Summit, MO (lee's+summit-mo), 101467, (38.9107156, -94.3821295)
-Springfield, MO (springfield-mo), 168090, (37.2166779, -93.2920373)
-St. Louis, MO (st.+louis-mo), 297645, (38.6264256, -90.1995853)
-Jackson, MS (jackson-ms), 157821, (39.04632065, -82.64344670649042)
-Billings, MT (billings-mt), 109736, (45.7874957, -108.49607)
-Fredericton, NB (fredericton-nb), 58220, (45.94780155, -66.65347069241668)
-Moncton, NB (moncton-nb), 71889, (46.097995, -64.80011)
-Saint John, NB (saint+john-nb), 67575, (45.278752, -66.058044)
-Cary, NC (cary-nc), 173587, (35.7882893, -78.7812081)
-Charlotte, NC (charlotte-nc), 900350, (35.2272086, -80.8430827)
-Durham, NC (durham-nc), 285897, (35.996653, -78.9018053)
-Fayetteville, NC (fayetteville-nc), 211705, (35.0525759, -78.878292)
-Greensboro, NC (greensboro-nc), 297878, (36.0726355, -79.7919754)
-High Point, NC (high+point-nc), 113565, (35.9556924, -80.0053176)
-Raleigh, NC (raleigh-nc), 474414, (35.7803977, -78.6390989)
-Wilmington, NC (wilmington-nc), 124794, (34.2257282, -77.9447107)
-Winston-Salem, NC (winston-salem-nc), 248112, (36.0998131, -80.2440518)
-Fargo, ND (fargo-nd), 125209, (46.877229, -96.789821)
-Lincoln, NE (lincoln-ne), 290505, (40.8088861, -96.7077751)
-Omaha, NE (omaha-ne), 478393, (41.2587459, -95.9383758)
-Manchester, NH (manchester-nh), 112546, (42.9956397, -71.4547891)
-Elizabeth, NJ (elizabeth-nj), 128382, (40.6639916, -74.2107006)
-Jersey City, NJ (jersey+city-nj), 262664, (40.7215682, -74.047455)
-Newark, NJ (newark-nj), 282520, (40.735657, -74.1723667)
-Paterson, NJ (paterson-nj), 144801, (40.9167654, -74.171811)
-St. John's, NL (st.+john's-nl), 108860, (47.561701, -52.715149)
-Albuquerque, NM (albuquerque-nm), 562540, (35.0841034, -106.650985)
-Las Cruces, NM (las+cruces-nm), 105096, (32.3140354, -106.7798078)
-Cape Breton, NS (cape+breton-ns), 94285, (46.2950327, -60.93605535048172)
-Halifax, NS (halifax-ns), 403131, (44.648618, -63.5859487)
-Henderson, NV (henderson-nv), 329172, (36.0301134, -114.9826194)
-Las Vegas, NV (las+vegas-nv), 662368, (36.1672559, -115.148516)
-North Las Vegas, NV (north+las+vegas-nv), 260098, (36.2005843, -115.121584)
-Reno, NV (reno-nv), 259290, (39.5261206, -119.8126581)
-Sparks, NV (sparks-nv), 106900, (39.5404679, -119.7487235)
-Buffalo, NY (buffalo-ny), 254479, (42.8867166, -78.8783922)
-New York, NY (new+york-ny), 8253213, (40.7127281, -74.0060152)
-Rochester, NY (rochester-ny), 205225, (43.157285, -77.615214)
-Syracuse, NY (syracuse-ny), 141229, (43.0481221, -76.1474244)
-Yonkers, NY (yonkers-ny), 200040, (40.9312099, -73.8987469)
-Akron, OH (akron-oh), 195994, (41.083064, -81.518485)
-Cincinnati, OH (cincinnati-oh), 304548, (39.1014537, -84.5124602)
-Cleveland, OH (cleveland-oh), 378589, (41.4996562, -81.6936813)
-Columbus, OH (columbus-oh), 903852, (39.9622601, -83.0007065)
-Dayton, OH (dayton-oh), 139907, (39.7589478, -84.1916069)
-Toledo, OH (toledo-oh), 271455, (41.6529143, -83.5378173)
-Broken Arrow, OK (broken+arrow-ok), 111648, (36.0525993, -95.7908195)
-Norman, OK (norman-ok), 125762, (35.2225717, -97.4394816)
-Oklahoma City, OK (oklahoma+city-ok), 662314, (35.4729886, -97.5170536)
-Tulsa, OK (tulsa-ok), 403166, (36.1556805, -95.9929113)
-Ajax, ON (ajax-on), 119677, (43.8505287, -79.0208814)
-Aurora, ON (aurora-on), 55445, (43.99973, -79.467545)
-Barrie, ON (barrie-on), 141434, (44.3893113, -79.6901736)
-Belleville, ON (belleville-on), 50716, (44.1633264, -77.3852556)
-Brampton, ON (brampton-on), 593638, (43.6858146, -79.7599337)
-Brantford, ON (brantford-on), 97496, (43.1408157, -80.2631733)
-Burlington, ON (burlington-on), 183314, (43.3248924, -79.7966835)
-Caledon, ON (caledon-on), 66502, (43.827060149999994, -79.9061036956765)
-Cambridge, ON (cambridge-on), 129920, (43.3600536, -80.3123023)
-Chatham-Kent, ON (chatham-kent-on), 101647, (42.41833, -82.0898417)
-Clarington, ON (clarington-on), 92013, (43.96868585, -78.65135738273909)
-Greater Sudbury, ON (greater+sudbury-on), 161531, (46.49272, -80.991211)
-Guelph, ON (guelph-on), 131794, (43.5460516, -80.2493276)
-Halton Hills, ON (halton+hills-on), 61161, (43.64701, -80.017604)
-Hamilton, ON (hamilton-on), 536917, (43.2560802, -79.8728583)
-Kawartha Lakes, ON (kawartha+lakes-on), 75423, (44.575616, -78.8486034)
-Kingston, ON (kingston-on), 123798, (44.230687, -76.481323)
-Kitchener, ON (kitchener-on), 233222, (43.451291, -80.4927815)
-London, ON (london-on), 383822, (42.9537654, -81.2291529)
-Markham, ON (markham-on), 328966, (43.8563707, -79.3376825)
-Milton, ON (milton-on), 110128, (43.513671, -79.882817)
-Mississauga, ON (mississauga-on), 721599, (43.5896231, -79.6443879)
-Newmarket, ON (newmarket-on), 84224, (44.056258, -79.461708)
-Niagara Falls, ON (niagara+falls-on), 88071, (43.1065603, -79.0639039)
-Norfolk County, ON (norfolk+county-on), 64044, (42.7971532, -80.4538365)
-North Bay, ON (north+bay-on), 51553, (46.3092115, -79.4607617)
-Oakville, ON (oakville-on), 193832, (43.447436, -79.666672)
-Oshawa, ON (oshawa-on), 159458, (43.8975558, -78.8635324)
-Ottawa, ON (ottawa-on), 934243, (45.4211435, -75.6900574)
-Peterborough, ON (peterborough-on), 81032, (44.3048009, -78.3199496)
-Pickering, ON (pickering-on), 91771, (43.835765, -79.090576)
-Richmond Hill, ON (richmond+hill-on), 195022, (43.880078, -79.439392)
-Sarnia, ON (sarnia-on), 71594, (42.9746137, -82.4065585)
-Sault Ste. Marie, ON (sault+ste.+marie-on), 73368, (46.52391, -84.320068)
-St. Catharines, ON (st.+catharines-on), 133113, (43.1579812, -79.2441003)
-Thunder Bay, ON (thunder+bay-on), 107909, (48.406414, -89.259796)
-Toronto, ON (toronto-on), 2731571, (43.6534817, -79.3839347)
-Vaughan, ON (vaughan-on), 306233, (43.7941544, -79.5268023)
-Waterloo, ON (waterloo-on), 104986, (43.4652699, -80.5222961)
-Welland, ON (welland-on), 52293, (42.9922181, -79.2484192)
-Whitby, ON (whitby-on), 128377, (43.87982, -78.9421751)
-Windsor, ON (windsor-on), 217188, (42.317099, -83.0353434)
-Bend, OR (bend-or), 101886, (44.0581728, -121.3153096)
-Eugene, OR (eugene-or), 173236, (44.0505054, -123.0950506)
-Gresham, OR (gresham-or), 110031, (45.4997475, -122.4309766)
-Hillsboro, OR (hillsboro-or), 110985, (45.5228939, -122.989827)
-Portland, OR (portland-or), 656751, (45.5202471, -122.6741949)
-Salem, OR (salem-or), 175891, (44.9391565, -123.033121)
-Allentown, PA (allentown-pa), 121470, (40.6022059, -75.4712794)
-Philadelphia, PA (philadelphia-pa), 1578487, (39.9527237, -75.1635262)
-Pittsburgh, PA (pittsburgh-pa), 299226, (40.4416941, -79.9900861)
-Blainville, QC (blainville-qc), 56863, (45.67932, -73.87619)
-Brossard, QC (brossard-qc), 85721, (45.4554829, -73.4678904)
-Drummondville, QC (drummondville-qc), 75423, (45.8864303, -72.5018764)
-Gatineau, QC (gatineau-qc), 276245, (45.4841214, -75.6813728)
-Granby, QC (granby-qc), 66222, (45.3990409, -72.721834)
-Laval, QC (laval-qc), 422993, (45.60558895, -73.73441730569056)
-Longueuil, QC (longueuil-qc), 239700, (45.5333387, -73.4200318)
-Lévis, QC (lévis-qc), 143414, (46.7910096, -71.1753274)
-Mirabel, QC (mirabel-qc), 50513, (45.652595250000005, -74.06154359364649)
-Montreal, QC (montreal-qc), 1704694, (45.5031824, -73.5698065)
-Quebec City, QC (quebec+city-qc), 531902, (46.8137431, -71.2084061)
-Repentigny, QC (repentigny-qc), 84285, (45.7326055, -73.4528307)
-Saguenay, QC (saguenay-qc), 145949, (48.405959, -71.069183)
-Saint-Hyacinthe, QC (saint-hyacinthe-qc), 55648, (45.627484, -72.940636)
-Saint-Jean-sur-Richelieu, QC (saint-jean-sur-richelieu-qc), 95114, (45.3056879, -73.2533401)
-Saint-Jérôme, QC (saint-jérôme-qc), 74346, (45.775426, -74.013176)
-Sherbrooke, QC (sherbrooke-qc), 161323, (45.403271, -71.889038)
-Terrebonne, QC (terrebonne-qc), 111575, (45.6782015, -73.7424135)
-Trois-Rivières, QC (trois-rivières-qc), 134413, (46.3507999, -72.5571257)
-Providence, RI (providence-ri), 179270, (51.4325409, -2.6642358)
-Charleston, SC (charleston-sc), 139714, (32.7876012, -79.9402728)
-Columbia, SC (columbia-sc), 132130, (34.0007493, -81.0343313)
-North Charleston, SC (north+charleston-sc), 118752, (32.9131295, -80.0629981965219)
-Sioux Falls, SD (sioux+falls-sd), 187809, (43.5460587, -96.7313928)
-Regina, SK (regina-sk), 215106, (50.44876, -104.61731)
-Saskatoon, SK (saskatoon-sk), 246376, (52.131802, -106.660767)
-Chattanooga, TN (chattanooga-tn), 184742, (35.0457219, -85.3094883)
-Clarksville, TN (clarksville-tn), 161247, (36.5277607, -87.3588703)
-Knoxville, TN (knoxville-tn), 190223, (35.9603948, -83.9210261)
-Memphis, TN (memphis-tn), 649705, (35.1490215, -90.0516285)
-Murfreesboro, TN (murfreesboro-tn), 150757, (35.8460396, -86.3921096)
-Nashville-Davidson metropolitan government, TN (nashville-davidson+metropolitan+government-tn), 671295, (36.2042585, -86.8212516)
-Abilene, TX (abilene-tx), 124407, (32.44645, -99.7475905)
-Allen, TX (allen-tx), 109379, (33.1031744, -96.6705503)
-Amarillo, TX (amarillo-tx), 199654, (35.2072185, -101.8338246)
-Arlington, TX (arlington-tx), 398864, (32.701938999999996, -97.10562379033699)
-Austin, TX (austin-tx), 995484, (30.2711286, -97.7436995)
-Beaumont, TX (beaumont-tx), 115473, (30.0860459, -94.1018461)
-Brownsville, TX (brownsville-tx), 183428, (25.9140256, -97.4890856)
-Carrollton, TX (carrollton-tx), 139892, (32.9537349, -96.8902816)
-College Station, TX (college+station-tx), 119260, (30.5955289, -96.3071042)
-Corpus Christi, TX (corpus+christi-tx), 327248, (27.7951482, -97.3942053)
-Dallas, TX (dallas-tx), 1343266, (32.7762719, -96.7968559)
-Denton, TX (denton-tx), 147515, (33.1838787, -97.1413417)
-Edinburg, TX (edinburg-tx), 102374, (26.3013982, -98.1624501)
-El Paso, TX (el+paso-tx), 681534, (31.7754152, -106.464634)
-Fort Worth, TX (fort+worth-tx), 927720, (32.753177, -97.3327459)
-Frisco, TX (frisco-tx), 209980, (33.1506744, -96.8236116)
-Garland, TX (garland-tx), 238139, (32.912624, -96.6388833)
-Grand Prairie, TX (grand+prairie-tx), 195272, (32.7459645, -96.9977846)
-Houston, TX (houston-tx), 2316120, (29.7589382, -95.3676974)
-Irving, TX (irving-tx), 240916, (32.8295183, -96.9442177)
-Killeen, TX (killeen-tx), 153991, (31.1171441, -97.727796)
-Laredo, TX (laredo-tx), 263640, (27.5236998, -99.497352)
-League City, TX (league+city-tx), 108477, (29.5074538, -95.0949303)
-Lewisville, TX (lewisville-tx), 112232, (33.046233, -96.994174)
-Lubbock, TX (lubbock-tx), 262611, (33.5635206, -101.879336)
-McAllen, TX (mcallen-tx), 143751, (26.2043691, -98.230082)
-McKinney, TX (mckinney-tx), 208272, (33.1976496, -96.6154471)
-Mesquite, TX (mesquite-tx), 138916, (32.7666103, -96.599472)
-Midland, TX (midland-tx), 147069, (31.83688, -102.0103767)
-Odessa, TX (odessa-tx), 125413, (31.8457149, -102.367687)
-Pasadena, TX (pasadena-tx), 149440, (29.6910625, -95.2091006)
-Pearland, TX (pearland-tx), 123562, (29.5639758, -95.2864299)
-Plano, TX (plano-tx), 291296, (33.0136764, -96.6925096)
-Richardson, TX (richardson-tx), 121112, (32.9481789, -96.7297206)
-Round Rock, TX (round+rock-tx), 137575, (30.5085915, -97.6788056)
-San Angelo, TX (san+angelo-tx), 101612, (31.4649685, -100.4405094)
-San Antonio, TX (san+antonio-tx), 1567118, (29.4246002, -98.4951405)
-Sugar Land, TX (sugar+land-tx), 117875, (29.6196787, -95.6349463)
-Tyler, TX (tyler-tx), 108222, (30.7563939, -94.3984613)
-Waco, TX (waco-tx), 141377, (31.5520981, -97.114845)
-Wichita Falls, TX (wichita+falls-tx), 105405, (33.9137085, -98.4933873)
-Provo, UT (provo-ut), 116295, (40.2337289, -111.6587085)
-Salt Lake City, UT (salt+lake+city-ut), 204087, (40.7596198, -111.8867975)
-West Jordan, UT (west+jordan-ut), 116530, (40.6061308, -111.9396586)
-West Valley City, UT (west+valley+city-ut), 133894, (40.6967254, -111.9868211)
-Alexandria, VA (alexandria-va), 158726, (33.7237617, -116.2673237)
-Chesapeake, VA (chesapeake-va), 247011, (36.7183708, -76.2466798)
-Hampton, VA (hampton-va), 135464, (52.5324707, -0.2763797)
-Newport News, VA (newport+news-va), 179062, (36.9775016, -76.42977)
-Norfolk, VA (norfolk-va), 242803, (36.8968052, -76.2602336)
-Richmond, VA (richmond-va), 232226, (-32.8652, 151.5012)
-Virginia Beach, VA (virginia+beach-va), 451231, (36.8529841, -75.9774183)
-Bellevue, WA (bellevue-wa), 148073, (47.6144219, -122.192337)
-Everett, WA (everett-wa), 112482, (47.9673056, -122.2013998)
-Kent, WA (kent-wa), 130676, (47.3826903, -122.2270272)
-Renton, WA (renton-wa), 101494, (47.4799078, -122.2034496)
-Seattle, WA (seattle-wa), 769714, (47.6038321, -122.3300624)
-Spokane, WA (spokane-wa), 222050, (47.6571934, -117.4235106)
-Spokane Valley, WA (spokane+valley-wa), 102893, (47.6571104, -117.2613936)
-Tacoma, WA (tacoma-wa), 219945, (47.2495798, -122.4398746)
-Vancouver, WA (vancouver-wa), 186192, (45.6306954, -122.6744557)
-Green Bay, WI (green+bay-wi), 103836, (44.5126379, -88.0125794)
-Madison, WI (madison-wi), 263094, (43.074761, -89.3837613)
-Milwaukee, WI (milwaukee-wi), 589067, (43.0349931, -87.922497)
+name;coordinates;population
+Tokyo, Tokyo, Japan;35.6895,139.69171;8,336,599
+Delhi, NCT, India;28.65195,77.23149;10,927,986
+Shanghai, Shanghai, China;31.22222,121.45806;22,315,474
+São Paulo, São Paulo, Brazil (Sao Paulo);-23.5475,-46.63611;10,021,295
+Mexico City, Mexico City, Mexico;19.42847,-99.12766;12,294,193
+Dhaka, Dhaka, Bangladesh;23.7104,90.40744;10,356,500
+Cairo, Cairo, Egypt;30.06263,31.24967;7,734,614
+Beijing, Beijing, China;39.9075,116.39723;11,716,620
+Mumbai, Maharashtra, India;19.07283,72.88261;12,691,836
+Osaka, Ōsaka, Japan;34.69374,135.50218;2,592,413
+Karachi, Sindh, Pakistan;24.8608,67.0104;11,624,219
+Chongqing, Chongqing, China;29.56278,106.55278;7,457,600
+Istanbul, Istanbul, Turkey;41.01384,28.94966;14,804,116
+Buenos Aires, Buenos Aires F.D., Argentina;-34.61315,-58.37723;13,076,300
+Kolkata, West Bengal, India;22.56263,88.36304;4,631,392
+Kinshasa, Kinshasa, Democratic Republic of the Congo;-4.32758,15.31357;7,785,965
+Lagos, Lagos, Nigeria;6.45407,3.39467;9,000,000
+Manila, Metro Manila, Philippines;14.6042,120.9822;1,600,000
+Tianjin, Tianjin, China;39.14222,117.17667;11,090,314
+Guangzhou, Guangdong, China;23.11667,113.25;11,071,424
+Rio de Janeiro, Rio de Janeiro, Brazil;-22.90642,-43.18223;6,023,699
+Lahore, Punjab, Pakistan;31.558,74.35071;6,310,888
+Bengaluru, Karnataka, India (Bangalore);12.97194,77.59369;5,104,047
+Moscow, Moscow, Russia;55.75222,37.61556;10,381,222
+Shenzhen, Guangdong, China;22.54554,114.0683;10,358,381
+Chennai, Tamil Nadu, India;13.08784,80.27847;4,328,063
+Bogotá, Bogota D.C., Colombia (Bogota);4.60971,-74.08175;7,674,366
+Paris, Île-de-France, France;48.85341,2.3488;2,138,551
+Jakarta, Jakarta, Indonesia;-6.21462,106.84513;8,540,121
+Lima, Lima, Peru;-12.04318,-77.02824;7,737,002
+Bangkok, Bangkok, Thailand;13.75398,100.50144;5,104,476
+Hyderabad, Telangana, India;17.38405,78.45636;3,597,816
+Seoul, Seoul, South Korea;37.566,126.9784;10,349,312
+Nagoya, Aichi, Japan;35.18147,136.90641;2,191,279
+London, England, United Kingdom;51.50853,-0.12574;7,556,900
+Chengdu, Sichuan, China;30.66667,104.06667;7,415,590
+Tehran, Tehrān, Iran;35.69439,51.42151;7,153,309
+Nanjing, Jiangsu, China;32.06167,118.77778;7,165,292
+Ho Chi Minh City, Ho Chi Minh City, Vietnam;10.82302,106.62965;3,467,331
+Luanda, Luanda, Angola;-8.83682,13.23432;2,776,168
+Wuhan, Hubei, China;30.58333,114.26667;9,785,388
+Xi’an, Shaanxi, China (Xi'an);34.25833,108.92861;6,501,190
+Ahmedabad, Gujarat, India;23.02579,72.58727;3,719,710
+New York City, New York, United States;40.71427,-74.00597;8,175,133
+Kuala Lumpur, Kuala Lumpur, Malaysia;3.1412,101.68653;1,453,975
+Hangzhou, Zhejiang, China;30.29365,120.16142;6,241,971
+Hong Kong, Central and Western, Hong Kong;22.27832,114.17469;7,012,738
+Sūrat, Gujarat, India (Surat);21.19594,72.83023;2,894,504
+Dongguan, Guangdong, China;23.01797,113.74866;8,000,000
+Suzhou, Jiangsu, China;31.30408,120.59538;5,345,961
+Foshan, Guangdong, China;23.02677,113.13148;3,600,000
+Riyadh, Ar Riyāḑ, Saudi Arabia;24.68773,46.72185;4,205,961
+Shenyang, Liaoning, China;41.79222,123.43278;6,255,921
+Baghdad, Baghdad, Iraq;33.34058,44.40088;7,216,000
+Dar es Salaam, Dar es Salaam, Tanzania;-6.82349,39.26951;2,698,652
+Santiago, Santiago Metropolitan, Chile;-33.45694,-70.64827;4,837,295
+Pune, Maharashtra, India;18.51957,73.85535;2,935,744
+Madrid, Madrid, Spain;40.4165,-3.70256;3,255,944
+Harbin, Heilongjiang, China;45.75,126.65;5,878,939
+Toronto, Ontario, Canada;43.70011,-79.4163;2,600,000
+Belo Horizonte, Minas Gerais, Brazil;-19.92083,-43.93778;2,373,224
+Singapore, Central Singapore, Singapore;1.28967,103.85007;3,547,809
+Khartoum, Khartoum, Sudan;15.55177,32.53241;1,974,647
+Johannesburg, Gauteng, South Africa;-26.20227,28.04363;2,026,469
+Dalian, Liaoning, China;38.91222,121.60222;4,087,733
+Qingdao, Shandong, China;36.06488,120.38042;3,718,835
+Barcelona, Catalonia, Spain;41.38879,2.15899;1,621,537
+Fukuoka, Fukuoka, Japan;33.6,130.41667;1,392,289
+Jinan, Shandong, China;36.66833,116.99722;4,335,989
+Zhengzhou, Henan, China;34.75778,113.64861;4,253,913
+Saint Petersburg, St.-Petersburg, Russia;59.93863,30.31413;5,028,000
+Yangon, Yangon, Myanmar;16.80528,96.15611;4,477,638
+Alexandria, Alexandria, Egypt;31.20176,29.91582;3,811,516
+Abidjan, Abidjan, Ivory Coast;5.30966,-4.01266;3,677,115
+Guadalajara, Jalisco, Mexico;20.66682,-103.39182;1,640,589
+Ankara, Ankara, Turkey;39.91987,32.85427;3,517,182
+Chittagong, Chittagong, Bangladesh;22.3384,91.83168;3,920,222
+Melbourne, Victoria, Australia;-37.814,144.96332;4,246,375
+Addis Ababa, Addis Ababa, Ethiopia;9.02497,38.74689;2,757,729
+Sydney, New South Wales, Australia;-33.86785,151.20732;4,627,345
+Monterrey, Nuevo León, Mexico;25.67507,-100.31847;1,122,874
+Nairobi, Nairobi Area, Kenya;-1.28333,36.81667;2,750,547
+Hanoi, Ha Nội, Vietnam;21.0245,105.84117;1,431,270
+Brasília, Federal District, Brazil (Brasilia);-15.77972,-47.92972;2,207,718
+Cape Town, Western Cape, South Africa;-33.92584,18.42322;3,433,441
+Jeddah, Makkah, Saudi Arabia (Jiddah);21.54238,39.19797;2,867,446
+Changsha, Hunan, China;28.19874,112.97087;3,093,980
+Kunming, Yunnan, China;25.03889,102.71833;3,855,346
+Ürümqi, Xinjiang, China (Urumqi);43.80096,87.60046;3,029,372
+Changchun, Jilin, China;43.88,125.32278;4,193,073
+Taipei, Taiwan, Taiwan;25.04776,121.53185;7,871,900
+Shantou, Guangdong, China;23.36814,116.71479;5,329,024
+Hefei, Anhui, China;31.86389,117.28083;3,310,268
+Kabul, Kabul, Afghanistan;34.52813,69.17233;3,043,532
+Rome, Latium, Italy;41.89193,12.51133;2,318,895
+Ningbo, Zhejiang, China;29.87819,121.54945;3,491,597
+Tel Aviv, Tel Aviv, Israel;32.08088,34.78057;432,892
+Montréal, Quebec, Canada (Montreal);45.50884,-73.58781;1,600,000
+Shijiazhuang, Hebei, China;38.04139,114.47861;2,834,942
+Recife, Pernambuco, Brazil;-8.05389,-34.88111;1,478,098
+Yaoundé, Centre, Cameroon (Yaounde);3.86667,11.51667;1,299,369
+Porto Alegre, Rio Grande do Sul, Brazil;-30.03306,-51.23;1,372,741
+Fortaleza, Ceará, Brazil;-3.71722,-38.54306;2,400,000
+Kano, Kano, Nigeria;12.00012,8.51672;3,626,068
+Medellín, Antioquia, Colombia (Medellin);6.25184,-75.56359;1,999,979
+Jaipur, Rajasthan, India;26.91962,75.78781;2,711,758
+Los Angeles, California, United States;34.05223,-118.24368;3,971,883
+Taiyuan, Shanxi, China;37.86944,112.56028;3,426,519
+Nanning, Guangxi, China;22.81667,108.31667;803,788
+Salvador, Bahia, Brazil;-12.97111,-38.51083;2,711,840
+Casablanca, Casablanca-Settat, Morocco;33.58831,-7.61138;3,144,909
+Douala, Littoral, Cameroon;4.04827,9.70428;1,338,082
+Xiamen, Fujian, China;24.47979,118.08187;3,531,347
+Lucknow, Uttar Pradesh, India;26.83928,80.92313;2,472,011
+Fuzhou, Fujian, China;26.06139,119.30611;1,179,720
+Changzhou, Jiangsu, China;31.77359,119.95401;949,018
+Kozhikode, Kerala, India;11.24802,75.7804;439,922
+Curitiba, Paraná, Brazil;-25.42778,-49.27306;1,718,421
+Wenzhou, Zhejiang, China;27.99942,120.66682;865,672
+Nanchang, Jiangxi, China;28.68396,115.85306;2,357,839
+Ibadan, Oyo, Nigeria;7.37756,3.90591;3,565,108
+Malappuram, Kerala, India;11.04199,76.08154;61,743
+Berlin, Berlin, Germany;52.52437,13.41053;3,426,354
+Tangshan, Hebei, China;39.63333,118.18333;3,372,102
+Faisalābad, Punjab, Pakistan (Faisalabad);31.41554,73.08969;2,506,595
+Antananarivo, Analamanga, Madagascar;-18.91368,47.53613;1,391,433
+Bekasi, West Java, Indonesia;-6.2349,106.9896;1,520,119
+Kumasi, Ashanti, Ghana;6.68848,-1.62443;1,468,609
+Kampala, Central Region, Uganda;0.31628,32.58219;1,353,189
+Busan, Busan, South Korea;35.10278,129.04028;3,678,555
+Abuja, FCT, Nigeria;9.05785,7.49508;590,400
+Guiyang, Guizhou, China;26.58333,106.71667;1,171,633
+Asunción, Asunción, Paraguay (Asuncion);-25.30066,-57.63591;1,482,200
+Santo Domingo, Nacional, Dominican Republic;18.47186,-69.89232;2,201,941
+Campinas, São Paulo, Brazil;-22.90556,-47.06083;1,031,554
+Wuxi, Jiangsu, China;31.56887,120.28857;3,543,719
+Mashhad, Razavi Khorasan, Iran;36.31559,59.56796;2,307,177
+Puebla, Puebla, Mexico;19.03793,-98.20346;1,590,256
+Dakar, Dakar, Senegal;14.6937,-17.44406;2,476,400
+Trichūr, Kerala, India (Thrissur);10.51667,76.21667;325,110
+Cochin, Kerala, India (Kochi);9.93988,76.26022;604,696
+Kuwait City, Al Asimah, Kuwait;29.36972,47.97833;60,064
+Durban, KwaZulu-Natal, South Africa;-29.8579,31.0292;3,120,282
+Port Harcourt, Rivers, Nigeria;4.77742,7.0134;1,148,665
+Lanzhou, Gansu, China;36.05701,103.83987;2,628,426
+Kanpur, Uttar Pradesh, India;26.46523,80.34975;2,823,249
+Athens, Attica, Greece;37.97945,23.71622;664,046
+Milan, Lombardy, Italy;45.46427,9.18951;1,236,837
+Indore, Madhya Pradesh, India;22.71792,75.8333;1,837,041
+Pyongyang, Pyongyang, North Korea;39.03385,125.75432;3,222,000
+Sanaa, Sanaa, Yemen;15.35472,44.20667;1,937,451
+Guayaquil, Guayas, Ecuador;-2.20584,-79.90795;1,952,029
+İzmir, İzmir, Turkey;38.41273,27.13838;2,500,603
+Kyiv, Kyiv City, Ukraine (Kiev);50.45466,30.5238;2,797,553
+Guatemala City, Guatemala, Guatemala;14.64072,-90.51327;994,938
+Surabaya, East Java, Indonesia;-7.24917,112.75083;2,374,658
+Lisbon, Lisbon, Portugal;38.71667,-9.13333;517,802
+Caracas, Capital, Venezuela;10.48801,-66.87919;3,000,000
+Zhongshan, Guangdong, China;21.31992,110.5723;3,121,275
+Nagpur, Maharashtra, India;21.14631,79.08491;2,228,018
+Shizuoka, Shizuoka, Japan;34.98333,138.38333;701,561
+Dubai, Dubai, United Arab Emirates;25.0657,55.17128;1,137,347
+Ouagadougou, Centre, Burkina Faso;12.36566,-1.53388;1,086,505
+Lusaka, Lusaka, Zambia;-15.40669,28.28713;1,267,440
+Coimbatore, Tamil Nadu, India;11.00555,76.96612;959,823
+Port-au-Prince, Ouest, Haiti;18.54349,-72.33881;1,234,742
+Depok, West Java, Indonesia;-6.4,106.81861;1,198,129
+Handan, Hebei, China;36.60056,114.46778;1,358,318
+Incheon, Incheon, South Korea;37.45646,126.70515;2,628,000
+Cali, Valle del Cauca, Colombia;3.43722,-76.5225;2,392,877
+Algiers, Algiers, Algeria;36.73225,3.08746;1,977,663
+Huai'an, Jiangsu, China (Huaiyin);33.58861,119.01917;555,230
+Manchester, England, United Kingdom;53.48095,-2.23743;395,515
+Goiânia, Goiás, Brazil (goiania);-16.67861,-49.25389;1,171,195
+Weifang, Shandong, China;36.71,119.10194;394,732
+Taipei, Taiwan, Taiwan (taibei);25.04776,121.53185;7,871,900
+Bamako, Bamako, Mali;12.65,-8;1,297,281
+Thiruvananthapuram, Kerala, India;8.4855,76.94924;784,153
+Zibo, Shandong, China;36.79056,118.06333;3,129,228
+Chicago, Illinois, United States;41.85003,-87.65005;2,720,546
+Sapporo, Hokkaido, Japan;43.06667,141.35;1,883,027
+Pretoria, Gauteng, South Africa;-25.74486,28.18783;1,619,438
+Mbuji-Mayi, Kasaï-Oriental, Democratic Republic of the Congo;-6.13603,23.58979;874,761
+Shaoxing, Zhejiang, China;30.00237,120.57864;421,283
+Birmingham, England, United Kingdom;52.48142,-1.89983;984,333
+Yantai, Shandong, China;37.47649,121.44081;719,332
+Bandung, West Java, Indonesia;-6.92222,107.60694;1,699,719
+Vancouver, British Columbia, Canada;49.24966,-123.11934;600,000
+Huizhou, Guangdong, China;23.11147,114.41523;289,201
+Lubumbashi, Haut-Katanga, Democratic Republic of the Congo;-11.66089,27.47938;1,373,770
+Accra, Greater Accra, Ghana;5.55602,-0.1969;1,963,264
+Tashkent, Toshkent Shahri, Uzbekistan;41.26465,69.21627;1,978,028
+Toluca, México, Mexico (Toluca de Lerdo);19.28786,-99.65324;505,881
+Patna, Bihar, India;25.59408,85.13563;1,599,920
+Brazzaville, Brazzaville, Republic of the Congo;-4.26613,15.28318;1,284,609
+Luoyang, Henan, China;34.68361,112.45361;1,390,581
+Bhopal, Madhya Pradesh, India;23.25469,77.40289;1,599,914
+San Juan, San Juan, Puerto Rico;18.46633,-66.10572;418,140
+Damascus, Dimashq, Syria;33.5102,36.29128;1,569,394
+Brisbane, Queensland, Australia;-27.46794,153.02809;2,189,878
+Beirut, Beyrouth, Lebanon;33.89332,35.50157;1,916,100
+Tunis, Tūnis, Tunisia;36.81897,10.16579;693,210
+Tangerang, Banten, Indonesia;-6.17806,106.63;1,372,124
+Mogadishu, Banaadir, Somalia;2.03711,45.34375;2,587,183
+Baku, Baki, Azerbaijan;40.37767,49.89201;1,116,513
+Medan, North Sumatra, Indonesia;3.58333,98.66667;1,750,971
+Belém, Pará, Brazil (belem);-1.45583,-48.50444;1,407,737
+Nantong, Jiangsu, China;32.03028,120.87472;666,251
+Sendai, Miyagi, Japan;38.26667,140.86667;1,063,103
+Houston, Texas, United States;29.76328,-95.36327;2,296,224
+Manaus, Amazonas, Brazil;-3.10194,-60.025;1,598,210
+Barranquilla, Atlántico, Colombia;10.96854,-74.78132;1,380,425
+Maracaibo, Zulia, Venezuela;10.66663,-71.61245;2,225,000
+Gujrānwāla, Punjab, Pakistan (Gujranwala);32.15567,74.18705;1,384,471
+Rawalpindi, Punjab, Pakistan;33.6007,73.0679;1,743,101
+Peshawar, Khyber Pakhtunkhwa, Pakistan;34.008,71.57849;1,218,773
+Taoyuan City, Taiwan, Taiwan;24.99368,121.29696;402,014
+Agra, Uttar Pradesh, India;27.18333,78.01667;1,430,055
+Hohhot, Inner Mongolia, China;40.81056,111.65222;774,477
+Baotou, Inner Mongolia, China;40.65222,109.82222;1,301,768
+Vadodara, Gujarat, India;22.29941,73.20812;1,409,476
+Kannur, Kerala, India;11.86752,75.35763;62,836
+Liuzhou, Guangxi, China;24.31258,109.38916;0
+Visakhapatnam, Andhra Pradesh, India;17.68009,83.20161;1,063,178
+Tongshan, Jiangsu, China (Xuzhou);34.18045,117.15707;1,199,193
+Daegu, Daegu, South Korea;35.87028,128.59111;2,566,540
+Naples, Campania, Italy;40.85216,14.26811;959,470
+Amman, Amman, Jordan;31.95522,35.94503;1,275,857
+Tijuana, Baja California, Mexico;32.5027,-117.00371;1,376,457
+Isfahan, Isfahan, Iran (Esfahan);32.65246,51.67462;1,547,164
+Phnom Penh, Phnom Penh, Cambodia;11.56245,104.91601;1,573,544
+Havana, La Habana, Cuba;23.13302,-82.38304;2,163,824
+Nashik, Maharashtra, India;19.99727,73.79096;1,289,497
+Vitória, Espírito Santo, Brazil (Vitoria);-20.31944,-40.33778;312,656
+Vijayawada, Andhra Pradesh, India;16.50745,80.6466;874,587
+Brussels, Brussels Capital, Belgium;50.85045,4.34878;1,019,022
+Mecca, Makkah, Saudi Arabia;21.42664,39.82563;1,323,624
+Hiroshima, Hiroshima, Japan;34.4,132.45;1,143,841
+Perth, Western Australia, Australia;-31.95224,115.8614;1,896,548
+Multān, Punjab, Pakistan (multan);30.19679,71.47824;1,437,230
+Yangzhou, Jiangsu, China;32.39722,119.43583;539,715
+Minsk, Minsk City, Belarus;53.9,27.56667;1,742,124
+Bursa, Bursa, Turkey;40.19559,29.06013;1,412,701
+Baoding, Hebei, China;38.85111,115.49028;995,652
+Aleppo, Aleppo, Syria;36.20124,37.16117;1,602,264
+Putian, Fujian, China;25.43944,119.01028;376,558
+Taizhou, Jiangsu, China;32.49069,119.90812;612,356
+Conakry, Conakry, Guinea;9.53795,-13.67729;1,767,200
+Linyi, Shandong, China;35.06306,118.34278;270,669
+Wuhu, Anhui, China;31.33728,118.37351;507,524
+Vienna, Vienna, Austria;48.20849,16.37208;1,691,468
+Kollam, Kerala, India;8.88113,76.58469;394,163
+Valencia, Carabobo, Venezuela;10.16202,-68.00765;1,385,083
+Rājkot, Gujarat, India (Rajkot);22.29161,70.79322;1,177,362
+Haikou, Hainan, China;20.04583,110.34167;615,835
+Almaty, Almaty Qalasy, Kazakhstan;43.25667,76.92861;2,000,900
+Santos, São Paulo, Brazil (Baixada Santista);-23.96083,-46.33361;411,403
+Yancheng, Jiangsu, China;33.3575,120.1573;628,441
+Daqing, Heilongjiang, China;46.58333,125;203,488
+Rabat, Rabat-Salé-Kénitra, Morocco;34.01325,-6.83255;1,655,753
+Leeds, England, United Kingdom;53.79648,-1.54785;455,123
+Semarang, Central Java, Indonesia;-6.99306,110.42083;1,288,084
+Quito, Pichincha, Ecuador;-0.22985,-78.52495;1,399,814
+Panamá, Panamá, Panama (Panama City);8.9936,-79.51973;408,168
+Hyderabad, Sindh, Pakistan;25.39242,68.37366;1,386,330
+Ludhiāna, Punjab, India (Ludhiana);30.91204,75.85379;1,545,368
+La Paz, La Paz, Bolivia;-16.5,-68.15;812,799
+Xinpu, Jiangsu, China (Lianyungang);34.59972,119.15944;392,444
+Lomé, Maritime, Togo (Lome);6.12874,1.22154;749,700
+Davao, Davao, Philippines (Davao City);7.07306,125.61278;1,212,504
+León de los Aldama, Guanajuato, Mexico (Leon de los Aldamas);21.12908,-101.67374;1,114,626
+Zhuhai, Guangdong, China;22.27694,113.56778;501,199
+Turin, Piedmont, Italy;45.07049,7.68682;870,456
+Bucharest, Bucureşti, Romania;44.43225,26.10626;1,877,155
+Adana, Adana, Turkey;37.00167,35.32889;1,248,988
+Warsaw, Mazovia, Poland;52.22977,21.01178;1,702,139
+Hamburg, Hamburg, Germany;53.57532,10.01534;1,739,117
+Datong, Shanxi, China;40.09361,113.29139;1,052,678
+Benin City, Edo, Nigeria;6.33815,5.62575;1,125,058
+Budapest, Budapest, Hungary;47.49801,19.03991;1,741,041
+Madurai, Tamil Nadu, India;9.91769,78.11898;909,908
+Montevideo, Montevideo, Uruguay;-34.90328,-56.18816;1,270,737
+Quanzhou, Fujian, China;24.91389,118.58583;184,143
+Palembang, South Sumatra, Indonesia;-2.91673,104.7458;1,441,500
+Santa Cruz de la Sierra, Santa Cruz, Bolivia;-17.78629,-63.18117;1,364,389
+Matola, Maputo, Mozambique;-25.96222,32.45889;675,422
+Gaziantep, Gaziantep, Turkey;37.05944,37.3825;1,065,975
+Sharjah, Ash Shāriqah, United Arab Emirates;25.33737,55.41206;543,733
+Phoenix, Arizona, United States;33.44838,-112.07404;1,563,025
+Lyon, Auvergne-Rhône-Alpes, France;45.74846,4.84671;472,317
+Meerut, Uttar Pradesh, India;28.98002,77.70636;1,223,184
+Jiangmen, Guangdong, China;22.58333,113.08333;532,419
+Cần Thơ, Cần Thơ, Vietnam (Can Tho);10.03711,105.78825;259,598
+Raipur, Chhattisgarh, India;21.23333,81.63333;679,995
+Varanasi, Uttar Pradesh, India;25.31668,83.01041;1,164,404
+Xiangyang, Hubei, China;32.0422,112.14479;462,956
+Mosul, Nineveh, Iraq;36.335,43.11889;1,739,800
+Glasgow, Scotland, United Kingdom;55.86515,-4.25763;591,620
+Novosibirsk, Novosibirsk, Russia;55.0415,82.9346;1,419,007
+Shiraz, Fars, Iran;29.61031,52.53113;1,249,942
+La Laguna y Monte del Castillo, Veracruz, Mexico;18.98334,-96.07806;1,920
+Xushan, Zhejiang, China (Cixi);30.1764,121.2457;0
+Stockholm, Stockholm, Sweden;59.33258,18.0649;1,515,017
+Anshan, Liaoning, China;41.12361,122.99;1,199,275
+Auckland, Auckland, New Zealand;-36.84853,174.76349;417,910
+Jamshedpur, Jharkhand, India;22.80278,86.18545;616,338
+Tabriz, East Azerbaijan, Iran;38.08,46.2919;1,424,641
+Yinchuan, Ningsia Hui Autonomous Region, China;38.46806,106.27306;475,101
+Jilin, Jilin, China;43.85083,126.56028;1,881,977
+Srinagar, Jammu and Kashmir, India;34.08565,74.80555;975,857
+Ulan Bator, Ulaanbaatar, Mongolia (Ulaanbaatar);47.90771,106.88324;844,818
+Marseille, Provence-Alpes-Côte d'Azur, France;43.29695,5.38107;794,811
+Makassar, South Sulawesi, Indonesia;-5.14861,119.43194;1,321,717
+Yichang, Hubei, China;30.71444,111.28472;476,725
+Aurangabad, Maharashtra, India;19.87757,75.34226;1,016,441
+Muscat, Muscat, Oman;23.58413,58.40778;797,000
+Qinhuangdao, Hebei, China;39.93167,119.58833;759,718
+Philadelphia, Pennsylvania, United States;39.95233,-75.16379;1,567,442
+Córdoba, Cordoba, Argentina (Cordoba);-31.4135,-64.18105;1,428,214
+Qiqihar, Heilongjiang, China (Qiqihaer);47.34088,123.96045;882,364
+Xining, Qinghai, China;36.62554,101.75739;767,531
+Karaj, Alborz, Iran;35.83266,50.99155;1,448,075
+San Antonio, Texas, United States;29.42412,-98.49363;1,469,845
+Calgary, Alberta, Canada;51.05011,-114.08529;1,019,942
+Hengyang, Hunan, China;26.88946,112.61888;759,602
+Daejeon, Daejeon, South Korea (Daejon);36.32139,127.41972;1,475,221
+Monrovia, Montserrado, Liberia;6.30054,-10.7969;939,524
+Tiruppur, Tamil Nadu, India;11.11541,77.35456;397,521
+Rosario, Santa Fe, Argentina;-32.94682,-60.63932;1,173,533
+Munich, Bavaria, Germany;48.13743,11.57549;1,260,391
+Kaohsiung, Takao, Taiwan (Gaoxiong);22.61626,120.31333;1,519,711
+Harare, Harare, Zimbabwe;-17.82772,31.05337;1,542,813
+Juárez, Chihuahua, Mexico (Ciudad Juarez);31.72024,-106.46084;1,512,354
+Anyang, Henan, China;36.096,114.38278;781,129
+Kananga, Kasaï-Central, Democratic Republic of the Congo;-5.89624,22.41659;463,546
+Gwangju, Gwangju, South Korea;35.15472,126.91556;1,416,938
+Medina, Al Madīnah al Munawwarah, Saudi Arabia;24.46861,39.61417;1,300,000
+Yekaterinburg, Sverdlovsk, Russia;56.8519,60.6122;1,349,772
+Abu Dhabi, Abu Dhabi, United Arab Emirates;24.46667,54.36667;603,492
+Jodhpur, Rajasthan, India;26.26841,73.00594;921,476
+Edmonton, Alberta, Canada;53.55014,-113.46871;712,391
+Natal, Rio Grande do Norte, Brazil;-5.795,-35.20944;763,043
+Tegucigalpa, Francisco Morazán, Honduras;14.0818,-87.20681;850,848
+Onitsha, Anambra, Nigeria;6.14978,6.78569;561,066
+Ranchi, Jharkhand, India;23.34316,85.3094;846,454
+Kathmandu, Central Region, Nepal;27.70169,85.3206;1,442,271
+Jabalpur, Madhya Pradesh, India;23.16697,79.95006;1,030,168
+Mandalay, Mandalay, Myanmar;21.97473,96.08359;1,208,099
+Zhangjiakou, Hebei, China;40.81,114.87944;692,602
+Huainan, Anhui, China;32.62639,116.99694;1,027,655
+Āsansol, West Bengal, India (Asansol);23.68333,86.98333;504,271
+Chaozhou, Guangdong, China;23.65396,116.62262;424,787
+Kota, Rajasthan, India;25.18254,75.83907;763,088
+San Diego, California, United States;32.71533,-117.15726;1,394,928
+Kharkiv, Kharkiv, Ukraine;49.98081,36.25272;1,430,885
+San José, San José, Costa Rica (San Jose);9.93333,-84.08333;335,007
+Chon Buri, Chon Buri, Thailand;13.3622,100.98345;219,164
+Allahābād, Uttar Pradesh, India (Allahabad);25.44478,81.84322;1,073,438
+Gwalior, Madhya Pradesh, India;26.22983,78.17337;882,458
+Ottawa, Ontario, Canada;45.41117,-75.69812;812,129
+Zürich, Zurich, Switzerland (Zurich);47.36667,8.55;341,730
+Belgrade, Central Serbia, Serbia;44.80401,20.46513;1,273,651
+Amritsar, Punjab, India;31.62234,74.87534;1,092,450
+João Pessoa, Paraíba, Brazil (Joao Pessoa);-7.115,-34.86306;650,883
+Yiwu, Zhejiang, China;29.31506,120.07676;89,629
+Basrah, Basra, Iraq;30.50852,47.7804;2,600,000
+Nouakchott, Mauritania;18.08581,-15.9785;661,400
+Santiago de Querétaro, Querétaro, Mexico (Queretaro);20.58806,-100.38806;626,495
+Homs, Homs, Syria;34.72682,36.72339;775,404
+Copenhagen, Capital Region, Denmark;55.67594,12.56553;1,153,615
+Konya, Konya, Turkey;37.87135,32.48464;875,530
+Bucaramanga, Santander, Colombia;7.12539,-73.1198;571,820
+Dhanbād, Jharkhand, India (Dhanbad);23.80199,86.44324;219,636
+Weihai, Shandong, China;37.50914,122.11356;152,595
+Dallas, Texas, United States;32.78306,-96.80667;1,300,092
+Zhangye, Gansu, China (Ganzhou);38.93417,100.45167;96,228
+Adelaide, South Australia, Australia;-34.92866,138.59863;1,225,235
+Haiphong, Hải Phòng, Vietnam (Hai Phong);20.86481,106.68345;602,695
+Mombasa, Mombasa, Kenya;-4.05466,39.66359;799,668
+Taichung, Taiwan, Taiwan (Taizhong);24.1469,120.6839;1,040,725
+Maceió, Alagoas, Brazil (Maceio);-9.66583,-35.73528;954,991
+Cochabamba, Cochabamba, Bolivia;-17.3895,-66.1568;900,414
+Niamey, Niamey, Niger;13.51366,2.1098;774,235
+Samut Prakan, Samut Prakan, Thailand;13.59934,100.59675;388,920
+Joinville, Santa Catarina, Brazil;-26.30444,-48.84556;461,304
+Jiaxing, Zhejiang, China;30.7522,120.75;466,101
+Kaifeng, Henan, China;34.7986,114.30742;900,000
+Helsinki, Uusimaa, Finland;60.16952,24.93545;558,457
+Porto, Porto, Portugal;41.14961,-8.61099;249,633
+Zhanjiang, Guangdong, China;21.28145,110.34271;637,790
+Zunyi, Guizhou, China;27.68667,106.90722;466,292
+Rizhao, Shandong, China;35.4275,119.45528;246,387
+Kisangani, Tshopo, Democratic Republic of the Congo;0.51528,25.19099;539,158
+Prague, Praha, Czechia;50.08804,14.42076;1,165,581
+Shengli, Shandong, China (Dongying);37.46271,118.49165;306,450
+Qom, Qom, Iran;34.6401,50.8764;900,000
+Nanchong, Sichuan, China;30.79508,106.08473;7,150,000
+Antalya, Antalya, Turkey;36.90812,30.69556;758,188
+Bareilly, Uttar Pradesh, India;28.36678,79.43167;745,435
+Sofia, Sofia-Capital, Bulgaria;42.69751,23.32415;1,152,556
+Shiyan, Hubei, China;32.6475,110.77806;3,460,000
+Kazan, Tatarstan, Russia;55.78874,49.12214;1,104,738
+Dammam, Eastern Province, Saudi Arabia (Ad-Dammam);26.43442,50.10326;768,602
+Port Elizabeth, Eastern Cape, South Africa;-33.96109,25.61494;967,677
+Ahvaz, Khuzestan, Iran;31.31901,48.6842;841,145
+Lu’an, Anhui, China (Liuanchow);31.73561,116.51688;0
+Florianópolis, Santa Catarina, Brazil (Florianopolis);-27.59667,-48.54917;412,724
+Nizhniy Novgorod, Nizjnij Novgorod, Russia;56.32867,44.00205;1,284,164
+Pointe-Noire, Pointe-Noire, Republic of the Congo;-4.77609,11.86352;659,084
+Yingkou, Liaoning, China;40.66482,122.22833;591,159
+Fès, Fès-Meknès, Morocco (Fes);34.03313,-5.00028;964,891
+Alīgarh, Uttar Pradesh, India (Aligarh);27.88145,78.07464;753,207
+Guankou, Hunan, China (Liuyang);28.15861,113.62709;1,380,000
+Dublin, Leinster, Ireland;53.33306,-6.24889;1,024,027
+Maoming, Guangdong, China;21.65,110.9;0
+Tangier, Tanger-Tetouan-Al Hoceima, Morocco (Tanger);35.76727,-5.79975;688,356
+Chengtangcun, Shandong, China (Tengzhou);35.08357,117.19071;105,456
+Freetown, Western Area, Sierra Leone;8.48714,-13.2356;802,639
+San Luis Potosí, San Luis Potosí, Mexico (San Luis Potosi);22.14982,-100.97916;677,704
+Mysore, Karnataka, India;12.29791,76.63925;868,313
+Chelyabinsk, Chelyabinsk, Russia;55.15402,61.42915;1,062,919
+Morādābād, Uttar Pradesh, India (Moradabad);28.83893,78.77684;721,139
+Barquisimeto, Lara, Venezuela;10.0647,-69.35703;809,490
+Suzhou, Jiangsu, China;31.30408,120.59538;5,345,961
+Maracay, Aragua, Venezuela;10.23535,-67.59113;1,754,256
+Astana, Astana Qalasy, Kazakhstan;51.1801,71.44598;345,604
+Zhuzhou, Hunan, China;27.83333,113.15;709,358
+Uyo, Akwa Ibom, Nigeria;5.05127,7.9335;436,606
+Guozhen, Shaanxi, China (Baoji);34.36591,107.35904;85,415
+Jieyang, Guangdong, China;23.5418,116.36581;1,001,985
+Chifeng, Inner Mongolia, China;42.26833,118.96361;346,654
+Bhubaneshwar, Odisha, India (Bhubaneswar);20.27241,85.83385;762,243
+Puning, Guangdong, China;23.31072,116.16869;118,023
+Mendoza, Mendoza, Argentina;-32.89084,-68.82717;876,884
+Bogor, West Java, Indonesia;-6.59444,106.78917;800,000
+Chiang Mai, Chiang Mai, Thailand;18.79038,98.98468;200,952
+Mwanza, Mwanza, Tanzania;-2.51667,32.9;436,801
+Tiruchirappalli, Tamil Nadu, India;10.8155,78.69651;775,484
+Omsk, Omsk, Russia;54.99244,73.36859;1,129,281
+Mérida, Yucatán, Mexico (Merida);20.97537,-89.61696;717,175
+Benxi, Liaoning, China;41.28861,123.765;987,717
+Huaibei, Anhui, China;33.97444,116.79167;903,039
+Lilongwe, Central Region, Malawi;-13.96692,33.78725;646,750
+Jinhua, Zhejiang, China;29.10678,119.64421;142,206
+Kigali, Kigali, Rwanda;-1.94995,30.05885;745,261
+Tripoli, Tripoli, Libya;32.87519,13.18746;1,150,989
+Chandigarh, Chandigarh, India;30.73629,76.7884;960,787
+Jinzhou, Liaoning, China;41.10778,121.14167;604,269
+Chittagong, Chittagong, Bangladesh (Islamabad);22.3384,91.83168;3,920,222
+Samara, Samara, Russia;53.20007,50.15;1,134,730
+Amsterdam, North Holland, Netherlands;52.37403,4.88969;741,636
+Da Nang, Đà Nẵng, Vietnam;16.06778,108.22083;752,493
+Haifa, Haifa, Israel;32.81841,34.9885;267,300
+Guilin, Guangxi, China;25.28194,110.28639;649,352
+Krasnoyarsk, Krasnoyarskiy, Russia;56.01839,92.86717;927,200
+Mexicali, Baja California, Mexico;32.62781,-115.45446;597,099
+Ufa, Bashkortostan, Russia;54.74306,55.96779;1,033,338
+Rostov-na-Donu, Rostov, Russia (Rostov-on-Don);47.23135,39.72328;1,074,482
+Guwahati, Assam, India;26.1844,91.7458;899,094
+Kaduna, Kaduna, Nigeria;10.52641,7.43879;1,582,102
+Bukavu, South Kivu, Democratic Republic of the Congo;-2.49077,28.84281;225,389
+Liupanshui, Guizhou, China;26.59444,104.83333;251,900
+Quetta, Balochistān, Pakistan;30.18414,67.00141;733,675
+Köln, North Rhine-Westphalia, Germany (Cologne);50.93333,6.95;963,395
+Aguascalientes, Aguascalientes, Mexico;21.88234,-102.28259;658,179
+Binzhou, Shandong, China;37.36667,118.01667;115,893
+Salem, Tamil Nadu, India;11.65376,78.15538;778,396
+Abomey-Calavi, Atlantique, Benin;6.44852,2.35566;385,755
+Maputo, Maputo City, Mozambique;-25.96553,32.58322;1,191,613
+Bandar Lampung, Lampung, Indonesia;-5.42917,105.26111;800,348
+Aba, Abia, Nigeria;5.10658,7.36667;897,560
+Pizhou, Jiangsu, China;34.31139,117.95028;82,641
+Nnewi, Anambra, Nigeria;6.01962,6.91729;193,987
+Tasikmalaya, West Java, Indonesia;-7.3274,108.2207;271,143
+San Salvador, San Salvador, El Salvador;13.68935,-89.18718;525,990
+Zaozhuang, Shandong, China;34.86472,117.55417;183,665
+Xinxiang, Henan, China;35.19033,113.80151;743,601
+Luohe, Henan, China;33.56394,114.04272;417,356
+Sahāranpur, Uttar Pradesh, India (Saharanpur);29.9679,77.54522;484,873
+Shymkent, Ongtüstik Qazaqstan, Kazakhstan (Shimkent);42.3,69.6;414,032
+Cuernavaca, Morelos, Mexico;18.9261,-99.23075;343,769
+Yerevan, Yerevan, Armenia;40.18111,44.51361;1,093,485
+Goyang-si, Gyeonggi-do, South Korea;37.65639,126.835;1,073,069
+Tbilisi, T'bilisi, Georgia;41.69411,44.83368;1,049,498
+Chihuahua, Chihuahua, Mexico;28.63528,-106.08889;809,232
+Perm, Perm, Russia;58.01046,56.25017;982,419
+Bujumbura, Bujumbura Mairie, Burundi;-3.3822,29.3644;331,700
+Jalandhar, Punjab, India;31.32556,75.57917;785,178
+Managua, Managua, Nicaragua;12.13282,-86.2504;973,087
+Voronezh, Voronezj, Russia;51.67204,39.1843;848,752
+Cartagena, Bolívar, Colombia;10.39972,-75.51444;952,024
+Wenling, Zhejiang, China;28.37524,121.38416;67,433
+Lille, Hauts-de-France, France;50.63297,3.05858;228,328
+Fuyang, Anhui, China;32.9,115.81667;170,023
+Bishkek, Bishkek, Kyrgyzstan;42.87,74.59;900,000
+Diyarbakır, Diyarbakır, Turkey (Diyarbakir);37.91363,40.21721;644,763
+Bazhou, Sichuan, China (Bazhong);31.8557,106.772;0
+Shiliguri, West Bengal, India (siliguri);26.71004,88.42851;515,574
+Oslo, Oslo, Norway;59.91273,10.74609;580,000
+Shangrao, Jiangxi, China;28.45179,117.94287;318,769
+Changwon, Gyeongsangnam-do, South Korea;35.22806,128.68111;550,000
+Ma’anshan, Anhui, China (Ma'anshan);31.68579,118.51008;0
+Zhaoqing, Guangdong, China;23.05116,112.45972;361,969
+Antwerpen, Flanders, Belgium;51.21989,4.40346;459,805
+Kermanshah, Kermānshāh, Iran;34.31417,47.065;621,100
+Biên Hòa, Đồng Nai, Vietnam (Bien Hoa);10.94469,106.82432;407,208
+Johor Bahru, Johor, Malaysia;1.4655,103.7578;802,489
+Solāpur, Maharashtra, India (Solapur);17.67152,75.91044;997,281
+Samarinda, East Kalimantan, Indonesia;-0.49167,117.14583;355,160
+Toulouse, Occitanie, France;43.60426,1.44367;433,055
+Mersin, Mersin, Turkey;36.81196,34.63886;537,842
+Hargeysa, Woqooyi Galbeed, Somalia;9.56,44.065;477,876
+Teresina, Piauí, Brazil;-5.08917,-42.80194;744,512
+Kirkuk, Kirkuk, Iraq;35.46806,44.39222;601,433
+Aracaju, Sergipe, Brazil;-10.91111,-37.07167;490,175
+Bobo-Dioulasso, Hauts-Bassins, Burkina Faso;11.17715,-4.2979;360,106
+Leshan, Sichuan, China;29.56227,103.76386;154,477
+Yueyang, Hunan, China;29.37455,113.09481;1,200,000
+Dezhou, Shandong, China;37.45127,116.31046;379,555
+Marrakesh, Marrakesh-Safi, Morocco (Marrakech);31.63416,-7.99994;839,296
+Tampico, Tamaulipas, Mexico;22.24484,-97.8352;309,003
+Huzhou, Zhejiang, China;30.8703,120.0933;158,320
+Rotterdam, South Holland, Netherlands;51.9225,4.47917;598,199
+Aden, Aden, Yemen;12.77944,45.03667;550,602
+Austin, Texas, United States;30.26715,-97.74306;931,830
+San Jose, California, United States;37.33939,-121.89496;1,026,908
+Denpasar, Bali, Indonesia;-8.65,115.21667;834,881
+Odessa, Odessa, Ukraine (odesa);46.47747,30.73262;1,001,558
+Chenzhou, Hunan, China;25.8,113.03333;179,038
+Xuchang, Henan, China;34.03189,113.86299;1,265,536
+Volgograd, Volgograd, Russia;48.71939,44.50183;1,011,417
+Saltillo, Coahuila, Mexico;25.42321,-101.0053;621,250
+San Miguel de Tucumán, Tucuman, Argentina (San Miguel de Tucuman);-26.82414,-65.2226;781,023
+Asmara, Maekel, Eritrea;15.33805,38.93184;563,930
+Padang, West Sumatra, Indonesia;-0.94924,100.35427;840,352
+Cebu City, Central Visayas, Philippines;10.31672,123.89071;798,634
+Acapulco de Juárez, Guerrero, Mexico (Acapulco de Juarez);16.86336,-99.8901;652,136
+Valparaíso, Valparaíso, Chile (Valparaiso);-33.036,-71.62963;282,448
+Sekondi-Takoradi, Western, Ghana (Sekondi Takoradi);4.92678,-1.75773;138,872
+Ikorodu, Lagos, Nigeria;6.61526,3.5069;0
+Kayseri, Kayseri, Turkey;38.73222,35.48528;592,840
+Warangal, Telangana, India;18,79.58333;557,802
+Changshu City, Jiangsu, China;31.64615,120.74221;1,047,700
+Bordeaux, Nouvelle-Aquitaine, France;44.84044,-0.5805;231,844
+Songkhla, Songkhla, Thailand;7.19882,100.5951;84,264
+Qujing, Yunnan, China;25.48333,103.78333;146,015
+Mueang Nonthaburi, Nonthaburi, Thailand (Nonthaburi);13.86075,100.51477;291,555
+Krasnodar, Krasnodarskiy, Russia;45.04484,38.97603;649,851
+Ilorin, Kwara, Nigeria;8.49664,4.54214;814,192
+Cancún, Quintana Roo, Mexico (Cancun);21.17429,-86.84656;542,043
+Tshikapa, Kasai, Democratic Republic of the Congo;-6.41621,20.79995;267,462
+Nyala, Southern Darfur, Sudan;12.04888,24.88069;565,734
+Xintai, Shandong, China;35.90056,117.75194;222,459
+Blantyre, Southern Region, Malawi (Blantyre-Limbe);-15.78499,35.00854;584,877
+Morelia, Michoacán, Mexico;19.70078,-101.18443;592,797
+Dnipro, Dnipro, Ukraine;48.4593,35.03865;1,032,822
+Khulna, Khulna, Bangladesh;22.80979,89.56439;1,342,339
+Jerusalem, Jerusalem, Israel;31.76904,35.21633;801,000
+Cúcuta, Norte de Santander, Colombia (Cucuta);7.89391,-72.50782;721,398
+Nice, Provence-Alpes-Côte d'Azur, France;43.70313,7.26608;338,620
+Dehra Dūn, Uttarakhand, India (Dehradun);30.32443,78.03392;522,081
+Seongnam-si, Gyeonggi-do, South Korea;37.43861,127.13778;1,031,935
+Fort Worth, Texas, United States;32.72541,-97.32085;833,319
+Agadir, Souss-Massa, Morocco;30.42018,-9.59815;698,310
+Mudanjiang, Heilongjiang, China;44.58333,129.6;665,915
+Ḩamāh, Hama, Syria (Hamah);35.13179,36.75783;460,602
+Dushanbe, Dushanbe, Tajikistan;38.53575,68.77905;679,400
+Guiping, Guangxi, China;23.39336,110.07437;71,066
+Jiujiang, Jiangxi, China;29.70475,116.00206;258,807
+Southampton, England, United Kingdom;50.90395,-1.40428;246,201
+Laiwu, Shandong, China;36.19278,117.65694;124,108
+Arequipa, Arequipa, Peru;-16.39889,-71.535;841,130
+Ciudad Guayana, Bolívar, Venezuela;8.35122,-62.64102;746,535
+Zamboanga, Zamboanga Peninsula, Philippines (Zamboanga City);6.91028,122.07389;457,623
+Veracruz, Veracruz, Mexico;19.18095,-96.1429;568,313
+Jacksonville, Florida, United States;30.33218,-81.65565;868,031
+San Pedro Sula, Cortés, Honduras;15.50417,-88.025;489,466
+Pathum Thani, Pathum Thani, Thailand;14.01346,100.53049;24,547
+Rājshāhi, Rajshahi Division, Bangladesh (Rajshahi);24.374,88.60114;700,133
+Chengde, Hebei, China;40.9519,117.95883;449,325
+Mişrātah, Mişrātah, Libya (Misratah);32.37535,15.09254;386,120
+Guigang, Guangxi, China;23.09639,109.60917;76,430
+Jos, Plateau, Nigeria;9.92849,8.89212;816,824
+Reynosa, Tamaulipas, Mexico;26.08061,-98.28835;498,654
+Bengbu, Anhui, China;32.94083,117.36083;576,648
+Columbus, Ohio, United States;39.96118,-82.99879;850,106
+Villahermosa, Tabasco, Mexico;17.98689,-92.93028;362,401
+Yangjiang, Guangdong, China;21.85563,111.96272;399,735
+Charlotte, North Carolina, United States;35.22709,-80.84313;827,097
+Ulsan, Ulsan, South Korea;35.53722,129.31667;962,865
+Bangui, Bangui, Central African Republic;4.36122,18.55496;542,393
+Oran, Oran, Algeria;35.69906,-0.63588;645,984
+Owerri, Imo, Nigeria;5.48363,7.03325;215,038
+Campo Grande, Mato Grosso do Sul, Brazil;-20.44278,-54.64639;729,151
+Liverpool, England, United Kingdom;53.41058,-2.97794;864,122
+Antipolo, Calabarzon, Philippines;14.62578,121.12251;549,543
+Najaf, An Najaf, Iraq;32.02594,44.34625;482,576
+Zhangzhou, Fujian, China;24.51333,117.65556;589,831
+Bergamo, Lombardy, Italy;45.69601,9.66721;114,162
+Donetsk, Donetsk, Ukraine;48.023,37.80224;1,024,700
+Jingling, Hubei, China (Tianmen);30.65,113.1;224,871
+Warri, Delta, Nigeria;5.51737,5.75006;536,023
+Londrina, Paraná, Brazil;-23.31028,-51.16278;471,832
+Leiyang, Hunan, China;26.40238,112.85908;129,116
+Malang, East Java, Indonesia;-7.9797,112.6304;746,716
+La Plata, Buenos Aires, Argentina;-34.92145,-57.95453;694,167
+Concepción, Biobío, Chile (Concepcion);-36.82699,-73.04977;215,413
+Hengshui, Hebei, China;37.73222,115.70111;456,356
+Linfen, Shanxi, China;36.08889,111.51889;232,566
+Xinyuan, Xinjiang, China;43.42649,83.24959;300,000
+Sylhet, Sylhet, Bangladesh;24.89904,91.87198;237,000
+Dandong, Liaoning, China;40.12917,124.39472;631,973
+Indianapolis, Indiana, United States;39.76838,-86.15804;829,718
+Nampula, Nampula, Mozambique;-15.11646,39.2666;388,526
+Deyang, Sichuan, China;31.13019,104.38198;152,194
+Hermosillo, Sonora, Mexico;29.1026,-110.97732;595,811
+San Francisco, California, United States;37.77493,-122.41942;864,816
+Trujillo, La Libertad, Peru;-8.11599,-79.02998;747,450
+Ta‘izz, Ta‘izz, Yemen (Taiz);13.57952,44.02091;615,222
+Guntur, Andhra Pradesh, India;16.29974,80.45729;530,577
+Jiangyin, Jiangsu, China;31.91102,120.26302;107,918
+Bhiwandi, Maharashtra, India;19.30023,73.05881;707,035
+Lubango, Huíla, Angola;-14.91717,13.4925;102,541
+Liaoyang, Liaoning, China;41.27194,123.17306;687,890
+Bahawalpur, Punjab, Pakistan;29.39779,71.6752;552,607
+Changzhi, Shanxi, China;35.20889,111.73861;699,514
+Tyumen, Tyumenskaya, Russia;57.15222,65.52722;519,119
+Tuxtla, Chiapas, Mexico (Tuxtla Gutierrez);16.75973,-93.11308;481,128
+Ashgabat, Ahal, Turkmenistan;37.95,58.38333;727,700
+Erbil, Arbīl, Iraq;36.18333,44.01193;932,800
+Baishan, Jilin, China;41.93853,126.41965;183,880
+Xishan, Hunan, China (Liling);27.66667,113.5;98,162
+Tainan, Taiwan, Taiwan;22.99083,120.21333;771,235
+Puducherry, Puducherry, India;11.93381,79.82979;227,411
+Culiacán, Sinaloa, Mexico (Culiacan);24.79032,-107.38782;675,000
+Changde, Hunan, China;29.04638,111.6783;517,780
+Fuxin, Liaoning, China;42.01556,121.65889;689,050
+Palermo, Sicily, Italy;38.13205,13.33561;648,260
+Shangqiu, Henan, China;34.45,115.65;181,218
+Xingtai, Hebei, China;37.06306,114.49417;611,739
+Fīrozābād, Uttar Pradesh, India (Firozabad);27.15092,78.39781;306,409
+Libreville, Estuaire, Gabon;0.39241,9.45356;578,156
+Huangshi, Hubei, China;30.24706,115.04814;688,090
+Saratov, Saratov, Russia;51.54056,46.00861;863,725
+Benghazi, Banghāzī, Libya (Banghazi);32.11486,20.06859;650,629
+Valencia, Valencia, Spain;39.46975,-0.37739;814,208
+Luzhou, Sichuan, China;28.8903,105.42575;0
+Québec, Quebec, Canada (Quebec City);46.81228,-71.21454;528,595
+Yibin, Sichuan, China;28.76667,104.62383;242,111
+Bucheon-si, Gyeonggi-do, South Korea;37.49889,126.78306;850,731
+Ipoh, Perak, Malaysia;4.5841,101.0829;673,318
+Winnipeg, Manitoba, Canada;49.8844,-97.14704;632,063
+Bogra, Rajshahi Division, Bangladesh;24.85098,89.37108;210,000
+Cabinda, Cabinda, Angola;-5.55,12.2;66,020
+Umuahia, Abia, Nigeria;5.52491,7.49461;264,662
+Xinyang, Henan, China;32.12278,114.06556;1,590,668
+Xinghua, Jiangsu, China;32.93917,119.83417;105,918
+Newcastle upon Tyne, England, United Kingdom;54.97328,-1.61396;192,382
+Yangquan, Shanxi, China;37.8575,113.56333;413,394
+Thessaloníki, Central Macedonia, Greece (Thessaloniki);40.64361,22.93086;354,290
+Bologna, Emilia-Romagna, Italy;44.49381,11.33875;366,133
+Orūmīyeh, Āz̄ārbāyjān-e Gharbī, Iran (Orumiyeh);37.55274,45.07605;577,307
+Xiaogan, Hubei, China;30.92689,113.92221;160,437
+Heze, Shandong, China;35.23929,115.47358;254,602
+Maiduguri, Borno, Nigeria;11.84692,13.15712;1,112,449
+Korla, Xinjiang, China (Kuerle);41.76055,86.15231;179,465
+Niigata, Niigata, Japan;37.88637,139.00589;505,272
+Eskişehir, Eskişehir, Turkey (Eskisehir);39.77667,30.52056;514,869
+Cherthala, Kerala, India;9.68444,76.33558;45,827
+Quzhou, Zhejiang, China;28.95944,118.86861;82,216
+Zhuji, Zhejiang, China;29.71877,120.24233;110,721
+Sorocaba, São Paulo, Brazil;-23.50167,-47.45806;558,862
+Haicheng, Liaoning, China;40.85158,122.74754;191,651
+Enugu, Enugu, Nigeria;6.44132,7.49883;688,862
+Nottingham, England, United Kingdom;52.9536,-1.15047;729,977
+Tianshui, Gansu, China;34.57952,105.74238;3,500,000
+Huludao, Liaoning, China;40.75243,120.83552;0
+Xalapa de Enríquez, Veracruz, Mexico;19.53124,-96.91589;425,148
+Bīkaner, Rajasthan, India (Bikaner);28.01762,73.31495;576,015
+Frankfurt am Main, Hesse, Germany;50.11552,8.68417;650,000
+Huaihua, Hunan, China;27.56337,110.00404;127,322
+Nakhon Ratchasima, Nakhon Ratchasima, Thailand;14.97066,102.10196;208,781
+Vereeniging, Gauteng, South Africa;-26.67313,27.92615;474,681
+Liaocheng, Shandong, China;36.45596,115.97766;226,930
+Seattle, Washington, United States;47.60621,-122.33207;684,451
+Jiaozuo, Henan, China;35.23972,113.23306;517,540
+Bozhou, Anhui, China;33.87722,115.77028;174,140
+Nellore, Andhra Pradesh, India;14.44992,79.98697;404,158
+Hamilton, Ontario, Canada;43.25011,-79.84963;519,949
+Gebze, Kocaeli, Turkey;40.80276,29.43068;281,436
+Taixing, Jiangsu, China;32.16667,120.01361;79,655
+Cagayan de Oro, Northern Mindanao, Philippines (Cagayan de Oro City);8.48222,124.64722;445,103
+Kraków, Lesser Poland Voivodeship, Poland (Krakow);50.06143,19.93658;755,050
+Kunshan, Jiangsu, China;31.37762,120.95431;1,600,000
+Shaoguan, Guangdong, China;24.8,113.58333;628,749
+Gorakhpur, Haryana, India;29.44768,75.67206;1,324,570
+Dasmariñas, Calabarzon, Philippines (Dasmarinas);14.32944,120.93667;441,876
+Amrāvati, Maharashtra, India (Amravati);20.93333,77.75;603,837
+Jincheng, Shanxi, China;35.50222,112.83278;332,650
+Langfang, Hebei, China;39.50972,116.69472;720,119
+Ansan-si, Gyeonggi-do, South Korea;37.32361,126.82194;650,728
+Ar Rayyān, Baladīyat ar Rayyān, Qatar (ar-Rayyan);25.29194,51.42444;272,465
+As Sulaymānīyah, As Sulaymānīyah, Iraq (Sulaimaniya);35.56496,45.4329;723,170
+Cuttack, Odisha, India;20.46497,85.87927;580,000
+Denver, Colorado, United States;39.73915,-104.9847;682,545
+Meishan, Anhui, China;31.72913,115.91241;0
+Zhumadian, Henan, China;32.97944,114.02944;720,000
+Zigong, Sichuan, China;29.34162,104.77689;689,961
+Benguela, Benguela, Angola;-12.57626,13.40547;151,226
+Gaomi, Shandong, China;36.38333,119.75278;150,793
+Anqing, Anhui, China;30.51365,117.04723;358,661
+Qingyuan, Guangdong, China;23.7,113.03333;151,287
+Banjarmasin, South Kalimantan, Indonesia;-3.31987,114.59075;572,837
+Hanchuan, Hubei, China;30.65,113.76667;87,737
+Danyang, Fujian, China;26.35102,119.4803;1,990
+Muzaffarnagar, Uttar Pradesh, India;29.47091,77.70332;349,706
+Lokoja, Kogi, Nigeria;7.79688,6.74048;60,579
+Kumamoto, Kumamoto, Japan;32.80589,130.69181;680,423
+Kottayam, Kerala, India;9.58692,76.52132;59,437
+Belgaum, Karnataka, India;15.85212,74.50447;428,720
+Zarqa, Zarqa, Jordan;32.07275,36.08796;792,665
+Zaria, Kaduna, Nigeria;11.11128,7.7227;975,153
+Sheffield, England, United Kingdom;53.38297,-1.4659;685,368
+Zanzibar, Zanzibar Urban/West, Tanzania;-6.16394,39.19793;403,658
+Gaza, Gaza Strip, Palestinian Territory;31.50161,34.46672;410,000
+Zaragoza, Aragon, Spain;41.65606,-0.87734;674,317
+Linhai, Zhejiang, China;28.85535,121.1447;152,937
+Zaporizhia, Zaporizhia, Ukraine (Zaporizhzhya);47.82289,35.19031;796,217
+Mālegaon, Maharashtra, India (Malegaon);20.54966,74.53462;435,362
+São José dos Campos, São Paulo, Brazil (Sao jose dos Campos);-23.17944,-45.88694;613,764
+Osogbo, Osun, Nigeria (Oshogbo);7.77104,4.55698;156,694
+Tangdukou, Hunan, China (Shaoyang);26.96589,111.24138;0
+Kāyankulam, Kerala, India (Kayamkulam);9.18173,76.50093;64,183
+Jiamusi, Heilongjiang, China;46.79927,130.31633;549,549
+Mangalore, Karnataka, India;12.91723,74.85603;417,387
+Okayama, Okayama, Japan;34.65,133.93333;639,652
+Ribeirão Preto, São Paulo, Brazil (Ribeirao Preto);-21.1775,-47.81028;619,746
+Bunia, Ituri, Democratic Republic of the Congo;1.55941,30.25224;96,764
+Lviv, Lviv, Ukraine;49.83826,24.02324;717,803
+Rasht, Gīlān, Iran;37.27611,49.58862;594,590
+Anqiu, Shandong, China;36.43417,119.1925;105,665
+Tongliao, Inner Mongolia, China;43.6125,122.26528;261,110
+Cheongju-si, North Chungcheong, South Korea;36.63722,127.48972;634,596
+Sialkot, Punjab, Pakistan;32.49268,74.53134;477,396
+Maturín, Monagas, Venezuela (Maturin);9.74569,-63.18323;410,972
+East London, Eastern Cape, South Africa (Buffalo City);-33.01529,27.91162;478,676
+Dadukou, Sichuan, China (Panzhihua);26.5479,101.70539;461,513
+Yanji, Jilin, China;42.9075,129.50778;326,957
+Wusong, Anhui, China (Tongling);30.95,117.78333;312,588
+Wuzhou, Guangxi, China;23.48333,111.31667;265,846
+Oaxaca, Oaxaca, Mexico (Oaxaca de Juarez);17.06542,-96.72365;262,566
+Washington, D.C., Washington, D.C., United States;38.89511,-77.03637;601,723
+Sargodha, Punjab, Pakistan;32.08586,72.67418;542,603
+Bhavnagar, Gujarat, India;21.76287,72.15331;554,978
+Gold Coast, Queensland, Australia;-28.00029,153.43088;591,473
+Changji, Xinjiang, China (Yan'an Beilu);44.00782,87.30461;198,776
+Kitwe, Copperbelt, Zambia;-12.80243,28.21323;400,914
+Florence, Tuscany, Italy;43.77925,11.24626;349,296
+Jammu, Jammu and Kashmir, India;32.73569,74.86911;465,567
+Dazhou, Sichuan, China;31.21592,107.50092;130,749
+Tirupati, Andhra Pradesh, India;13.63551,79.41989;250,821
+Bacoor, Calabarzon, Philippines;14.45903,120.92903;356,974
+Malanje, Malanje, Angola;-9.54015,16.34096;87,046
+Dengzhou, Shandong, China;37.80822,120.75908;85,279
+The Hague, South Holland, Netherlands;52.07667,4.29861;474,292
+Longyan, Fujian, China;25.10722,117.0225;0
+Yuncheng, Shanxi, China;35.02306,110.99278;201,950
+Sevilla, Andalusia, Spain (Seville);37.38283,-5.97317;703,206
+Cotonou, Littoral, Benin;6.36536,2.41833;780,000
+Dongtai, Jiangsu, China;32.85231,120.30947;110,988
+Tol’yatti, Samara, Russia (Tolyatti);53.5303,49.3461;702,879
+Salta, Salta, Argentina;-24.7859,-65.41166;512,686
+Marka, Lower Shabeelle, Somalia (Merca);1.71594,44.77166;230,100
+Balikpapan, East Kalimantan, Indonesia;-1.26753,116.82887;433,866
+Yuyao, Zhejiang, China;30.05,121.14944;114,177
+Boston, Massachusetts, United States;42.35843,-71.05977;667,137
+Uberlândia, Minas Gerais, Brazil (Uberlandia);-18.91861,-48.27722;563,536
+Ta’if, Makkah, Saudi Arabia (Taif);21.27028,40.41583;530,848
+Yuxi, Yunnan, China;24.355,102.54222;103,829
+Vientiane, Vientiane Prefecture, Laos;17.96667,102.6;196,731
+Bristol, England, United Kingdom;51.45523,-2.59665;617,280
+Akure, Ondo, Nigeria;7.25256,5.19312;420,594
+Ibb, Ibb, Yemen;13.96667,44.18333;234,837
+Celaya, Guanajuato, Mexico;20.52353,-100.8157;305,901
+Cheonan, Chungcheongnam-do, South Korea;36.8065,127.1522;365,114
+Jundiaí, São Paulo, Brazil (Jundiai);-23.18639,-46.88417;321,589
+Gulbarga, Karnataka, India;17.33583,76.83757;483,615
+Huambo, Huambo, Angola;-12.77611,15.73917;226,145
+Padova, Veneto, Italy;45.40797,11.88586;203,725
+Durgapur, West Bengal, India;23.51583,87.30801;518,872
+Kurnool, Andhra Pradesh, India;15.82887,78.03602;460,184
+El Paso, Texas, United States;31.75872,-106.48693;681,124
+Nantes, Pays de la Loire, France;47.21725,-1.55336;277,269
+Buraydah, Al-Qassim, Saudi Arabia;26.32599,43.97497;391,336
+Zagreb, City of Zagreb, Croatia;45.81444,15.97798;698,966
+Zhangjiagang, Jiangsu, China;31.865,120.53889;66,039
+Pontianak, West Kalimantan, Indonesia;-0.03194,109.325;455,173
+Al ‘Amārah, Maysan, Iraq (Amara);31.83561,47.14483;323,302
+Liège, Wallonia, Belgium (Liege);50.63373,5.56749;182,597
+Chengxiang, Jiangsu, China (Taicang);31.44778,121.09389;0
+Nashville, Tennessee, United States;36.16589,-86.78444;530,852
+Genoa, Liguria, Italy;44.40478,8.94439;580,223
+Ezhou, Hubei, China;30.4,114.83333;193,652
+Santiago de los Caballeros, Santiago, Dominican Republic;19.4517,-70.69703;1,200,000
+Mar del Plata, Buenos Aires, Argentina;-38.00228,-57.55754;553,935
+Tamale, Northern, Ghana;9.40079,-0.8393;360,579
+Zhoukou, Henan, China;33.63333,114.63333;377,061
+Łódź, Łódź Voivodeship, Poland (Lodz);51.75,19.46667;768,755
+Goma, Nord Kivu, Democratic Republic of the Congo;-1.67409,29.22845;144,124
+Oklahoma City, Oklahoma, United States;35.46756,-97.51643;631,346
+Latakia, Latakia, Syria (Lattakia);35.53168,35.79011;340,181
+Las Vegas, Nevada, United States;36.17497,-115.13722;623,747
+Tabuk, Tabuk, Saudi Arabia;28.3998,36.57151;455,450
+Ankang, Shaanxi, China;32.68,109.01722;132,654
+General Santos, Soccsksargen, Philippines (General Santos City);6.11278,125.17167;679,588
+Renqiu, Hebei, China;38.69889,116.09361;98,569
+Detroit, Michigan, United States;42.33143,-83.04575;677,116
+Manama, Manama, Bahrain;26.22787,50.58565;147,074
+Loudi, Hunan, China;27.73444,111.99444;150,684
+Jeonju, Jeollabuk-do, South Korea;35.82194,127.14889;711,424
+Bijie, Guizhou, China;27.30193,105.28627;77,645
+Portland, Oregon, United States;45.52345,-122.67621;632,309
+Sokoto, Sokoto, Nigeria;13.06269,5.24322;563,861
+Qinzhou, Guangxi, China;21.97296,108.62612;100,996
+Macau, Macao (Macao);22.20056,113.54611;520,400
+Samsun, Samsun, Turkey;41.27976,36.3361;394,050
+Denizli, Denizli, Turkey;37.77417,29.0875;313,238
+Zhoushan, Zhejiang, China;29.98869,122.20488;84,380
+Busto Arsizio, Lombardy, Italy;45.61128,8.84914;79,519
+Tongxiang, Zhejiang, China;30.63287,120.56081;0
+Shima, Fujian, China (Longhai);24.44647,117.81216;68,375
+Puyang, Zhejiang, China;29.45679,119.88872;3,590,000
+Jhānsi, Uttar Pradesh, India (Jhansi);25.45887,78.57994;412,927
+Neijiang, Sichuan, China;29.58354,105.06216;546,854
+Izhevsk, Udmurtiya, Russia;56.84976,53.20448;631,038
+Memphis, Tennessee, United States;35.14953,-90.04898;655,770
+Jamnagar, Gujarat, India;22.47292,70.06673;492,056
+Erode, Tamil Nadu, India;11.3428,77.72741;147,270
+Doha, Baladīyat ad Dawḩah, Qatar;25.28545,51.53096;344,939
+Pachuca de Soto, Hidalgo, Mexico;20.11697,-98.73329;319,581
+Haimen, Guangdong, China;23.19346,116.61219;125,427
+Chongjin, Hamgyŏng-bukto, North Korea;41.79556,129.77583;327,000
+Chiclayo, Lambayeque, Peru;-6.77137,-79.84088;577,375
+Wuhai, Inner Mongolia, China;39.68442,106.81583;218,427
+Hegang, Heilongjiang, China;47.35118,130.30012;743,307
+Sanya, Hainan, China;18.24306,109.505;144,753
+Beersheba, Southern District, Israel (Be'er Sheva);31.25181,34.7913;186,600
+Victoria de Durango, Durango, Mexico (durango);24.02032,-104.65756;457,140
+Bokāro, Jharkhand, India (Bokaro Steel City);23.78707,85.95644;418,533
+Wrocław, Lower Silesia, Poland (Wroclaw);51.1,17.03333;634,893
+Irkutsk, Irkutsk, Russia;52.29778,104.29639;586,695
+Barnaul, Altai Krai, Russia;53.36056,83.76361;599,579
+Nay Pyi Taw, Nay Pyi Taw, Myanmar;19.745,96.12972;925,000
+Bulawayo, Bulawayo, Zimbabwe;-20.15,28.58333;699,385
+Miluo Chengguanzhen, Hunan, China;28.8107,113.06616;0
+Venice, Veneto, Italy (Venezia);45.43713,12.33265;51,298
+Jambi City, Jambi, Indonesia;-1.6,103.61667;420,323
+Sfax, Şafāqis, Tunisia (Safaqis);34.74056,10.76028;277,278
+Khabarovsk, Khabarovsk, Russia;48.48271,135.08379;579,000
+Herāt, Herat, Afghanistan (Herat);34.34817,62.19967;272,806
+Düsseldorf, North Rhine-Westphalia, Germany (Duesseldorf);51.22172,6.77616;573,057
+Belfast, Northern Ireland, United Kingdom;54.59682,-5.92541;274,770
+Nasiriyah, Dhi Qar, Iraq;31.05799,46.25726;400,249
+Stuttgart, Baden-Württemberg, Germany;48.78232,9.17702;589,793
+Verona, Veneto, Italy;45.4299,10.98444;219,103
+Raurkela, Odisha, India;22.22496,84.86414;536,450
+Al Jubayl, Eastern Province, Saudi Arabia (Jubayl);27.0174,49.62251;237,274
+Riga, Riga, Latvia;56.946,24.10589;742,572
+Bandar Abbas, Hormozgan, Iran;27.1865,56.2808;352,173
+Kolhāpur, Maharashtra, India (Kolhapur);16.69563,74.23167;516,142
+Bacolod City, Western Visayas, Philippines;10.66667,122.95;454,898
+Seregno, Lombardy, Italy;45.65002,9.20548;42,760
+Ulyanovsk, Ulyanovsk, Russia;54.32824,48.38657;640,680
+Uvira, South Kivu, Democratic Republic of the Congo;-3.39534,29.13779;170,391
+Al Ain, Abu Dhabi, United Arab Emirates (al-ain);24.19167,55.76056;408,733
+Bari, Apulia, Italy;41.11148,16.8554;277,387
+Ajmer, Rajasthan, India;26.4521,74.63867;517,911
+Kuching, Sarawak, Malaysia;1.55,110.33333;570,407
+Bissau, Bissau, Guinea-Bissau;11.86357,-15.59767;388,028
+Bauchi, Bauchi, Nigeria;10.31032,9.84388;316,149
+Genève, Geneva, Switzerland (Geneva);46.20222,6.14569;183,981
+Enshi, Hubei, China;30.3,109.48333;95,227
+Anshun, Guizhou, China;26.25,105.93333;351,936
+Colombo, Western, Sri Lanka;6.93194,79.84778;648,034
+Hanzhong, Shaanxi, China;33.07507,107.02214;145,986
+Ujjain, Madhya Pradesh, India;23.18239,75.77643;457,346
+Göteborg, Västra Götaland, Sweden (Gothenburg);57.70716,11.96679;572,799
+Jinzhong, Yunnan, China;26.37595,103.30639;0
+Patiāla, Punjab, India (Patiala);30.33625,76.3922;329,224
+Zahedan, Sistan and Baluchestan, Iran;29.4963,60.8629;551,980
+Bilāspur, Chhattisgarh, India (Bilaspur);22.08005,82.15543;282,705
+Louisville, Kentucky, United States;38.25424,-85.75941;243,639
+San Jose del Monte, Central Luzon, Philippines;14.81389,121.04528;357,828
+Kryvyi Rih, Dnipro, Ukraine;47.90966,33.38044;652,380
+Yaroslavl, Jaroslavl, Russia;57.62987,39.87368;606,730
+Brighton, England, United Kingdom;50.82838,-0.13947;139,001
+Feira de Santana, Bahia, Brazil;-12.26667,-38.96667;481,911
+Vladivostok, Primorskiy, Russia;43.10562,131.87353;587,022
+Comilla, Chittagong, Bangladesh;23.46186,91.18503;389,411
+Tlaxcala, Tlaxcala, Mexico;19.31905,-98.19982;84,670
+Siping, Jilin, China;43.16143,124.37785;555,609
+Sanhe, Ningsia Hui Autonomous Region, China;36.5641,105.639;0
+Calabar, Cross River, Nigeria;4.95893,8.32695;461,796
+Mathura, Uttar Pradesh, India;27.5035,77.67215;330,511
+Abakaliki, Ebonyi, Nigeria;6.32485,8.11368;134,102
+Xinmin, Liaoning, China;41.99083,122.82528;74,139
+Makhachkala, Dagestan, Russia;42.97638,47.50236;497,959
+Tomsk, Tomsk, Russia;56.49771,84.97437;485,519
+Jingjiang, Jiangsu, China;32.01417,120.2625;0
+Shishi, Fujian, China;24.74038,118.62906;0
+Fuqing, Fujian, China;25.725,119.37944;67,397
+Şanlıurfa, Şanlıurfa, Turkey (Sanliurfa);37.16708,38.79392;449,549
+Leipzig, Saxony, Germany;51.33962,12.37129;504,971
+Agartala, Tripura, India;23.83605,91.27939;203,264
+Xiantao, Hubei, China;30.3708,113.44294;239,406
+Imphal, Manipur, India;24.80805,93.9442;223,523
+Daye, Hubei, China;30.08333,114.95;61,847
+Mbeya, Mbeya, Tanzania;-8.9,33.45;291,649
+Kingston, Kingston, Jamaica;17.99702,-76.79358;937,700
+Sāngli, Maharashtra, India (Sangli);16.85438,74.56417;601,214
+Cuiabá, Mato Grosso, Brazil (Cuiaba);-15.59611,-56.09667;521,934
+Samarqand, Samarqand, Uzbekistan (Samarkand);39.65417,66.95972;319,366
+Málaga, Andalusia, Spain (malaga);36.72016,-4.42034;568,305
+Ibagué, Tolima, Colombia (Ibague);4.43889,-75.23222;421,685
+Dortmund, North Rhine-Westphalia, Germany;51.51494,7.466;588,462
+Kagoshima, Kagoshima, Japan;31.56667,130.55;555,352
+Cabimas, Zulia, Venezuela;10.38828,-71.43993;200,818
+Taihecun, Heilongjiang, China (Qitaihe);45.76347,130.85048;345,033
+Milwaukee, Wisconsin, United States;43.0389,-87.90647;600,155
+Catania, Sicily, Italy;37.49223,15.07041;290,927
+Samut Sakhon, Samut Sakhon, Thailand;13.54753,100.27362;63,498
+Likasi, Haut-Katanga, Democratic Republic of the Congo;-10.98303,26.7384;422,414
+Beira, Sofala, Mozambique;-19.84361,34.83889;530,604
+Hamadān, Hamadān, Iran (Hamadan);34.79922,48.51456;528,256
+Shuozhou, Shanxi, China;39.31583,112.4225;0
+Tonghua, Jilin, China;41.71972,125.92639;510,000
+Djibouti, Djibouti, Djibouti;11.58901,43.14503;623,891
+Essen, North Rhine-Westphalia, Germany;51.45657,7.01228;593,085
+Toulon, Provence-Alpes-Côte d'Azur, France;43.12442,5.92836;168,701
+Dresden, Saxony, Germany;51.05089,13.73832;486,854
+Juiz de Fora, Minas Gerais, Brazil;-21.76417,-43.35028;470,193
+Bouaké, Vallée du Bandama, Ivory Coast (Bouake);7.69385,-5.03031;567,481
+Pereira, Risaralda, Colombia;4.81333,-75.69611;440,118
+Udaipur, Rajasthan, India;24.58584,73.71346;422,784
+Vellore, Tamil Nadu, India;12.9184,79.13255;177,081
+Dongyang, Zhejiang, China;29.26778,120.22528;130,387
+Ardabīl, Ardabīl, Iran (Ardabil);38.2498,48.2933;410,753
+Thoothukudi, Tamil Nadu, India (Thoothukkudi);8.76735,78.13425;410,760
+Bloemfontein, Orange Free State, South Africa;-29.12107,26.214;463,064
+Xinyi, Guangdong, China;22.37303,110.94746;98,259
+Udon Thani, Changwat Udon Thani, Thailand;17.41567,102.78589;247,231
+Ogbomoso, Oyo, Nigeria (Ogbomosho);8.13373,4.24014;0
+Jalgaon, Maharashtra, India;21.00292,75.56602;429,298
+Hebi, Henan, China;35.89917,114.1925;244,662
+Zaoyang, Hubei, China;32.12722,112.75417;184,509
+Gaya, Bihar, India;24.79686,85.00385;423,692
+Baltimore, Maryland, United States;39.29038,-76.61219;621,849
+Yazd, Yazd, Iran;31.89722,54.3675;477,905
+Tirunelveli, Tamil Nadu, India;8.72742,77.6838;1,435,844
+Zhaodong, Heilongjiang, China;46.06771,125.98263;154,406
+Songyang, Henan, China (Dengfeng);34.45528,113.02806;62,375
+Matamoros, Coahuila, Mexico;25.52699,-103.2285;104,024
+Kitchener, Ontario, Canada;43.42537,-80.5112;233,700
+Poza Rica de Hidalgo, Veracruz, Mexico;20.53315,-97.45946;174,526
+Oujda-Angad, Oriental, Morocco;34.68139,-1.90858;405,253
+Santa Fe de la Vera Cruz, Santa Fe, Argentina;-31.63333,-60.7;489,505
+Cuito, Bíe, Angola;-12.38333,16.93333;113,624
+Orenburg, Orenburg, Russia;51.7727,55.0988;550,204
+Cangzhou, Hebei, China;38.31667,116.86667;527,681
+Jiaozhou, Shandong, China;36.28389,120.00333;165,026
+Kemerovo, Kemerovo, Russia;55.33333,86.08333;477,090
+Bremen, Bremen, Germany;53.07516,8.80777;546,501
+Karbala, Karbalāʼ, Iraq;32.61603,44.02488;434,450
+Al Manşūrah, Dakahlia, Egypt (Al-Mansurah);31.03637,31.38069;420,195
+Weinan, Shaanxi, China;34.50355,109.50891;172,321
+Anyang-si, Gyeonggi-do, South Korea;37.3925,126.92694;634,367
+Mazār-e Sharīf, Balkh, Afghanistan (Mazar-e Sharif);36.70904,67.11087;303,282
+Kota Kinabalu, Sabah, Malaysia;5.9749,116.0724;457,326
+Basel, Basel-City, Switzerland;47.55839,7.57327;164,488
+Gomel, Gomel, Belarus;52.4345,30.9754;480,951
+Albuquerque, New Mexico, United States;35.08449,-106.65114;559,121
+Gaozhou, Guangdong, China;21.93924,110.84607;166,069
+Feicheng, Shandong, China;35.26056,117.9675;80,929
+Meknès, Fès-Meknès, Morocco (Meknes);33.89352,-5.54727;545,705
+Pānīpat, Haryana, India (Panipat);29.38747,76.96825;292,808
+Kahramanmaraş, Kahramanmaraş, Turkey (Kahramanmaras);37.5847,36.92641;376,045
+Irbid, Irbid, Jordan;32.55556,35.85;307,480
+Arāk, Markazi, Iran (Arak);34.09493,49.69809;503,647
+Tepic, Nayarit, Mexico;21.50951,-104.89569;280,592
+Chiang Rai, Chiang Rai, Thailand;19.90858,99.8325;78,756
+Guangyuan, Sichuan, China;32.44201,105.823;213,365
+Leicester, England, United Kingdom;52.6386,-1.13169;508,916
+Tongchuanshi, Shaanxi, China;35.07474,109.08495;223,603
+Khamis Mushait, 'Asir, Saudi Arabia (Khamis Mushayt);18.3,42.73333;387,553
+Ndola, Copperbelt, Zambia;-12.95867,28.63659;394,518
+Tucson, Arizona, United States;32.22174,-110.92648;531,641
+Imus, Calabarzon, Philippines;14.42972,120.93667;216,099
+Villavicencio, Meta, Colombia;4.142,-73.62664;321,717
+Adapazarı, Sakarya, Turkey (Sakarya);40.78056,30.40333;286,787
+Bamenda, North-West, Cameroon;5.9597,10.14597;393,835
+Shouguang, Shandong, China;36.88,118.7375;79,212
+Utrecht, Utrecht, Netherlands;52.09083,5.12222;290,529
+Rājahmundry, Andhra Pradesh, India (Rajahmundry);17.00517,81.77784;304,804
+Novokuznetsk, Kemerovo, Russia;53.7557,87.1099;539,616
+Larkana, Sindh, Pakistan;27.55898,68.21204;364,033
+City of Isabela, ARMM, Philippines (Basilan City);6.70407,121.97117;67,336
+Valledupar, Cesar, Colombia;10.46314,-73.25322;308,237
+Chaoyang, Liaoning, China;41.57028,120.45861;410,005
+Uíge, Uíge, Angola (Uige);-7.60874,15.06131;60,008
+Hamhŭng, Hamgyŏng-namdo, North Korea (Hamhung);39.91833,127.53639;559,056
+Sukkur, Sindh, Pakistan;27.70323,68.85889;417,767
+Rayong, Rayong, Thailand;12.68095,101.25798;106,737
+Port of Spain, City of Port of Spain, Trinidad and Tobago;10.66668,-61.51889;49,031
+Kermanshah, Kermānshāh, Iran;34.31417,47.065;621,100
+Abeokuta, Ogun, Nigeria;7.15571,3.34509;593,100
+Mek'ele, Tigray, Ethiopia (Mekele);13.49667,39.47528;215,546
+Guli, Zhejiang, China (Yongkang);28.88162,120.03308;536,000
+Edinburgh, Scotland, United Kingdom;55.95206,-3.19648;464,990
+Haining, Zhejiang, China;30.53629,120.68638;70,171
+San Juan, San Juan, Argentina;-31.5375,-68.53639;447,048
+Ryazan’, Rjazan, Russia;54.6269,39.6916;520,173
+Vilnius, Vilnius, Lithuania;54.68916,25.2798;542,366
+Taishan, Guangdong, China;22.25135,112.7799;145,440
+Calamba, Calabarzon, Philippines;14.21167,121.16528;316,612
+Mesa, Arizona, United States;33.42227,-111.82264;471,825
+Hannover, Lower Saxony, Germany;52.37052,9.73322;515,140
+Fresno, California, United States;36.74773,-119.77237;520,052
+Chuzhou, Anhui, China;32.32194,118.29778;280,582
+Namangan, Namangan, Uzbekistan;40.9983,71.67257;432,456
+Pingdu, Shandong, China;36.78444,119.94639;91,077
+Al Mukallā, Muḩāfaz̧at Ḩaḑramawt, Yemen (Al-Mukalla);14.54248,49.12424;258,132
+Qingzhou, Shandong, China;36.69667,118.47972;117,056
+Longgang, Shandong, China (Longkou);37.65181,120.33063;60,444
+Astrakhan, Astrakhan, Russia;46.34968,48.04076;502,533
+Santa Marta, Magdalena, Colombia;11.24079,-74.19904;431,781
+Ambon, Maluku, Indonesia;-3.69583,128.18333;355,596
+Bellary, Karnataka, India;15.14205,76.92398;336,681
+Pietermaritzburg, KwaZulu-Natal, South Africa;-29.61679,30.39278;750,845
+Rustenburg, North-West, South Africa;-25.66756,27.24208;124,064
+Heyuan, Guangdong, China;23.73333,114.68333;93,718
+Yanshi Chengguanzhen, Henan, China;34.71601,112.79568;0
+Surakarta, Central Java, Indonesia;-7.55611,110.83167;555,308
+Dalian, Liaoning, China;38.91222,121.60222;4,087,733
+Shekhūpura, Punjab, Pakistan (Sheikhupura);31.71287,73.98556;361,303
+Youdian, Yunnan, China (Changning);24.82894,99.59232;0
+Grenoble, Auvergne-Rhône-Alpes, France;45.17155,5.72239;158,552
+Puerto Vallarta, Jalisco, Mexico;20.617,-105.23018;187,134
+Balashikha, Moscow Oblast, Russia;55.80945,37.95806;150,103
+Angeles City, Central Luzon, Philippines;15.15,120.58333;299,391
+Gombe, Gombe, Nigeria;10.28969,11.16729;250,258
+Hosūr, Tamil Nadu, India (Hosur);12.73647,77.83264;103,724
+Poznań, Greater Poland, Poland (Poznan);52.40692,16.92993;570,352
+Zijinglu, Henan, China (Gongyi);34.76,112.97139;56,033
+Van, Van, Turkey;38.49457,43.38323;371,713
+Gaoyou, Jiangsu, China;32.78933,119.44182;90,911
+Shizuishan, Ningsia Hui Autonomous Region, China;39.23333,106.76944;136,570
+Kikwit, Kwilu, Democratic Republic of the Congo;-5.04098,18.81619;186,991
+Cuautla, Morelos, Mexico (Cuautla Morelos);18.8106,-98.93525;146,178
+Sacramento, California, United States;38.58157,-121.4944;490,712
+Kalasin, Kalasin, Thailand;16.43281,103.50658;55,102
+Shangyu, Zhejiang, China;30.01556,120.87111;770,000
+Atlanta, Georgia, United States;33.749,-84.38798;463,878
+Al Maḩallah al Kubrá, Gharbia, Egypt (Al-Mahallah al-Kubra');30.97063,31.1669;431,052
+Loum, Littoral, Cameroon;4.7182,9.7351;177,429
+Laixi, Shandong, China;36.85917,120.52694;75,849
+Kākināda, Andhra Pradesh, India (kakinada);16.96036,82.23809;292,923
+Penza, Penza, Russia;53.20066,45.00464;512,602
+Berbera, Woqooyi Galbeed, Somalia;10.43959,45.01432;242,344
+Utsunomiya, Tochigi, Japan;36.56667,139.88333;449,865
+Porto Velho, Rondônia, Brazil;-8.76194,-63.90389;306,180
+Qianjiang, Hubei, China;30.421,112.8919;179,079
+Songyuan, Jilin, China;45.12902,124.82769;113,611
+Duisburg, North Rhine-Westphalia, Germany;51.43247,6.76516;504,358
+Nakhon Pathom, Nakhon Pathom, Thailand;13.8196,100.04427;117,927
+Muzaffarpur, Bihar, India;26.12259,85.39055;333,200
+Mataram, West Nusa Tenggara, Indonesia;-8.58333,116.11667;318,674
+Mbouda, West, Cameroon;5.62611,10.25421;111,320
+Zinder, Zinder, Niger;13.80716,8.9881;191,424
+Jianshe, Henan, China (Changge);34.2175,113.76889;0
+Kirov, Kirov, Russia;58.59665,49.66007;457,383
+Kuantan, Pahang, Malaysia;3.8077,103.326;366,229
+Yanjiang, Sichuan, China (Ziyang);30.12108,104.64811;87,400
+Xingning, Guangdong, China;24.1483,115.72272;0
+Kandahār, Kandahar, Afghanistan (Kandahar);31.61332,65.71013;391,190
+Nürnberg, Bavaria, Germany (Nurenberg);49.45421,11.07752;499,237
+Eslāmshahr, Tehrān, Iran (Eslamshahr);35.55222,51.23504;0
+Bournemouth, England, United Kingdom;50.72048,-1.8795;163,600
+Jinjiang, Fujian, China;24.81978,118.57415;89,623
+Cheboksary, Chuvashia, Russia;56.13222,47.25194;446,781
+Matsuyama, Ehime, Japan;33.83916,132.76574;443,322
+Tanda, Gharbia, Egypt (Tanta);30.78847,31.00192;404,901
+Shuangyashan, Heilongjiang, China;46.63611,131.15389;600,000
+Lipetsk, Lipetsk, Russia;52.60311,39.57076;515,655
+Karagandy, Karaganda, Kazakhstan (Karaganda);49.83333,73.1658;451,800
+Kuiju, Shandong, China (Changyi);36.85361,119.39083;0
+Arusha, Arusha, Tanzania;-3.36667,36.68333;341,136
+Murcia, Murcia, Spain;37.98704,-1.13004;436,870
+Malatya, Malatya, Turkey;38.35018,38.31667;441,805
+Tirana, Tiranë, Albania;41.3275,19.81889;374,801
+Surat Thani, Surat Thani, Thailand;9.14011,99.33311;127,201
+Kansas City, Missouri, United States;39.09973,-94.57857;475,378
+Ubon Ratchathani, Changwat Ubon Ratchathani, Thailand;15.23844,104.84866;122,533
+Kolwezi, Lualaba, Democratic Republic of the Congo;-10.71484,25.46674;418,000
+Kabinda, Kasaï-Oriental, Democratic Republic of the Congo;-6.13791,24.48179;59,004
+Jiancheng, Sichuan, China (Jianyang);30.39097,104.54912;0
+Nanping, Fujian, China;26.645,118.17361;171,674

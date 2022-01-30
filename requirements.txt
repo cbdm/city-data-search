@@ -9,6 +9,7 @@ gunicorn==20.1.0
 idna==3.3
 itsdangerous==2.0.1
 Jinja2==3.0.3
+jsonpickle==2.1.0
 MarkupSafe==2.0.1
 meteostat==1.5.11
 numpy==1.22.1

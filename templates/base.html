@@ -9,6 +9,10 @@
         box-sizing: border-box;
         }
 
+        .city_image {
+                width: 60%;
+        }
+
         /* Create two equal columns that floats next to each other */
         .two_columns_no_borders {
             float: left;
@@ -26,6 +30,9 @@
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
         @media screen and (max-width: 600px) {
             .two_columns_no_borders {
+                width: 100%;
+            }
+            .city_image {
                 width: 100%;
             }
         }
@@ -111,7 +118,7 @@
         .nav_bar {
             color: #555555;
             font-size: 2em;
-            margin-left: 50px;
+            margin-left: 75px;
             text-decoration: none;
         }
 
@@ -137,6 +144,15 @@
         h2 {
             color: #d64161;
         }
+
+        .alert {
+            font-size: large;
+            color: #d64161;
+            border-color: #555555;
+            border-width: 5px;
+            border-style: dotted;
+            width: 350px;
+        }
     </style>
 </head>
 <body>
@@ -154,6 +170,7 @@
     </div>
 </body>
 <footer>
+    {% block footer %} {% endblock %}
     <hr />
     If you want to <a href="https://github.com/cbdm/city-data-search">contribute to the project</a>, or have any suggestions, <a href="mailto:hi@city-data-search.com">get in touch! (hi@city-data-search.com)</a>
 </footer>

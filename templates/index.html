@@ -2,12 +2,13 @@
 
 {% block content %}
     <form method="post">
-        <label for="title">Enter the city in the format City, ST (e.g., "Irvine, CA", "New York, NY")</label>
+        <label for="title">Enter a city name (e.g., "Irvine, CA", "New York, NY")</label>
         <br/>
-        <input type="text" name="city"
+        <input type="text" name="query_value"
                placeholder="Irvine, CA"
-               value="{{ request.form['city'] }}"></input>
-        <br/>
-        <button type="submit">Submit</button>
+               value="{{ request.form['query_value'] }}"></input>
+        <br/><br/>
+        <input type ="submit" name="action" value="Go">
+        <input type ="submit" name="action" value="Search">
     </form>
 {% endblock %}

@@ -1,152 +1,114 @@
 import os.path
+import csv
+import json
 from heapq import heappush, heappushpop
-from pickle import load
 from geopy.distance import distance
-from geopy.geocoders import Nominatim
 
-location_app = Nominatim(user_agent="query")
-
-class City(object):
-    '''Object to store city data we use to find closest largest cities.'''
-    def __init__(self, displayname, citystate, population, coordinates):
-        self.displayname = displayname
-        self.citystate = citystate
-        self.population = population
-        self.coordinates = coordinates
-
-    def __hash__(self):
-        return str.__hash__(f'{self.coordinates}')
-
-    def __str__(self):
-        return self.__repr__()
-    
-    def __repr__(self):
-        return f'{self.displayname} ({self.citystate}), {self.population}, {self.coordinates}'
-
-    def __eq__(self, o):
-        if not isinstance(o, City): return False
-        return self.displayname == o.displayname
-
-    def __gt__(self, o):
-        # Compare state before city name.
-        if not isinstance(o, City): return False
-        city, state = self.displayname.split(', ')
-        ocity, ostate = o.displayname.split(', ')
-
-        if state > ostate:
-            return True
-        elif state < ostate:
-            return False
-
-        if city > ocity:
-            return True
-        else:
-            return False
-
-    @staticmethod
-    def from_str(s):
-        data = s.split(', ')
-        displayname = data[0] + ', ' + data[1][:data[1].find(' ')]
-        citystate = data[1][data[1].find('(') + 1:-1]
-        population = f'{int(data[2]):,}'
-        coordinates = (float(data[3][data[3].find('(') + 1:]), float(data[4][:data[4].find(')')]))
-        return City(displayname, citystate, population, coordinates)
-
-
-_data = None  # Store the list of large cities.
+_data = None  # Store the large cities as a dict(coordinates -> name, pop).
 def _load_data():
     '''Load the preprocessed data into memory.'''
     global _data
     if _data: return
-    # Using a csv instead of pickle data because of heroku's storage.
+    # Using a json instead of pickle data because of heroku's storage.
     root_dir = os.path.dirname(os.path.realpath(__file__))
-    filepath = os.path.join(root_dir, 'large_cities.csv')
-    _data = []
+    filepath = os.path.join(root_dir, 'large_cities.json')
     with open(filepath) as file_in:
-        for row in file_in:
-            _data.append(City.from_str(row))
+        _data = json.load(file_in)
+    for city in _data:
+        city['coordinates'] = tuple(city['coordinates'])
 
 
-def find_close_large_cities(citystate, k=3, max_dist=100):
-    '''Find the k closest large cities (100k+ for US, 50k+ for Canada) for the given citystate.
-    Also returns the number of large cities within the max_dist (km).
-        Data sources:
-            US: https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/cities/
-            Canada: https://canadapopulation.org/largest-cities-in-canada-by-population/'''
+def find_k_closest_large_cities(coordinates, k=3):
+    '''Return a sorted list the k closest large cities for the given coordinates.'''
     assert isinstance(k, int)
     assert k <= 20
 
     # Load data if it hasn't been loaded yet.    
-    if _data is None:
-        _load_data()
-
-    # Find coordinates of given city.
-    loc = location_app.geocode(citystate)
-    coordinates = (loc.latitude, loc.longitude)
+    if _data is None: _load_data()
 
     # Initialize counter and result list.
-    count = 0
-    distances = []
+    result = []
 
     for city in _data:
+        city_copy = city.copy()
+
         # We don't want to include the city itself here.
-        if city.coordinates == coordinates:
-            continue
+        if city_copy['coordinates'] == coordinates: continue
 
         # Calculate the distance.
-        dist = distance(city.coordinates, coordinates)
+        city_copy['distance'] = distance(city_copy['coordinates'], coordinates).km
 
-        # Check it it's within max_dist.
-        if dist.km <= max_dist:
-            count += 1
- 
         # Populate the list of k closest ones as a heap.
-        if len(distances) < k:
-            heappush(distances, (-dist, city.displayname))
+        if len(result) < k:
+            heappush(result, (-city_copy['distance'], city_copy))
         else:
-            heappushpop(distances, (-dist, city.displayname))
+            heappushpop(result, (-city_copy['distance'], city_copy))
 
-    return ', '.join([f'{city} ({abs(distance.km):.0f}km)' for distance, city in sorted(distances, reverse=True)]), f'{count}'
+    return [city for _, city in sorted(result, reverse=True)]
 
 
-def get_all_large_cities_within_radius(coordinates, radius=100, k_closest=3):
-    '''Return a sorted list with all unique cities within the given radius in km.'''
-    assert k_closest <= 5
-    
+def find_all_large_cities_within_radius(coordinates, radius=250):
+    '''Return a list with all unique cities within the given radius in km.'''
     # Load data if it hasn't been loaded yet.    
     if _data is None: _load_data()
     
-    distances = set()
-    # keep the three closest ones in case there are none within the radius.
-    if k_closest > 0:
-        nearby = []
+    result = set()
     
     for city in _data:
+        city_copy = city.copy()
+        
         # We don't want to include the city itself here.
-        if city.coordinates == coordinates:
-            continue
+        if city_copy['coordinates'] == coordinates: continue
 
         # Calculate the distance.
-        dist = distance(city.coordinates, coordinates)
-
-        if k_closest > 0:
-            if len(nearby) < k_closest:
-                heappush(nearby, (-dist.km, city))
-            else:
-                heappushpop(nearby, (-dist.km, city))
+        city_copy['distance'] = distance(city['coordinates'], coordinates).km
 
         # Skip cities further than the given radius.
-        if dist.km > radius:
-            continue
+        if city_copy['distance'] > radius: continue
 
-        distances.add((dist.km, city))
+        # Add current city to the result set.
+        result.add(tuple(city_copy.items()))
 
-    if k_closest > 0:
-        distances |= set(nearby)
+    return [{x[0]: x[1] for x in city} for city in result]
 
-    return [city for _, city in distances]
+
+def find_both_k_closest_and_radius(coordinates, k=3, radius=250):
+    '''Return a list containing all unique cities that are within the given radius in km or is one of the k closest.'''
+    assert isinstance(k, int)
+    assert 0 < k <= 5
+    assert isinstance(radius, (int, float))
+
+    # Load data if it hasn't been loaded yet.    
+    if _data is None: _load_data()
+    
+    within_radius = set()
+    closest = []
+    
+    for city in _data:
+        city_copy = city.copy()
+        
+        # We don't want to include the city itself here.
+        if city['coordinates'] == coordinates: continue
+
+        # Calculate the distance.
+        city_copy['distance'] = distance(city['coordinates'], coordinates).km
+
+        # Update the k-closest cities.
+        if len(closest) < k:
+            heappush(closest, (-city_copy['distance'], city_copy))
+        else:
+            heappushpop(closest, (-city_copy['distance'], city_copy))
+
+        # Add the city to the result set if it's within the radius.
+        if city_copy['distance'] <= radius:
+            within_radius.add(tuple(city_copy.items()))
+
+    within_radius = [{x[0]: x[1] for x in city} for city in within_radius]
+    closest = [city for _, city in sorted(closest, reverse=True)]
+    return within_radius, closest
 
 
 if __name__ == '__main__':
-    print(find_close_large_cities('irvine-ca'))
-    print(get_all_large_cities_within_radius((33.6856969, -117.8259819)))
+    print(find_k_closest_large_cities((33.6856969, -117.8259819)))
+    print(find_all_large_cities_within_radius((33.6856969, -117.8259819)))
+    print(find_both_k_closest_and_radius((33.6856969, -117.8259819), k=5, radius=100))

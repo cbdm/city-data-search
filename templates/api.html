@@ -6,36 +6,34 @@
     <h2>Usage</h2>
     The following APIs are available:
     <ul>
-        <li><code>{{ url_for('index', _external=True) }}api/citystate/[citystate]</code></li>
-        <li><code>{{ url_for('index', _external=True) }}api/multi/[citystate1_citystate2_..._citystateN]</code></li>
+        <li><code>{{ url_for('index', _external=True) }}api/single/[city]</code></li>
+        <li><code>{{ url_for('index', _external=True) }}api/multi/[city1_city2_..._cityN]</code></li>
     </ul>
     These APIs return an XML containing information you can parse.<br/>
-    For both methods, you can use "get-headers" as a valid citystate to get the column names.
+    For both methods, you can use "get-headers" as a valid city to get the column names.
 
     <h3>Examples</h3>
     <ul>
-        <li>To get data for Irvine, CA: <a href="{{ url_for('single_city', citystate='irvine-ca') }}">{{ url_for('index', _external=True) }}api/citystate/irvine-ca</a></li>
-        <li>To get data for Irvine, CA and New York, NY with headers: <a href="{{ url_for('multi_city', citystatelist='get-headers_irvine-ca_new+york-ny') }}">{{ url_for('index', _external=True) }}api/multi/get-headers_irvine-ca_new+york-ny</a></li>
+        <li>To get data for Irvine, CA: <a href="{{ url_for('single_city', city='irvine,ca') }}">{{ url_for('index', _external=True) }}api/single/irvine,ca</a></li>
+        <li>To get data for Irvine, CA and New York, NY with headers: <a href="{{ url_for('multi_city', citylist='get-headers_irvine,ca_new+york,ny') }}">{{ url_for('index', _external=True) }}api/multi/get-headers_irvine,ca_new+york,ny</a></li>
     </ul>
     
     <h2>Data Format</h2>
     <h3>Single City</h3>
     <xmp>
-        <data citystate="irvine-ca">
-            <population>246,992</population>
-            <weather> 4.4 | 15.0 | 18.2 | 22.8 | 36.7 </weather>
-            <livability>80</livability>
-            <amenities>A+</amenities>
+        <data city="Irvine, California, United States">
+            <population>256,927</population>
+            <weather>4.4 | 15.0 | 18.2 | 22.8 | 36.7</weather>
+            <city_livability>80</city_livability>
             <cost_of_living>F</cost_of_living>
-            <crime>A</crime>
-            <employment>B</employment>
             <housing>D+</housing>
+            <safety>A</safety>
             <schools>A+</schools>
-            <user_ratings>A</user_ratings>
-            <nearby_large_cities>
-            Irvine, CA (0km), Orange, CA (8km), Santa Ana, CA (8km)
-            </nearby_large_cities>
-            <count_nearby_large>32</count_nearby_large>
+            <closest_major_cities>
+            Los Angeles, California, United States (58km), San Diego, California, United States (123km), Tijuana, Baja California, Mexico (150km)
+            </closest_major_cities>
+            <count_nearby_major_cities>4</count_nearby_major_cities>
+            <urban_area_name>Los Angeles</urban_area_name>
         </data>
     </xmp>
     Weather Format:
@@ -50,68 +48,54 @@
 
     <h3>Multi-city</h3>
     <xmp>
-        <multi citystatelist="get-headers_irvine-ca_new+york-ny">
-            <data citystate="get-headers">
-                <population>Population</population>
-                <weather>2021 Weather (ºC)</weather>
-                <livability>Overall Livability</livability>
-                <amenities>Amenities</amenities>
-                <cost_of_living>Cost of Living</cost_of_living>
-                <crime>Crime</crime>
-                <employment>Employment</employment>
-                <housing>Housing</housing>
-                <schools>Schools</schools>
-                <user_ratings>User Ratings</user_ratings>
-                <nearby_large_cities>Closest Large Cities</nearby_large_cities>
-                <count_nearby_large># of Large Cities Nearby</count_nearby_large>
+        <multi citylist="get-headers_irvine,ca_new+york,ny">
+            <data city="">
+            <population>Population</population>
+            <weather>Year-round Weather</weather>
+            <city_livability>City Livability</city_livability>
+            <cost_of_living>Cost of Living</cost_of_living>
+            <housing>Housing</housing>
+            <safety>Safety</safety>
+            <schools>Schools</schools>
+            <closest_major_cities>Closest Major Cities</closest_major_cities>
+            <count_nearby_major_cities>19</count_nearby_major_cities>
+            <urban_area_name>Urban Area Name</urban_area_name>
             </data>
-            <data citystate="irvine-ca">
-                <population>246,992</population>
-                <weather> 4.4 | 15.0 | 18.2 | 22.8 | 36.7 </weather>
-                <livability>80</livability>
-                <amenities>A+</amenities>
-                <cost_of_living>F</cost_of_living>
-                <crime>A</crime>
-                <employment>B</employment>
-                <housing>D+</housing>
-                <schools>A+</schools>
-                <user_ratings>A</user_ratings>
-                <nearby_large_cities>
-                Irvine, CA (0km), Orange, CA (8km), Santa Ana, CA (8km)
-                </nearby_large_cities>
-                <count_nearby_large>32</count_nearby_large>
+            <data city="Irvine, California, United States">
+            <population>256,927</population>
+            <weather>4.4 | 15.0 | 18.2 | 22.8 | 36.7</weather>
+            <city_livability>80</city_livability>
+            <cost_of_living>F</cost_of_living>
+            <housing>D+</housing>
+            <safety>A</safety>
+            <schools>A+</schools>
+            <closest_major_cities>
+            Los Angeles, California, United States (58km), San Diego, California, United States (123km), Tijuana, Baja California, Mexico (150km)
+            </closest_major_cities>
+            <count_nearby_major_cities>4</count_nearby_major_cities>
+            <urban_area_name>Los Angeles</urban_area_name>
             </data>
-            <data citystate="new+york-ny">
-                <population>8,461,961</population>
-                <weather>-7.2 | 10.6 | 14.6 | 19.4 | 35.0 </weather>
-                <livability>67</livability>
-                <amenities>A+</amenities>
-                <cost_of_living>F</cost_of_living>
-                <crime>F</crime>
-                <employment>C-</employment>
-                <housing>D+</housing>
-                <schools>C+</schools>
-                <user_ratings>B</user_ratings>
-                <nearby_large_cities>
-                New York, NY (0km), Jersey City, NJ (4km), Newark, NJ (14km)
-                </nearby_large_cities>
-                <count_nearby_large>6</count_nearby_large>
+            <data city="New York City, New York, United States">
+            <population>8,175,133</population>
+            <weather>-7.2 | 10.6 | 14.6 | 19.4 | 35.0</weather>
+            <city_livability>N/A</city_livability>
+            <cost_of_living>N/A</cost_of_living>
+            <housing>N/A</housing>
+            <safety>N/A</safety>
+            <schools>N/A</schools>
+            <closest_major_cities>
+            Philadelphia, Pennsylvania, United States (130km), Baltimore, Maryland, United States (273km), Boston, Massachusetts, United States (306km)
+            </closest_major_cities>
+            <count_nearby_major_cities>1</count_nearby_major_cities>
+            <urban_area_name>New York</urban_area_name>
             </data>
         </multi>
     </xmp>
 
-
-
     <h2>Google Sheets Integration</h2>
-    <h3>Data Preparation</h3>
-    Assuming you have city names in the format of "City, ST" (e.g., "Irvine, CA"), you can use the following formula to convert them into "city-state" (e.g., "irvine-ca"):<br/>
-    <code>=LOWER(SUBSTITUTE(SUBSTITUTE({CELL},", ","-"), " ", "+"))</code><br/>
-    where CELL is the cell containing the city name.
-
-    <h3>IMPORTXML</h3>
-    After you have the city names in the "city-state" format, you can use the following formulas:
+    You can use the following formulas to import the data into Google Sheets.
     <ul>
-        <li>To get data for a single city: <code>=IMPORTXML(CONCATENATE("{{ url_for('index', _external=True) }}api/citystate/", {CITY}), "/data")</code></li>
+        <li>To get data for a single city: <code>=IMPORTXML(CONCATENATE("{{ url_for('index', _external=True) }}api/single/", {CITY}), "/data")</code></li>
         <li>To get data for multiple cities: <code>=IMPORTXML(CONCATENATE("{{ url_for('index', _external=True) }}api/multi/", {CITY LIST}), "/multi/data")</code></li>
     </ul>
     HINT: for the second call, you can add "get-headers" as the 1st city in your list, and that should create the headers for you.
