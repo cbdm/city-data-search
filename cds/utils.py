@@ -47,7 +47,11 @@ def create_output_xml(city, headers=False):
     root.append(cmc)
 
     cnmc = ET.Element('count_nearby_major_cities')
-    cnmc.text = f'{len(city.nearby_major_cities)}'
+    if isinstance(city.nearby_major_cities, str):
+        # Check for the "headers city".
+        cnmc.text = city.nearby_major_cities
+    else:
+        cnmc.text = f'{len(city.nearby_major_cities)}'
     root.append(cnmc)
     
     uan = ET.Element('urban_area_name')

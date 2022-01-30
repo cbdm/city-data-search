@@ -281,7 +281,7 @@ class City(object):
     def create_headers_city():
         headers = City(None)
         headers.population = 'Population'
-        headers.weather = ['Year-round Weather']
+        headers.weather = ['Year-round Weather (ºC)']
         headers.overall_livability = 'City Livability'
         headers.cost_of_living = 'Cost of Living'
         headers.housing = 'Housing'
