@@ -157,7 +157,7 @@ class City(object):
                         self.ua_safety = utils.convert_score_from_numerical_to_letter(score)
 
     
-    def _fetch_areavibes(self):
+    def _fetch_areavibes(self, retry=None):
         '''Fetch city livability data from areavibes.
             Doing this in addition to teleport because, e.g., Irvine, CA != Los Angeles, CA'''
         # Default values:
@@ -167,8 +167,15 @@ class City(object):
         self.schools = 'N/A'
         self.safety = 'N/A'
         
-        livability_url = f'https://www.areavibes.com/{self.citystate}/livability'
+        livability_url = f'https://www.areavibes.com/{self.citystate if retry is None else retry}/livability'
         resp = requests.get(livability_url)
+        if resp.status_code == 404 and retry is None:
+            # If we couldn't find it, retry.
+            # This logic is for NYC, but maybe it solves other cities as well.
+            if self.name.endswith(' City'):
+                new_citystate = utils.convert_to_citystate(f'{self.name[:-5]}, {utils.state_province_to_short(self.state)}')
+                self._fetch_areavibes(retry=new_citystate)
+        
         if resp.status_code != 200:
             return
 
