@@ -7,7 +7,7 @@
     The following APIs are available:
     <ul>
         <li><code>{{ url_for('index', _external=True) }}api/single/[city]</code></li>
-        <li><code>{{ url_for('index', _external=True) }}api/multi/[city1_city2_..._cityN]</code></li>
+        <li><code>{{ url_for('index', _external=True) }}api/multi/[city1&city2&...&cityN]</code></li>
     </ul>
     These APIs return an XML containing information you can parse.<br/>
     For both methods, you can use "get-headers" as a valid city to get the column names.
@@ -15,7 +15,7 @@
     <h3>Examples</h3>
     <ul>
         <li>To get data for Irvine, CA: <a href="{{ url_for('single_city', city='irvine,ca') }}">{{ url_for('index', _external=True) }}api/single/irvine,ca</a></li>
-        <li>To get data for Irvine, CA and New York, NY with headers: <a href="{{ url_for('multi_city', citylist='get-headers_irvine,ca_new+york,ny') }}">{{ url_for('index', _external=True) }}api/multi/get-headers_irvine,ca_new+york,ny</a></li>
+        <li>To get data for Irvine, CA and New York, NY with headers: <a href="{{ url_for('multi_city', citylist='get-headers&irvine,ca&new+york,ny') }}">{{ url_for('index', _external=True) }}api/multi/get-headers&irvine,ca&new+york,ny</a></li>
     </ul>
     
     <h2>Data Format</h2>

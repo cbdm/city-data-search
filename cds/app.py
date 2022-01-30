@@ -89,7 +89,7 @@ def force_single_city(city):
 def multi_city(citylist, force=False):
     '''API to fetch data for all cities in the given city list.'''
     response = ET.Element('multi', citylist=citylist)
-    for city in citylist.split('_'):
+    for city in citylist.split('&'):
         new_data = get_single_city_data(city, force)
         response.append(ET.XML(new_data.decode("utf8")))
     return app.response_class(ET.tostring(response), mimetype='application/xml')
