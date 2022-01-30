@@ -1,12 +1,9 @@
 # app.py
 from os import getenv
 from flask import Flask, request, render_template, flash, redirect, url_for
-from data_fetchers import location_app, get_livability, get_population, get_weather, weather_start
-# from large_cities import find_close_large_cities, get_all_large_cities_within_radius
-from utils import create_output_xml, validate_city_state, convert_to_citystate
+from utils import create_output_xml
 from datetime import datetime
 import xml.etree.ElementTree as ET
-import xmltodict
 from city import search as city_search
 from data_handler import DataHandler
 

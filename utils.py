@@ -1,7 +1,6 @@
 from city import City
 import string
 import xml.etree.ElementTree as ET
-from os import remove
 
 def create_output_xml(city, headers=False):
     '''Create a xml that contains the provided data.'''

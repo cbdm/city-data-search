@@ -1,5 +1,4 @@
 import os.path
-import csv
 import json
 from heapq import heappush, heappushpop
 from geopy.distance import distance
