@@ -12,7 +12,7 @@ class DataHandler(object):
         )
 
 
-    def get_city_by_geonameid(self, geonameid, force=False):
+    def get_city_by_geonameid(self, geonameid, *, force=False, query='N/A'):
         cached = self._db.get(geonameid)
         if force or not cached:
             data = City(geonameid)
@@ -20,6 +20,8 @@ class DataHandler(object):
             self._db.set(geonameid, data.to_json())
         else:
             data = City.from_json(cached)
+        # Adds the query that got this city.
+        data.query = query
         return data
 
 

@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, flash, redirect, url_for
 from utils import create_output_xml
 from datetime import datetime
 import xml.etree.ElementTree as ET
-from city import search as city_search
+from city import search as city_search, City
 from data_handler import DataHandler
 
 app = Flask(__name__)
@@ -76,7 +76,7 @@ def web(geonameid):
 @app.route('/api/single/<city>/')
 def single_city(city, force=False):
     '''API to get data for a single given city.'''
-    return app.response_class(get_single_city_data(city, force), mimetype='application/xml')
+    return app.response_class(get_single_city_data(city, force=force), mimetype='application/xml')
 
 
 @app.route('/api/force/<city>/')
@@ -99,10 +99,11 @@ def get_single_city_data(city, force=False):
     '''Main function that creates a response xml for a single city.'''
     assert city
     if city == 'get-headers':
-        return create_output_xml(None, headers=True)
-    
-    city_info = city_search(city, max_results=1)[0]
-    city_obj = dh.get_city_by_geonameid(city_info.geonameid)
+        city_obj = City.create_headers_city()
+    else:
+        # TODO: add an empty response if the city_search didn't return results.
+        city_info = city_search(city, max_results=1)[0]
+        city_obj = dh.get_city_by_geonameid(city_info.geonameid, query=city)
     return create_output_xml(city_obj)
 
 

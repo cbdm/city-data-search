@@ -2,13 +2,11 @@ from city import City
 import string
 import xml.etree.ElementTree as ET
 
-def create_output_xml(city, headers=False):
+def create_output_xml(city):
     '''Create a xml that contains the provided data.'''
-    assert isinstance(city, City) or headers
-    if headers:
-        city = City.create_headers_city()
+    assert isinstance(city, City)
     
-    root = ET.Element('data', city=city.full_name)
+    root = ET.Element('data', query=city.query)
 
     fn = ET.Element('full_name')
     fn.text = city.full_name
