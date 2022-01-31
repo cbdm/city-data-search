@@ -17,27 +17,25 @@
     <h1>{{ city.full_name }}</h1>
     <div class="row">
         <div class="two_columns_no_borders">
-            <div class="row">
-                <div class="two_columns_no_borders">
-                    <div class="city_image" style="background-image: url({{ city.img }});">
-                        <img src="{{ city.img }}" alt="Photo of {{ city.name }}"/>
-                    </div>
+            <div class="basic_city_info">
+                <div class="city_image" style="background-image: url({{ city.img }});">
+                    <img src="{{ city.img }}" alt="Photo of {{ city.name }}"/>
                 </div>
-                <div class="two_columns_no_borders">
-                    <h2>Basic Info</h2>
-                    <ul>
-                        <li style="font-size: large;"> Population: {{ city.population }} </li>
-                        <li style="font-size: large;"> Current Local Time: <span id = "clock" onload="currentTime()"></span></li>
-                        <script>
-                            function currentTime() {
-                            let date = new luxon.DateTime.fromObject({}, {zone: '{{ city.tz }}'});
-                            document.getElementById("clock").innerText = date.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);;
-                            let t = setTimeout(function(){ currentTime() }, 1000);
-                            }
-                            currentTime();
-                        </script>
-                    </ul>
-                </div>
+            </div>
+            <div class="row">  
+                <h2>Basic Info</h2>
+                <ul>
+                    <li style="font-size: large;"> Population: {{ city.population }} </li>
+                    <li style="font-size: large;"> Current Local Time: <span id = "clock" onload="currentTime()"></span></li>
+                    <script>
+                        function currentTime() {
+                        let date = new luxon.DateTime.fromObject({}, {zone: '{{ city.tz }}'});
+                        document.getElementById("clock").innerText = date.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);;
+                        let t = setTimeout(function(){ currentTime() }, 1000);
+                        }
+                        currentTime();
+                    </script>
+                </ul>
             </div>
             <div class="row">
                 <h2> {{ weather_year }} Daily Temperatures</h2>
