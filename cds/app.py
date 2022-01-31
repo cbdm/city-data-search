@@ -6,6 +6,7 @@ from datetime import datetime
 import xml.etree.ElementTree as ET
 from city import search as city_search, City
 from data_handler import DataHandler
+from bcrypt import checkpw
 
 app = Flask(__name__)
 app.debug = True
@@ -114,10 +115,16 @@ def get_single_city_data(city, force=False):
 ##
 ## Option to flush the db if we make any changes to the data, should be used sparringly!
 ##
-@app.route('/flush-db/<password>')
-def clear_db(password):
-    dh.flush_db(password)
-    return '<h1>DB flushed!<h1>'
+@app.route('/flush-db/', methods=('GET', 'POST'))
+def clear_db():
+    if request.method == 'POST':
+        password = request.form.get('db_pass', '').encode('utf8')
+        if checkpw(password, getenv('REDIS_DROP_DB_PASSWORD', '').encode('utf8')):
+            dh.flush_db(password)
+            flash('Success!')
+        else:
+            flash('Incorrect password!')
+    return render_template('flush-db.html')
 
 
 ##

@@ -2,6 +2,7 @@ from city import City, search
 from os import getenv
 from redis import Redis
 from utils import convert_from_citystate
+from bcrypt import checkpw
 
 class DataHandler(object):
     def __init__(self, redis_host, redis_port, redis_password):
@@ -26,7 +27,6 @@ class DataHandler(object):
 
 
     def flush_db(self, password):
-        assert isinstance(password, str)
-        assert password == getenv('REDIS_DROP_DB_PASSWORD', '123')
+        assert isinstance(password, bytes)
+        assert checkpw(password, getenv('REDIS_DROP_DB_PASSWORD', '').encode('utf8'))
         self._db.flushall()
-        return 'DB dropped!'

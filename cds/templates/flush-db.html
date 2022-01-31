@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} (flush-db){% endblock %}</h1>
+    <form method="post">
+        <label for="title">Enter the db password below:</label>
+        <br/>
+        <input type="password" name="db_pass"
+               placeholder="Password"
+               value="{{ request.form['db_pass'] }}"></input>
+        <br/><br/>
+        <input type ="submit" name="action" value="Flush">
+    </form>
+{% endblock %}
