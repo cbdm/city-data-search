@@ -2,7 +2,7 @@
 Webapp to fetch different pieces of data about cities in a single location.  
 It is live at [https://www.city-data-search.com](https://www.city-data-search.com)
 
-Check our [about page](https://city-data-search.com/about) for more information.
+Check our [about page](https://www.city-data-search.com/about) for more information.
 
 ## API
 We provide API endpoints for you to get the data.  
