@@ -4,12 +4,12 @@
     <h1>{% block title %} (api info){% endblock %}</h1>
     
     <h2>Usage</h2>
-    The following APIs are available:
+    The following API endpoints are available:
     <ul>
         <li><code>{{ url_for('index', _external=True) }}api/single/[city]</code></li>
         <li><code>{{ url_for('index', _external=True) }}api/multi/[city1]&[city2]&...&[cityN]</code></li>
     </ul>
-    These APIs return an XML containing information you can parse.<br/>
+    These endpoints return an XML containing information you can parse.<br/>
     For both methods, you can use "get-headers" as a valid city to get the column names.
 
     <h3>Examples</h3>
@@ -97,7 +97,7 @@
     </xmp>
 
     <h3>Invalid City</h3>
-    If we cannot find a city for the given query, we will return a xml in the following format:<br/>
+    If we cannot find a city for the given query, we will return an XML with the following data:<br/>
     Example for searching "invalid city name".
     <xmp>
         <data query="invalid city name">
