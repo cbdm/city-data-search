@@ -97,10 +97,13 @@
     </xmp>
 
     <h3>Invalid City</h3>
-    If we cannot find a city for the given query, we will return the follwing xml:
+    If we cannot find a city for the given query, we will return a xml in the following format:<br/>
+    Example for searching "invalid city name".
     <xmp>
-        <data query="1234567890">
-            <full_name>Could not find a city for query="1234567890"</full_name>
+        <data query="invalid city name">
+            <full_name>
+                Could not find a city for query="invalid city name"
+            </full_name>
             <population>N/A</population>
             <weather>N/A</weather>
             <city_livability>N/A</city_livability>
