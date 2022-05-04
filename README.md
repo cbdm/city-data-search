@@ -1,13 +1,13 @@
 # City Data Search
 Webapp to fetch different pieces of data about cities in a single location.  
-It is live at [https://www.city-data-search.com](https://www.city-data-search.com)
+It is live at [https://city-data-search.cbdm.app](https://city-data-search.cbdm.app)
 
-Check our [about page](https://www.city-data-search.com/about) for more information.
+Check our [about page](https://city-data-search.cbdm.app/about) for more information.
 
 ## API
 We provide API endpoints for you to get the data.  
-Check [https://www.city-data-search.com/api/info](https://www.city-data-search.com/api/info)
+Check [https://city-data-search.cbdm.app/api/info](https://city-data-search.cbdm.app/api/info)
 
 ## Contribute :)
 Contributions are welcome!  
-Feel free to send a PR or get in touch! (hi@city-data-search.com)
+Feel free to send a PR or get in touch! ([city-data-search@cbdm.app](mailto:city-data-search.cbdm.app))
