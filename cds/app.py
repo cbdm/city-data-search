@@ -134,7 +134,7 @@ def clear_db():
 @app.route('/api/force/citystate/<citystate>/')
 def old_api(citystate):
     '''Rerouting old api endpoints.'''
-    return f"Invalid endpoint, please check {url_for('api_info', _external=True)} for up-to-date API info."
+    return f"Invalid endpoint, please check {url_for('api_info', _external=True, _scheme='https')} for up-to-date API info."
 
 
 if __name__ == '__main__':
