@@ -6,15 +6,35 @@ from datetime import datetime
 import xml.etree.ElementTree as ET
 from city import search as city_search, City
 from data_handler import DataHandler
-from bcrypt import checkpw
+from flask_sqlalchemy import SQLAlchemy
+from pymysql import install_as_MySQLdb
+install_as_MySQLdb()
 
 app = Flask(__name__)
 app.debug = True
 app.config['SECRET_KEY'] = getenv('FLASK_SECRET_KEY', 'abc')
-dh = DataHandler(redis_host=getenv('REDIS_ENDPOINT_URI', '127.0.0.1'),
-                    redis_port=getenv('REDIS_PORT', '6379'),
-                    redis_password=getenv('REDIS_PASSWORD', None)
-                )
+# Connect to the DB.
+db_config = {
+    'host': getenv('DB_HOST', 'localhost'),
+    'port': getenv('DB_PORT', '3306'),
+    'user': getenv('DB_USER', 'user'),
+    'passwd': getenv('DB_PASS', 'pass'),
+    'database': getenv('DB_NAME', 'db')
+}
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{user}:{passwd}@{host}:{port}/{database}'.format(**db_config)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+# Configure DB table to store data.
+class CachedCity(db.Model):
+    geonameid = db.Column(db.String(100), primary_key=True)
+    data = db.Column(db.JSON)
+
+    def __repr__(self):
+        return f'<CachedCity {self.geonameid}>'
+
+# Pass the instantiated DB to our data handler.
+dh = DataHandler(db=db, table=CachedCity)
 
 ##
 ## Webapp routes
@@ -110,21 +130,6 @@ def get_single_city_data(city, force=False):
             # If not, we create a special City object to include in the response.
             city_obj = City.create_invalid_query_city(city)
     return create_output_xml(city_obj)
-
-
-##
-## Option to flush the db if we make any changes to the data, should be used sparringly!
-##
-@app.route('/flush-db/', methods=('GET', 'POST'))
-def clear_db():
-    if request.method == 'POST':
-        password = request.form.get('db_pass', '').encode('utf8')
-        if checkpw(password, getenv('REDIS_DROP_DB_PASSWORD', '').encode('utf8')):
-            dh.flush_db(password)
-            flash('Success!')
-        else:
-            flash('Incorrect password!')
-    return render_template('flush-db.html')
 
 
 ##
