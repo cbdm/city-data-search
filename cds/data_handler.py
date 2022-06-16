@@ -1,6 +1,5 @@
 from city import City, search
 from os import getenv
-from redis import Redis
 from utils import convert_from_citystate
 
 class DataHandler(object):
