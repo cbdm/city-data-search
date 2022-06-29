@@ -288,17 +288,22 @@ class City(object):
         query1_url = f"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input={self.full_name}&key={api_key}&inputtype=textquery&fields=photos"
         resp1 = requests.get(query1_url)
         data1 = json.loads(resp1.text)
-        photo_ref = (
-            data1.get("candidates", [{}])[0]
-            .get("photos", [{}])[0]
-            .get("photo_reference", "")
-        )
-        if photo_ref:
-            query2_url = f"https://maps.googleapis.com/maps/api/place/photo?photoreference={photo_ref}&key={api_key}&maxwidth=400&maxheight=400"
-            resp2 = requests.get(query2_url)
-            self.img = (
-                "data:image/jpg;base64," + base64.b64encode(resp2.content).decode()
-            )
+
+        candidates = data1.get("candidates", None)
+        if not candidates:
+            return
+
+        photos = candidates.get("photos", None)
+        if not photos:
+            return
+
+        photo_ref = photos.get("photo_reference", None)
+        if not photo_ref:
+            return
+
+        query2_url = f"https://maps.googleapis.com/maps/api/place/photo?photoreference={photo_ref}&key={api_key}&maxwidth=400&maxheight=400"
+        resp2 = requests.get(query2_url)
+        self.img = "data:image/jpg;base64," + base64.b64encode(resp2.content).decode()
 
     def _fetch_weather(self):
         """Get the weather data from the previous full year."""
