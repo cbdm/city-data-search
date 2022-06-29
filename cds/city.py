@@ -28,6 +28,7 @@ class City(object):
             return
 
         # Populate the city attributes.
+        self._fetch_geonames()
         self._fetch_teleport()
         self._fetch_areavibes()
         self._fetch_city_image()
@@ -37,6 +38,34 @@ class City(object):
         # Timestamp this data for freshness and mark this city as fetched.
         self.timestamp = datetime.utcnow().isoformat()
         self._fetched = True
+
+
+    def _fetch_geonames(self):
+        '''Fetch city data from geonames.'''
+
+        geonames_user = getenv('GEONAMES_USER', 'demo')
+        url = f'http://api.geonames.org/getJSON?geonameId={self.geonameid}&username={geonames_user}'
+        resp_city = requests.get(url)
+        if resp_city.status_code != 200:
+            self.error_code = resp_city.status_code
+            return
+
+        # Parse a valid response.
+        data = json.loads(resp_city.text)
+
+        self.name = data.get('toponymName', 'N/A')
+        self.state = data.get('adminCodes1', {}).get('ISO3166_2', '')
+        self.country = data.get('countryCode', 'N/A')
+        self.full_name = f'{self.name}, {self.state}{", " if self.state else ""}{self.country}'
+        self.population = f"{data.get('population', 0):,}"
+        self.coordinates = (float(data.get('lat', '0')), float(data.get('lng', '0')))
+        self.bounding_box = data.get('bbox', {})
+        self.tz = data.get('timezone', {}).get('timeZoneId', '')
+        self.wikipedia_url = data.get('wikipediaURL', '')
+
+        # Try to convert city's name to the old city-state format.
+        # Used for the api calls and areavibes requests.
+        self.citystate = utils.convert_to_citystate(f'{self.name}, {self.state}')
 
 
     def _fetch_teleport(self):
@@ -50,17 +79,7 @@ class City(object):
 
         # Parse a valid response.
         data = json.loads(resp_city.text)
-        self.full_name = data.get('full_name', '')
-        self.name = data.get('name', self.full_name)
-        self.population = f"{data.get('population', 0):,}"
-        self.coordinates = tuple(data.get('location', {}).get('latlon', {}).values())
-        self.state = data.get('_links', {}).get('city:admin1_division', {}).get('name', '')
-        self.country = data.get('_links', {}).get('city:country', {}).get('name', '')
-        self.tz = data.get('_links', {}).get('city:timezone', {}).get('name', '')
 
-        # Try to convert city's name to the old city-state format.
-        # Used for the api calls and areavibes requests.
-        self.citystate = utils.convert_to_citystate(f'{self.name}, {utils.state_province_to_short(self.state)}')
         
         # Default values for urban area features:
         self.urban_area = 'N/A'
@@ -337,9 +356,11 @@ class City(object):
 def search(cityname, max_results=1):
     '''Find the best match results for the given city name.'''
     def _parse_city_result(city_search_result):
-        link = city_search_result.get('_links', {}).get('city:item', {}).get('href', '')
-        geonameid = link[link.rfind(':') + 1:-1]
-        name = city_search_result.get('matching_full_name', 'N/A')
+        geonameid = city_search_result.get('geonameId', None)
+        city_name = city_search_result.get('toponymName', 'N/A')
+        admin_area_name = city_search_result.get('adminCodes1', {}).get('ISO3166_2', '')
+        country = city_search_result.get('countryCode', 'N/A')
+        name = f'{city_name}, {admin_area_name}{", " if admin_area_name else ""}{country}'
         return geonameid, name
 
     assert isinstance(cityname, str)
@@ -347,18 +368,22 @@ def search(cityname, max_results=1):
     assert isinstance(max_results, int)
     if max_results < 1: return []
 
-    url = f'https://api.teleport.org/api/cities/?search={cityname}&limit={max_results}'
+    geonames_user = getenv('GEONAMES_USER', 'demo')
+    url = f'http://api.geonames.org/searchJSON?&maxRows={max_results}&lang=en&username={geonames_user}&q={cityname}'
     response = requests.get(url)
     data = json.loads(response.text)
-    return [City(*_parse_city_result(city_result)) for city_result in data.get('_embedded', {})
-                                                                        .get('city:search-results', [])]
+
+    return [City(*_parse_city_result(city_result))
+            for city_result in data.get('geonames', [])
+            if 'city' in city_result.get('fclName', '')
+           ]
 
 
 if __name__ == '__main__':            
-    irv = search('irvine', max_results=5)[0]    
+    irv = search('irvine', max_results=5)[0]
     irv.fetch_data()
     print(irv.__dict__)
 
-    bsb = search('brasilia', max_results=1)[0]
+    bsb = search('brasilia', max_results=2)[0]
     bsb.fetch_data()
     print(bsb.__dict__)
