@@ -71,16 +71,6 @@ class City(object):
     def _fetch_teleport(self):
         '''Fetch city data from teleport.'''
 
-        url = 'https://api.teleport.org/api/cities/' + urllib.parse.quote(f'geonameid:{self.geonameid}')
-        resp_city = requests.get(url)
-        if resp_city.status_code != 200:
-            self.error_code = resp_city.status_code
-            return
-
-        # Parse a valid response.
-        data = json.loads(resp_city.text)
-
-        
         # Default values for urban area features:
         self.urban_area = 'N/A'
         self.ua_overall_livability = 'N/A'
@@ -95,6 +85,15 @@ class City(object):
         self.ua_rent_small = 'N/A'
         self.ua_rent_medium = 'N/A'
         self.ua_rent_large = 'N/A'
+
+        url = 'https://api.teleport.org/api/cities/' + urllib.parse.quote(f'geonameid:{self.geonameid}')
+        resp_city = requests.get(url)
+        if resp_city.status_code != 200:
+            self.error_code = resp_city.status_code
+            return
+
+        # Parse a valid response.
+        data = json.loads(resp_city.text)
         
         #
         # Check if the city is part of a teleport urban area.
