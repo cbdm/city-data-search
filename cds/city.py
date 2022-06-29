@@ -293,11 +293,11 @@ class City(object):
         if not candidates:
             return
 
-        photos = candidates.get("photos", None)
+        photos = candidates[0].get("photos", None)
         if not photos:
             return
 
-        photo_ref = photos.get("photo_reference", None)
+        photo_ref = photos[0].get("photo_reference", None)
         if not photo_ref:
             return
 
