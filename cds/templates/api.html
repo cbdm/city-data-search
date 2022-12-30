@@ -22,10 +22,10 @@
     <h3>Single City</h3>
     <xmp>
         <data query="irvine, ca">
-            <full_name>Irvine, California, United States</full_name>
+            <full_name>Irvine, CA, US</full_name>
             <population>256,927</population>
-            <weather>4.4 | 15.0 | 18.2 | 22.8 | 36.7</weather>
-            <city_livability>80</city_livability>
+            <weather>5.0 | 15.0 | 18.2 | 22.8 | 36.7</weather>
+            <city_livability>79</city_livability>
             <cost_of_living>F</cost_of_living>
             <housing>D+</housing>
             <safety>A</safety>
@@ -35,6 +35,7 @@
             </closest_major_cities>
             <count_nearby_major_cities>4</count_nearby_major_cities>
             <urban_area_name>Los Angeles</urban_area_name>
+            <living_wage>$75,204</living_wage>
         </data>
     </xmp>
     Weather Format:
@@ -51,47 +52,50 @@
     <xmp>
         <multi citylist="get-headers&irvine,ca&new+york,ny">
             <data query="get-headers">
-                <full_name>Full City Name</full_name>
-                <population>Population</population>
-                <weather>Year-round Weather (ºC)</weather>
-                <city_livability>City Livability</city_livability>
-                <cost_of_living>Cost of Living</cost_of_living>
-                <housing>Housing</housing>
-                <safety>Safety</safety>
-                <schools>Schools</schools>
-                <closest_major_cities>Closest Major Cities</closest_major_cities>
-                <count_nearby_major_cities>Nearby Major Cities</count_nearby_major_cities>
-                <urban_area_name>Urban Area Name</urban_area_name>
+            <full_name>Full City Name</full_name>
+            <population>Population</population>
+            <weather>Year-round Weather (ºC)</weather>
+            <city_livability>City Livability</city_livability>
+            <cost_of_living>Cost of Living</cost_of_living>
+            <housing>Housing</housing>
+            <safety>Safety</safety>
+            <schools>Schools</schools>
+            <closest_major_cities>Closest Major Cities</closest_major_cities>
+            <count_nearby_major_cities>Nearby Major Cities</count_nearby_major_cities>
+            <urban_area_name>Urban Area Name</urban_area_name>
+            <living_wage>Living Wages (2a+1k)</living_wage>
             </data>
             <data query="irvine,ca">
-                <full_name>Irvine, California, United States</full_name>
-                <population>256,927</population>
-                <weather>4.4 | 15.0 | 18.2 | 22.8 | 36.7</weather>
-                <city_livability>80</city_livability>
-                <cost_of_living>F</cost_of_living>
-                <housing>D+</housing>
-                <safety>A</safety>
-                <schools>A+</schools>
-                <closest_major_cities>
-                Los Angeles, California, United States (58km), San Diego, California, United States (123km), Tijuana, Baja California, Mexico (150km)
-                </closest_major_cities>
-                <count_nearby_major_cities>4</count_nearby_major_cities>
-                <urban_area_name>Los Angeles</urban_area_name>
+            <full_name>Irvine, CA, US</full_name>
+            <population>256,927</population>
+            <weather>5.0 | 15.0 | 18.2 | 22.8 | 36.7</weather>
+            <city_livability>79</city_livability>
+            <cost_of_living>F</cost_of_living>
+            <housing>D+</housing>
+            <safety>A</safety>
+            <schools>A+</schools>
+            <closest_major_cities>
+            Los Angeles, California, United States (58km), San Diego, California, United States (123km), Tijuana, Baja California, Mexico (150km)
+            </closest_major_cities>
+            <count_nearby_major_cities>4</count_nearby_major_cities>
+            <urban_area_name>Los Angeles</urban_area_name>
+            <living_wage>$75,204</living_wage>
             </data>
             <data query="new+york,ny">
-                <full_name>New York City, New York, United States</full_name>
-                <population>8,175,133</population>
-                <weather>-7.2 | 10.6 | 14.6 | 19.4 | 35.0</weather>
-                <city_livability>67</city_livability>
-                <cost_of_living>F</cost_of_living>
-                <housing>D+</housing>
-                <safety>F</safety>
-                <schools>C+</schools>
-                <closest_major_cities>
-                Philadelphia, Pennsylvania, United States (130km), Baltimore, Maryland, United States (273km), Boston, Massachusetts, United States (306km)
-                </closest_major_cities>
-                <count_nearby_major_cities>1</count_nearby_major_cities>
-                <urban_area_name>New York</urban_area_name>
+            <full_name>New York City, NY, US</full_name>
+            <population>8,804,190</population>
+            <weather>-7.2 | 10.6 | 14.6 | 19.4 | 35.0</weather>
+            <city_livability>67</city_livability>
+            <cost_of_living>F</cost_of_living>
+            <housing>D+</housing>
+            <safety>F</safety>
+            <schools>C+</schools>
+            <closest_major_cities>
+            Philadelphia, Pennsylvania, United States (130km), Baltimore, Maryland, United States (273km), Boston, Massachusetts, United States (306km)
+            </closest_major_cities>
+            <count_nearby_major_cities>1</count_nearby_major_cities>
+            <urban_area_name>New York</urban_area_name>
+            <living_wage>$64,755</living_wage>
             </data>
         </multi>
     </xmp>
@@ -114,6 +118,7 @@
             <closest_major_cities>N/A</closest_major_cities>
             <count_nearby_major_cities>N/A</count_nearby_major_cities>
             <urban_area_name>N/A</urban_area_name>
+            <living_wages>N/A</living_wages>
         </data>
     </xmp>
     This is treated as a regular response, so it will be included in responses for multi-city requests as well.

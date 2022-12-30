@@ -399,6 +399,7 @@ class City(object):
         headers.closest_major_cities = "N/A"
         headers.nearby_major_cities = "N/A"
         headers.urban_area = "N/A"
+        headers.living_wages = "N/A"
         return headers
 
 
