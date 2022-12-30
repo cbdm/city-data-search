@@ -129,6 +129,60 @@
             {% endfor %}
             </ol>
             <b>Total within 250km:</b> {{ city.nearby_major_cities | length }}
+            {% if city.living_wages != "N/A" %}
+                <h2>Living Wage</h2>
+                {% if city.living_wages["metro"] %}
+                    <h3>Metro Area: {{ city.living_wages["metro"]["name"] }}</h3>
+                    <div class="row">
+                        <div class="three_columns">
+                            1 adult<br/>
+                            {{ city.living_wages["metro"]["wages"]["1A1W0C"] }}
+                        </div>
+                        <div class="three_columns">
+                            2 adults<br/>
+                            {{ city.living_wages["metro"]["wages"]["2A1W0C"] }}
+                        </div>
+                        <div class="three_columns">
+                            2 adults + 1 kid<br/>
+                            {{ city.living_wages["metro"]["wages"]["2A1W1C"] }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if city.living_wages["county"] %}
+                    <h3>County: {{ city.living_wages["county"]["name"] }}</h3>
+                    <div class="row">
+                        <div class="three_columns">
+                            1 adult<br/>
+                            {{ city.living_wages["county"]["wages"]["1A1W0C"] }}
+                        </div>
+                        <div class="three_columns">
+                            2 adults<br/>
+                            {{ city.living_wages["county"]["wages"]["2A1W0C"] }}
+                        </div>
+                        <div class="three_columns">
+                            2 adults + 1 kid<br/>
+                            {{ city.living_wages["county"]["wages"]["2A1W1C"] }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if city.living_wages["state"] %}
+                    <h3>State: {{ city.living_wages["state"]["name"] }}</h3>
+                    <div class="row">
+                        <div class="three_columns">
+                            1 adult<br/>
+                            {{ city.living_wages["state"]["wages"]["1A1W0C"] }}
+                        </div>
+                        <div class="three_columns">
+                            2 adults<br/>
+                            {{ city.living_wages["state"]["wages"]["2A1W0C"] }}
+                        </div>
+                        <div class="three_columns">
+                            2 adults + 1 kid<br/>
+                            {{ city.living_wages["state"]["wages"]["2A1W1C"] }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
         </div>
     </div>
     {% if city.urban_area != "N/A" %}

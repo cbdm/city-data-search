@@ -63,6 +63,19 @@ def create_output_xml(city):
     uan.text = city.urban_area
     root.append(uan)
 
+    lw = ET.Element("living_wage")
+    if isinstance(city.living_wages, str):
+        lw.text = city.living_wages
+    elif city.living_wages["metro"]:
+        lw.text = city.living_wages["metro"]["wages"]["2A1W0C"]
+    elif city.living_wages["county"]:
+        lw.text = city.living_wages["county"]["wages"]["2A1W0C"]
+    elif city.living_wages["state"]:
+        lw.text = city.living_wages["state"]["wages"]["2A1W0C"]
+    else:
+        lw.text = "N/A"
+    root.append(lw)
+
     return ET.tostring(root)
 
 

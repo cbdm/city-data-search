@@ -4,6 +4,7 @@ import json
 import utils
 import weather
 import large_cities
+import living_wages
 from datetime import datetime
 from jsonpickle import encode, decode
 import base64
@@ -42,6 +43,7 @@ class City(object):
         self._fetch_areavibes()
         self._fetch_city_image()
         self._fetch_weather()
+        self._fetch_living_wages()
         self._find_nearby_major_cities()
 
         # Timestamp this data for freshness and mark this city as fetched.
@@ -64,6 +66,7 @@ class City(object):
         self.name = data.get("toponymName", "N/A")
         self.state = data.get("adminCodes1", {}).get("ISO3166_2", "")
         self.country = data.get("countryCode", "N/A")
+        self.county = data.get("adminName2", "N/A") if self.country == "US" else "N/A"
         self.full_name = (
             f'{self.name}, {self.state}{", " if self.state else ""}{self.country}'
         )
@@ -301,7 +304,6 @@ class City(object):
         if not photo_ref:
             return
 
-        query2_url = f"https://maps.googleapis.com/maps/api/place/photo?photoreference={photo_ref}&key={api_key}&maxwidth=400&maxheight=400"
         query2_url = f"https://maps.googleapis.com/maps/api/place/photo?photoreference={photo_ref}&key={api_key}&maxwidth=800&maxheight=800"
         resp2 = requests.get(query2_url)
         self.img = "data:image/jpg;base64," + base64.b64encode(resp2.content).decode()
@@ -311,6 +313,14 @@ class City(object):
         self.weather_year = datetime.now().year - 1
         self.weather = weather.get_year_round_weather(
             self.coordinates, self.weather_year
+        )
+
+    def _fetch_living_wages(self):
+        """Get the living wages for the metro area or county."""
+        self.living_wages = (
+            living_wages.get_wages(self.state, self.name, self.county)
+            if self.country == "US"
+            else "N/A"
         )
 
     def _find_nearby_major_cities(self):
@@ -371,6 +381,7 @@ class City(object):
         headers.closest_major_cities = "Closest Major Cities"
         headers.nearby_major_cities = "Nearby Major Cities"
         headers.urban_area = "Urban Area Name"
+        headers.living_wages = "Living Wages (2a+1k)"
         return headers
 
     @staticmethod
