@@ -12,9 +12,6 @@ def get_wages(state, city, county):
         page = requests.get(base_url)
         soup = BeautifulSoup(page.text, "lxml")
 
-        with open("lw_start.html") as file_in:
-            page = file_in.read()
-        soup = BeautifulSoup(page, "lxml")
         state_name = utils.state_province_to_long(state)
         locations_path = ""
         for item in soup.find_all("li"):
