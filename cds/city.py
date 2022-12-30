@@ -302,6 +302,7 @@ class City(object):
             return
 
         query2_url = f"https://maps.googleapis.com/maps/api/place/photo?photoreference={photo_ref}&key={api_key}&maxwidth=400&maxheight=400"
+        query2_url = f"https://maps.googleapis.com/maps/api/place/photo?photoreference={photo_ref}&key={api_key}&maxwidth=800&maxheight=800"
         resp2 = requests.get(query2_url)
         self.img = "data:image/jpg;base64," + base64.b64encode(resp2.content).decode()
 
