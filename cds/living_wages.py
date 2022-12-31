@@ -31,9 +31,15 @@ def get_wages(state, city, county):
         metro_class = "metros list-unstyled"
         div = state_locations.find_all("div", {"class": metro_class})[0]
         metro_path = ""
+        lower_city = city.lower()
+        aux_city = (
+            lower_city
+            if not lower_city.endswith(" city")
+            else lower_city[: -len(" city")]
+        )
         for metro in div.find_all("li"):
-            metro_name = metro.text.strip()
-            if city in metro_name:
+            metro_name = metro.text.strip().lower()
+            if lower_city in metro_name or aux_city in metro_name:
                 metro_path = metro.a["href"]
                 break
 
@@ -127,6 +133,7 @@ if __name__ == "__main__":
         ("NC", "Raleigh", "Wake"),
         ("NJ", "Princeton", "Mercer"),
         ("FL", "Miami", "Miami-Dade County"),
+        ("NY", "New York City", ""),
     ]
 
     for t_state, t_city, t_county in tests:
@@ -141,4 +148,3 @@ if __name__ == "__main__":
 
             for fam_size, wage in v["wages"].items():
                 print(f"\t\t{fam_size} - {wage}")
-        break
