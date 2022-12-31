@@ -13,6 +13,7 @@ class DataHandler(object):
         if force or not cached:
             data = City(geonameid)
             data.fetch_data()
+            assert data._fetched  # make sure the data was fetched before commiting it.
             if not cached:
                 # If it's a new city, create a new entry.
                 cached = self._table(geonameid=geonameid, data=data.to_json())

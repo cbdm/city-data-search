@@ -254,4 +254,8 @@
 {% block footer %}
 <hr/>
 Data for {{ city.name }} was last updated on {{ city.timestamp }} (UTC).
+{% if show_refresh %}
+    <button onclick="window.location.href='{{ url_for('refresh', geonameid=geonameid) }}';">refresh data</button>
+{% endif %}
+
 {% endblock %}

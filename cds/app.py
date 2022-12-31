@@ -2,7 +2,7 @@
 from os import getenv
 from flask import Flask, request, render_template, flash, redirect, url_for
 from utils import create_output_xml
-from datetime import datetime
+from datetime import datetime, timedelta
 import xml.etree.ElementTree as ET
 from city import search as city_search, City
 from data_handler import DataHandler
@@ -39,6 +39,12 @@ class CachedCity(db.Model):
 
 # Pass the instantiated DB to our data handler.
 dh = DataHandler(db=db, table=CachedCity)
+
+# Define the min/max wait time to refresh the data.
+# Data over this limit *can* be updated by user's request.
+min_data_refresh = timedelta(weeks=12)
+# Data over this limit *should* be updated due to its freshness.
+max_data_refresh = timedelta(weeks=52)
 
 ##
 ## Webapp routes
@@ -92,7 +98,30 @@ def api_info():
 @app.route("/web/<geonameid>/")
 def web(geonameid):
     """Page to serve the data in a easy to understand GUI."""
-    return render_template("city.html", city=dh.get_city_by_geonameid(geonameid))
+    city = dh.get_city_by_geonameid(geonameid)
+    now = datetime.utcnow()
+    ts = datetime.fromisoformat(city.timestamp)
+    diff = now - ts
+    if diff >= max_data_refresh:
+        # Data is too old, should refresh.
+        return redirect(url_for("refresh", geonameid=geonameid))
+    return render_template(
+        "city.html",
+        city=city,
+        geonameid=geonameid,
+        show_refresh=(diff >= min_data_refresh),
+    )
+
+
+@app.route("/refresh/<geonameid>/")
+def refresh(geonameid):
+    city = dh.get_city_by_geonameid(geonameid)
+    now = datetime.utcnow()
+    ts = datetime.fromisoformat(city.timestamp)
+    diff = now - ts
+    assert diff >= min_data_refresh, "Data is still fresh, no need to update."
+    dh.get_city_by_geonameid(geonameid, force=True)
+    return redirect(url_for("web", geonameid=geonameid))
 
 
 ##
