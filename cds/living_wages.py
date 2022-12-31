@@ -47,9 +47,14 @@ def get_wages(state, city, county):
         county_class = "counties list-unstyled"
         div = state_locations.find_all("div", {"class": county_class})[0]
         county_path = ""
+        county_name = county.lower()
+        county_name = (
+            county_name
+            if county_name.endswith(" county")
+            else (county_name + " county")
+        )
         for _county in div.find_all("li"):
-            county_name = _county.text.strip()[: -len(" County")]
-            if county == county_name:
+            if county_name == _county.text.strip().lower():
                 county_path = _county.a["href"]
                 break
 
@@ -121,6 +126,7 @@ if __name__ == "__main__":
         ("NC", "Chapel Hill", "Orange"),
         ("NC", "Raleigh", "Wake"),
         ("NJ", "Princeton", "Mercer"),
+        ("FL", "Miami", "Miami-Dade County"),
     ]
 
     for t_state, t_city, t_county in tests:
