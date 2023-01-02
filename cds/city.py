@@ -381,7 +381,7 @@ class City(object):
         headers.closest_major_cities = "Closest Major Cities"
         headers.nearby_major_cities = "Nearby Major Cities"
         headers.urban_area = "Urban Area Name"
-        headers.living_wages = "Living Wages (2a+1k)"
+        headers.living_wages = "Living Wages (2a+0k)"
         return headers
 
     @staticmethod
