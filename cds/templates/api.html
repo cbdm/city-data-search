@@ -130,4 +130,6 @@
         <li>To get data for multiple cities: <code>=IMPORTXML(CONCATENATE("{{ url_for('index', _external=True, _scheme='https') }}api/multi/", {CITY LIST}), "/multi/data")</code></li>
     </ul>
     HINT: for the second call, you can add "get-headers" as the 1st city in your list, and that should create the headers for you.
+    <br/>
+    You can see a complete example here: <a href="{{ url_for('api_example', _external=True, _scheme='https') }}">{{ url_for('api_example', _external=True, _scheme='https') }}</a>
 {% endblock %}

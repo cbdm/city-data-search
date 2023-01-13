@@ -95,6 +95,12 @@ def api_info():
     return render_template("api.html")
 
 
+@app.route("/api/example/")
+def api_example():
+    """Redirect to google sheet example."""
+    return redirect("https://caio.link/city-data-search-example")
+
+
 @app.route("/web/<geonameid>/")
 def web(geonameid):
     """Page to serve the data in a easy to understand GUI."""
