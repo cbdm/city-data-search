@@ -1,4 +1,4 @@
-# City Data Search [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/f8wc.svg)](https://betteruptime.com/?utm_source=status_badge)
+# City Data Search [![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/f8wc.svg)](https://status.cbdm.app/)
 Webapp to fetch different pieces of data about cities in a single location.  
 It is live at [https://city-data-search.cbdm.app](https://city-data-search.cbdm.app)
 
