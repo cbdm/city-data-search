@@ -1,6 +1,6 @@
 # City Data Search
 Webapp to fetch different pieces of data about cities in a single location.  
-It is live at [https://city-data-search.cbdm.app](https://city-data-search.cbdm.app)
+It is live at [https://city-data-search.cbdm.app](https://city-data-search.cbdm.app) and you can check the service status at [status.cbdm.app](https://status.cbdm.app/).
 
 Check our [about page](https://city-data-search.cbdm.app/about) for more information.
 
