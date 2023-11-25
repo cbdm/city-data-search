@@ -66,7 +66,7 @@ def index():
                     flash(f'No cities found for "{query_value}"!')
                 else:
                     return redirect(url_for("web", geonameid=option_list[0].geonameid))
-    return render_template("index.html")
+    return render_template("index.html", recent_cities=dh.get_recent_cities())
 
 
 @app.route("/search/<query>", methods=("GET", "POST"))

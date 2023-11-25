@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post">
-        <label for="title">Enter a city name (e.g., "Irvine, CA", "New York, NY")</label>
-        <br/>
-        <input type="text" name="query_value"
-               placeholder="Irvine, CA"
-               value="{{ request.form['query_value'] }}"></input>
-        <br/><br/>
-        <input type ="submit" name="action" value="Go">
-        <input type ="submit" name="action" value="Search">
-    </form>
+    <div class="row">
+        <div class="two_columns_no_borders">
+            <form method="post">
+                <label for="title">Enter a city name (e.g., "Irvine, CA", "New York, NY")</label>
+                <br/>
+                <input type="text" name="query_value"
+                    placeholder="Irvine, CA"
+                    value="{{ request.form['query_value'] }}"></input>
+                <br/><br/>
+                <input type ="submit" name="action" value="Go">
+                <input type ="submit" name="action" value="Search">
+            </form>
+        </div>
+        <div class="two_columns_no_borders">
+            Recently searched cities
+            <ol>
+                {% for city in recent_cities %}
+                    <li><a href="{{ url_for('web', geonameid=city.geonameid) }}">{{ city.full_name }}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
 {% endblock %}
