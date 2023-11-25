@@ -15,11 +15,11 @@
             </form>
         </div>
         <div class="two_columns_no_borders">
-            Recently searched cities
-            <ol>
+            Some of the recently updated cities:
+            <ul>
                 {% for city in recent_cities %}
                     <li><a href="{{ url_for('web', geonameid=city.geonameid) }}">{{ city.full_name }}</a></li>
                 {% endfor %}
-            </ol>
+            </ul>
         </div>
 {% endblock %}

@@ -1,8 +1,7 @@
-from city import City, search
-from os import getenv
-from utils import convert_from_citystate
+from city import City
 from datetime import datetime, timedelta
-from sqlalchemy.sql import select, desc
+from sqlalchemy.sql import select
+from random import sample
 
 
 class DataHandler(object):
@@ -40,12 +39,12 @@ class DataHandler(object):
             >= DataHandler.UPDATE_RECENT_FREQUENCY
         ):
             self._recent_cities = sorted(
-                [
+                {
                     City.from_json(c[0].data)
                     for c in self._db.session.execute(select(self._table))
-                ],
+                },
                 key=lambda x: x.timestamp,
                 reverse=True,
-            )[:n]
+            )[: n * 3]
             self._last_recent_check = datetime.utcnow()
-        return self._recent_cities
+        return sample(self._recent_cities, n)

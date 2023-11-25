@@ -349,7 +349,7 @@ class City(object):
         return self.geonameid > o.geonameid
 
     def __hash__(self):
-        return self.geonameid
+        return int(self.geonameid)
 
     def __str__(self):
         return f"(City:{self.geonameid}, {self.full_name})"
