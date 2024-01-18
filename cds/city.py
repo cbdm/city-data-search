@@ -102,7 +102,7 @@ class City(object):
             f"geonameid:{self.geonameid}"
         )
         resp_city = requests.get(url)
-        if resp_city.status_code != 200:
+        if resp_city.status_code != 200 or not resp_city.text:
             self.error_code = resp_city.status_code
             return
 
