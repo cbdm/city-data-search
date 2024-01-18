@@ -39,7 +39,6 @@ class City(object):
 
         # Populate the city attributes.
         self._fetch_geonames()
-        self._fetch_teleport()
         self._fetch_areavibes()
         self._fetch_city_image()
         self._fetch_weather()
@@ -80,140 +79,8 @@ class City(object):
         # Used for the api calls and areavibes requests.
         self.citystate = utils.convert_to_citystate(f"{self.name}, {self.state}")
 
-    def _fetch_teleport(self):
-        """Fetch city data from teleport."""
-
-        # Default values for urban area features:
-        self.urban_area = "N/A"
-        self.ua_overall_livability = "N/A"
-        self.ua_cost_of_living = "N/A"
-        self.ua_housing = "N/A"
-        self.ua_schools = "N/A"
-        self.ua_safety = "N/A"
-        self.ua_img_url = "N/A"
-        self.ua_weather_type = "N/A"
-        self.ua_avg_num_rainy_days = "N/A"
-        self.ua_currency = "N/A"
-        self.ua_rent_small = "N/A"
-        self.ua_rent_medium = "N/A"
-        self.ua_rent_large = "N/A"
-
-        url = "https://api.teleport.org/api/cities/" + urllib.parse.quote(
-            f"geonameid:{self.geonameid}"
-        )
-        resp_city = requests.get(url)
-        if resp_city.status_code != 200 or not resp_city.text:
-            self.error_code = resp_city.status_code
-            return
-
-        # Parse a valid response.
-        data = json.loads(resp_city.text)
-
-        #
-        # Check if the city is part of a teleport urban area.
-        #
-        urban_area_link = (
-            data.get("_links", {}).get("city:urban_area", {}).get("href", "")
-        )
-        if urban_area_link:
-            self._fetch_urban_area(urban_area_link)
-
-    def _fetch_urban_area(self, urban_area_link):
-        """Get data from the given urban area link."""
-        resp_ua = requests.get(urban_area_link)
-        data_ua = json.loads(resp_ua.text)
-
-        self.urban_area = data_ua.get("name", "")
-
-        details_url = data_ua.get("_links", {}).get("ua:details", {}).get("href", "")
-        if details_url:
-            resp_details = requests.get(details_url)
-            details_data = json.loads(resp_details.text)
-
-            for cat in details_data.get("categories", []):
-                category = cat.get("id", "")
-                if category == "CLIMATE":
-                    for subcat in cat.get("data", []):
-                        subcategory = subcat.get("id", "")
-                        if subcategory == "WEATHER-TYPE":
-                            self.ua_weather_type = subcat.get("string_value", "")
-                        elif subcategory == "WEATHER-AV-NUMBER-RAINY-DAYS":
-                            self.ua_avg_num_rainy_days = int(
-                                subcat.get("float_value", 0)
-                            )
-
-                elif category == "ECONOMY":
-                    for subcat in cat.get("data", []):
-                        if subcat.get("id", "") == "CURRENCY-URBAN-AREA":
-                            self.ua_currency = subcat.get("string_value", "")
-                            break
-
-                elif category == "HOUSING":
-                    for subcat in cat.get("data", []):
-                        subcategory = subcat.get("id", "")
-                        if subcategory == "APARTMENT-RENT-SMALL":
-                            self.ua_rent_small = (
-                                f'{int(subcat.get("currency_dollar_value", 0)):,}'
-                            )
-
-                        elif subcategory == "APARTMENT-RENT-MEDIUM":
-                            self.ua_rent_medium = (
-                                f'{int(subcat.get("currency_dollar_value", 0)):,}'
-                            )
-
-                        elif subcategory == "APARTMENT-RENT-LARGE":
-                            self.ua_rent_large = (
-                                f'{int(subcat.get("currency_dollar_value", 0)):,}'
-                            )
-
-        img_url = data_ua.get("_links", {}).get("ua:images", {}).get("href", "")
-        if img_url:
-            resp_img = requests.get(img_url)
-            img_data = json.loads(resp_img.text)
-            self.ua_img_url = (
-                img_data.get("photos", [{}])[0].get("image", {}).get("mobile", "N/A")
-            )
-
-        # Get the urban area livability scores if available.
-        scores_url = data_ua.get("_links", {}).get("ua:scores", {}).get("href", "")
-        if scores_url:
-            resp_scores = requests.get(scores_url)
-            scores_data = json.loads(resp_scores.text)
-
-            overall = scores_data.get("teleport_city_score", -1)
-            if overall >= 0:
-                self.ua_overall_livability = f"{overall:.0f}"
-
-            for cat in scores_data.get("categories", []):
-                cat_name = cat.get("name", "")
-                if cat_name == "Cost of Living":
-                    score = cat.get("score_out_of_10", -1)
-                    if score >= 0:
-                        self.ua_cost_of_living = (
-                            utils.convert_score_from_numerical_to_letter(score)
-                        )
-                elif cat_name == "Education":
-                    score = cat.get("score_out_of_10", -1)
-                    if score >= 0:
-                        self.ua_schools = utils.convert_score_from_numerical_to_letter(
-                            score
-                        )
-                elif cat_name == "Housing":
-                    score = cat.get("score_out_of_10", -1)
-                    if score >= 0:
-                        self.ua_housing = utils.convert_score_from_numerical_to_letter(
-                            score
-                        )
-                elif cat_name == "Safety":
-                    score = cat.get("score_out_of_10", -1)
-                    if score >= 0:
-                        self.ua_safety = utils.convert_score_from_numerical_to_letter(
-                            score
-                        )
-
     def _fetch_areavibes(self, retry=None):
-        """Fetch city livability data from areavibes.
-        Doing this in addition to teleport because, e.g., Irvine, CA != Los Angeles, CA"""
+        """Fetch city livability data from areavibes."""
         # Default values:
         self.overall_livability = "N/A"
         self.cost_of_living = "N/A"

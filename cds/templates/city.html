@@ -180,71 +180,7 @@
                 {% endif %}
             {% endif %}
         </div>
-    </div>
-    {% if city.urban_area != "N/A" %}
-        <hr />
-        <div class="row">
-            <h2>Urban Area: <span style="color: black;">{{ city.urban_area }}</p></p></h2>
-            <div class="two_columns_no_borders">
-                <img src="{{ city.ua_img_url }}" alt="{{ city.urban_area }}" class="ua_image"/>
-            </div>
-            <div class="two_columns_no_borders">
-                <div class="row">
-                    <h2>Urban Area Livability</h2>
-                    <div class="two_columns">
-                        Overall<br/>
-                        {{ city.ua_overall_livability }}
-                    </div>
-                    <div class="two_columns">
-                        Cost of Living<br/>
-                        {{ city.ua_cost_of_living }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="three_columns">
-                        Housing<br/>
-                        {{ city.ua_housing }}
-                    </div>
-                    <div class="three_columns">
-                        Safety<br/>
-                        {{ city.ua_safety }}{{ Crime }}     
-                    </div>
-                    <div class="three_columns">
-                        Schools<br/>
-                        {{ city.ua_schools }}
-                    </div>
-                </div>
-                <div class="row">
-                    <h2>Weather</h2>
-                    <div class="two_columns">
-                        Type<br/>
-                        {{ city.ua_weather_type }}
-                    </div>
-                    <div class="two_columns">
-                        Rainy Days<br/>
-                        {{ city.ua_avg_num_rainy_days }}
-                    </div>
-                </div>
-                <div class="row">
-                    <h2>Monthly Rent (USD)</h2>
-                    <div class="three_columns">
-                        Small Apt.<br/>
-                        {{ city.ua_rent_small }}
-                    </div>
-                    <div class="three_columns">
-                        Medium Apt.<br/>
-                        {{ city.ua_rent_medium }}
-                    </div>
-                    <div class="three_columns">
-                        Large Apt.<br/>
-                        {{ city.ua_rent_large }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endif %}
-    
-    </div>
+    </div>    
 {% endblock %}
 
 {% block footer %}
