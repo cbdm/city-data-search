@@ -247,7 +247,6 @@ class City(object):
         headers.schools = "Schools"
         headers.closest_major_cities = "Closest Major Cities"
         headers.nearby_major_cities = "Nearby Major Cities"
-        headers.urban_area = "Urban Area Name"
         headers.living_wages = "Living Wages (2a+0k)"
         return headers
 
@@ -265,7 +264,6 @@ class City(object):
         headers.schools = "N/A"
         headers.closest_major_cities = "N/A"
         headers.nearby_major_cities = "N/A"
-        headers.urban_area = "N/A"
         headers.living_wages = "N/A"
         return headers
 

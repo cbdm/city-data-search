@@ -59,10 +59,6 @@ def create_output_xml(city):
         cnmc.text = f"{len(city.nearby_major_cities)}"
     root.append(cnmc)
 
-    uan = ET.Element("urban_area_name")
-    uan.text = city.urban_area
-    root.append(uan)
-
     lw = ET.Element("living_wage")
     if isinstance(city.living_wages, str):
         lw.text = city.living_wages
