@@ -14,6 +14,9 @@ class DataHandler(object):
         self._last_recent_check = datetime(1908, 3, 25)
 
     def get_city_by_geonameid(self, geonameid, *, force=False, query="N/A"):
+        # Make sure the given ID is valid.
+        assert geonameid.isdecimal(), "The geonameID should be a decimal value."
+
         cached = self._table.query.get(geonameid)
         if force or not cached:
             data = City(geonameid)
