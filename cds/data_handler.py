@@ -15,7 +15,9 @@ class DataHandler(object):
 
     def get_city_by_geonameid(self, geonameid, *, force=False, query="N/A"):
         # Make sure the given ID is valid.
-        assert geonameid.isdecimal(), "The geonameID should be a decimal value."
+        assert isinstance(geonameid, int) or (
+            isinstance(geonameid, str) and geonameid.isdecimal()
+        ), "The geonameID should be a decimal value."
 
         cached = self._table.query.get(geonameid)
         if force or not cached:
